@@ -1,0 +1,1942 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alexa Trachim · Partnerka biznesowa trenerek EFT</title>
+    <meta name="description" content="Pomagam trenerkom EFT budować i rozwijać unikatowe biznesy - od pierwszych ofert po współpracę wdrożeniową. Łączę wiedzę marketingową z pracą metodą EFT." />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400;1,9..40,500&family=Fraunces:opsz,wght@9..144,400..700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <style>
+      /* ==========================================================================
+         DESIGN SYSTEM & CSS VARIABLES
+         ========================================================================== */
+      :root {
+        --plum: #16121C;      /* Near-black: dark-section bg; primary text on light */
+        --bone: #F2ECE3;      /* Warm off-white: light-section bg; text on dark */
+        --raspberry: #C21F6B; /* Primary accent: CTAs, emphasis, hairlines */
+        --amethyst: #632A7A;  /* Secondary accent */
+        --lavender: #B79FD4;  /* Soft accent for details on dark */
+        --rose: #D590B2;      /* Soft accent for hovers/details */
+
+        --font-serif: 'Fraunces', serif;
+        --font-sans: 'DM Sans', sans-serif;
+        --font-script: 'Shadows Into Light', cursive;
+
+        --max-width: 1140px;
+        --header-height: 118px;
+      }
+
+      /* RESET & BASE STYLES */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+        background-color: var(--plum);
+        color: var(--bone);
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        overflow-x: hidden;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+      }
+
+      button, input, textarea {
+        font-family: inherit;
+        font-size: inherit;
+      }
+
+      /* TYPOGRAPHY UTILITIES */
+      h1, h2, h3, .heading-serif {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-optical-sizing: auto;
+        line-height: 1.05;
+        letter-spacing: -0.015em;
+      }
+
+      .script-kicker {
+        font-family: var(--font-script);
+        font-size: clamp(22px, 2.6vw, 26px);
+        font-weight: 400;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .star {
+        color: var(--raspberry);
+        font-size: 0.9em;
+        vertical-align: middle;
+      }
+
+      /* CONTAINER & SECTIONS */
+      .container {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      section {
+        padding: 5rem 0;
+        position: relative;
+      }
+
+      @media (min-width: 1024px) {
+        section {
+          padding: 7rem 0;
+        }
+      }
+
+      /* ALTERNATING DARK & LIGHT SECTIONS */
+      .sec-dark {
+        background-color: var(--plum);
+        color: var(--bone);
+      }
+
+      .sec-dark .script-kicker {
+        color: var(--lavender);
+      }
+
+      .sec-light {
+        background-color: var(--bone);
+        color: var(--plum);
+      }
+
+      .sec-light .script-kicker {
+        color: var(--amethyst);
+      }
+
+      /* BUTTONS */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0.85rem 2rem;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        border-radius: 2px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .btn-primary {
+        background-color: var(--raspberry);
+        color: var(--bone);
+        border-color: var(--raspberry);
+      }
+
+      .btn-primary:hover, .btn-primary:focus-visible {
+        background-color: #a31858;
+        border-color: #a31858;
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border-color: rgba(242, 236, 227, 0.3);
+        color: var(--bone);
+      }
+
+      .btn-outline:hover, .btn-outline:focus-visible {
+        border-color: var(--raspberry);
+        color: var(--rose);
+        background-color: rgba(194, 31, 107, 0.08);
+        transform: translateY(-2px);
+      }
+
+      .btn-icon-img {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+        vertical-align: middle;
+        margin-right: 0.5rem;
+        display: inline-block;
+      }
+
+      /* ANNOUNCEMENT BAR */
+      .announcement-bar {
+        background-color: var(--amethyst);
+        color: var(--bone);
+        font-family: var(--font-sans);
+        font-size: 0.88rem;
+        text-align: center;
+        padding: 0.65rem 1rem;
+        line-height: 1.4;
+        width: 100%;
+      }
+
+      .announcement-bar a {
+        color: var(--bone);
+        text-decoration: underline;
+        font-weight: 600;
+      }
+
+      .announcement-bar a:hover {
+        opacity: 0.9;
+      }
+
+      /* STICKY NAV */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: var(--bone);
+        border-bottom: 1px solid rgba(194, 31, 107, 0.18);
+      }
+
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: var(--header-height);
+      }
+
+      /* LOGO IN NAV */
+      .nav-logo-link {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 0;
+      }
+
+      .nav-logo-img {
+        height: auto;
+        max-height: 100px;
+        width: auto;
+        max-width: 100%;
+        display: block;
+        object-fit: contain;
+      }
+
+      @media (max-width: 640px) {
+        .nav-container {
+          height: 86px;
+        }
+        .nav-logo-img {
+          height: auto;
+          max-height: 64px;
+        }
+      }
+
+      .nav-menu {
+        display: none;
+        list-style: none;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-menu a {
+        color: var(--plum);
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        position: relative;
+      }
+
+      .nav-menu a::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        background-color: var(--raspberry);
+        transition: width 0.2s ease;
+      }
+
+      .nav-menu a:hover::after, .nav-menu a:focus-visible::after {
+        width: 100%;
+      }
+
+      .nav-menu a:hover {
+        color: var(--raspberry);
+      }
+
+      /* MOBILE HAMBURGER & OVERLAY */
+      .hamburger-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 44px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        z-index: 1002;
+      }
+
+      .hamburger-btn span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--plum);
+        transition: transform 0.25s ease, opacity 0.25s ease;
+      }
+
+      .hamburger-btn.is-active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .hamburger-btn.is-active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger-btn.is-active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      .mobile-menu-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: var(--bone);
+        z-index: 1001;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+      }
+
+      .mobile-menu-overlay.is-active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .mobile-menu-overlay a {
+        color: var(--plum);
+        font-family: var(--font-serif);
+        font-size: 1.8rem;
+      }
+
+      .mobile-menu-overlay a:hover {
+        color: var(--raspberry);
+      }
+
+      .mobile-menu-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 48px;
+        height: 48px;
+        min-width: 44px;
+        min-height: 44px;
+        background: none;
+        border: none;
+        color: var(--plum);
+        font-size: 1.8rem;
+        line-height: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1003;
+        transition: color 0.2s ease, transform 0.2s ease;
+      }
+
+      .mobile-menu-close:hover {
+        color: var(--raspberry);
+        transform: scale(1.1);
+      }
+
+      @media (min-width: 1024px) {
+        .hamburger-btn {
+          display: none;
+        }
+        .nav-menu {
+          display: flex;
+        }
+      }
+
+      /* DIVIDERS (VANITY LIGHT BULBS STRIP) */
+      .vanity-bulb-strip {
+        width: 100%;
+        height: 24px;
+        background-color: var(--plum);
+        background-image: radial-gradient(circle, var(--lavender) 3px, transparent 3.5px);
+        background-size: 40px 24px;
+        background-position: center;
+        background-repeat: repeat-x;
+        border-top: 1px solid rgba(183, 159, 212, 0.12);
+        border-bottom: 1px solid rgba(183, 159, 212, 0.12);
+      }
+
+      /* PHOTO PLACEHOLDERS */
+      .photo-placeholder {
+        width: 100%;
+        aspect-ratio: 4/5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .photo-placeholder.dark-frame {
+        background-color: #110d16;
+        border: 1px solid rgba(183, 159, 212, 0.2);
+        box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.7);
+      }
+
+      .photo-placeholder.light-frame {
+        background-color: #e5dccf;
+        border: 1px solid rgba(194, 31, 107, 0.25);
+      }
+
+      .photo-label {
+        font-family: var(--font-sans);
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        max-width: 280px;
+        line-height: 1.5;
+        z-index: 2;
+      }
+
+      .dark-frame .photo-label {
+        color: var(--lavender);
+      }
+
+      .light-frame .photo-label {
+        color: var(--plum);
+      }
+
+      /* HERO SECTION */
+      #hero {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+        align-items: center;
+      }
+
+      @media (min-width: 1024px) {
+        .hero-grid {
+          grid-template-columns: 1.15fr 0.85fr;
+          gap: 3.5rem;
+          align-items: stretch;
+        }
+
+        .hero-image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .hero-content h1 {
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+        color: var(--bone);
+      }
+
+      .hero-subhead {
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+        color: rgba(242, 236, 227, 0.85);
+        margin-bottom: 2.5rem;
+        max-width: 580px;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+
+      .hero-img {
+        width: 100%;
+        height: 100%;
+        max-height: 560px;
+        display: block;
+        border-radius: 6px;
+        border: 1px solid rgba(183, 159, 212, 0.25);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .omnie-img {
+        width: 100%;
+        height: auto;
+        max-height: 520px;
+        display: block;
+        border-radius: 6px;
+        border: 1px solid rgba(183, 159, 212, 0.25);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+        object-fit: cover;
+      }
+
+      /* DLA KOGO SECTION (LIGHT) */
+      #dlakogo {
+        padding-bottom: 2rem;
+      }
+
+      @media (min-width: 1024px) {
+        #dlakogo {
+          padding-bottom: 3rem;
+        }
+      }
+
+      .gdzie-heading {
+        font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+        text-align: center;
+        margin-bottom: 3.5rem;
+        color: var(--plum);
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: stretch;
+      }
+
+      @media (min-width: 1024px) {
+        .cards-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.75rem;
+          align-items: stretch;
+        }
+      }
+
+      /* UNIFIED CARD GLOW & STYLING FOR LIGHT SECTIONS */
+      .sec-light .editorial-card,
+      .sec-light .featured-case,
+      .sec-light .short-quote-card {
+        background-color: rgba(22, 18, 28, 0.025);
+        border: 1px solid rgba(194, 31, 107, 0.22);
+        border-left: 3px solid var(--raspberry);
+        border-radius: 6px;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(194, 31, 107, 0.08);
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .sec-light .offer-card {
+        background-color: #E8E0EC;
+        background: color-mix(in srgb, var(--lavender) 18%, var(--bone));
+        border: 1px solid rgba(194, 31, 107, 0.22);
+        border-left: 3px solid var(--raspberry);
+        border-radius: 6px;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(194, 31, 107, 0.08);
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .editorial-card .quote {
+        font-family: var(--font-sans);
+        font-style: italic;
+        font-size: 1.15rem;
+        line-height: 1.45;
+        margin-bottom: 1.25rem;
+        color: var(--rose);
+      }
+
+      .editorial-card .card-body {
+        font-size: 0.95rem;
+        color: rgba(22, 18, 28, 0.82);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .editorial-card .card-cta-wrap {
+        margin-top: auto;
+        padding-top: 0.5rem;
+      }
+
+      .card-link {
+        display: inline-flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--raspberry);
+        white-space: nowrap;
+      }
+
+      .card-link:hover {
+        color: #a31858;
+      }
+
+      /* SCROLL CUE BETWEEN DLA KOGO AND OFERTA */
+      .scroll-cue {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 0 1.5rem 0;
+        color: var(--raspberry);
+      }
+
+      .scroll-cue svg {
+        width: 28px;
+        height: 28px;
+        stroke: var(--raspberry);
+        stroke-width: 2.5;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .scroll-cue svg {
+          animation: scrollBounce 2s infinite ease-in-out;
+        }
+
+        .vanity-bulb-strip {
+          animation: bulbPulse 3.5s infinite ease-in-out alternate;
+        }
+      }
+
+      @keyframes scrollBounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(8px);
+        }
+        60% {
+          transform: translateY(4px);
+        }
+      }
+
+      @keyframes bulbPulse {
+        0% {
+          opacity: 0.55;
+        }
+        100% {
+          opacity: 0.95;
+        }
+      }
+
+      /* O MNIE SECTION */
+      #omnie {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dlaczego-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+        align-items: center;
+      }
+
+      @media (min-width: 1024px) {
+        .dlaczego-grid {
+          grid-template-columns: 0.9fr 1.1fr;
+          gap: 5rem;
+        }
+      }
+
+      .dlaczego-content h2 {
+        font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+        margin-bottom: 2rem;
+        color: var(--bone);
+      }
+
+      .dlaczego-content p {
+        font-size: 1.05rem;
+        color: rgba(242, 236, 227, 0.88);
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+      }
+
+      .dlaczego-content p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* NEGATIVE SPACE ACCENTS */
+      .hero-accent-stars,
+      .omnie-accent-stars {
+        position: absolute;
+        pointer-events: none;
+        opacity: 0.12;
+        z-index: 1;
+      }
+
+      .hero-accent-stars {
+        top: 8%;
+        right: 2%;
+        width: 140px;
+        height: 140px;
+      }
+
+      .omnie-accent-stars {
+        bottom: 8%;
+        left: 2%;
+        width: 120px;
+        height: 120px;
+      }
+
+      /* OFERTA SECTION */
+      #oferta {
+        padding-top: 2rem;
+      }
+
+      @media (min-width: 1024px) {
+        #oferta {
+          padding-top: 3rem;
+        }
+      }
+
+      .oferta-heading {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        color: var(--plum);
+        font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .offers-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: stretch;
+      }
+
+      @media (min-width: 1024px) {
+        .offers-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2.5rem;
+          align-items: stretch;
+        }
+      }
+
+      .offer-card {
+        height: 100%;
+      }
+
+      /* Pinned offer card flex structure */
+      .offer-card-top {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .offer-card-footer {
+        margin-top: auto;
+        padding-top: 1.25rem;
+        border-top: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.75rem;
+      }
+
+      .offer-card .date-line {
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: var(--raspberry);
+        letter-spacing: 0.02em;
+        margin: 0;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      /* Featured Partnerka offer card badge & borders */
+      #partnerka.offer-card {
+        border: 2px solid var(--raspberry);
+        border-left: 4px solid var(--raspberry);
+        box-shadow: 0 6px 24px rgba(194, 31, 107, 0.15);
+      }
+
+      #warsztat.offer-card {
+        background-color: #ECE0E7;
+        background: color-mix(in srgb, var(--raspberry) 15%, var(--bone));
+        border: 1px solid var(--raspberry);
+        border-left: 3px solid var(--raspberry);
+      }
+
+      .offer-badge {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        background-color: var(--raspberry);
+        color: var(--bone);
+        font-family: var(--font-sans);
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding: 0.35rem 0.85rem;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(194, 31, 107, 0.25);
+      }
+
+      .offer-card .offer-title {
+        font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+        color: var(--plum);
+        margin-bottom: 0.75rem;
+        line-height: 1.15;
+      }
+
+      @media (min-width: 1024px) {
+        .offer-card .offer-title {
+          white-space: nowrap;
+        }
+      }
+
+      .offer-card .tagline {
+        font-size: 1.15rem;
+        font-weight: 500;
+        color: var(--raspberry);
+        margin-bottom: 1.25rem;
+        font-style: italic;
+      }
+
+      .offer-card .offer-body p {
+        font-size: 0.98rem;
+        color: rgba(22, 18, 28, 0.85);
+        margin-bottom: 1rem;
+        line-height: 1.65;
+      }
+
+      .offer-card .offer-body p:last-child {
+        margin-bottom: 0;
+      }
+
+      .offer-card .offer-cta-wrap {
+        margin-top: 0;
+        padding-top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .offer-card .btn {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      /* OPINIE (TESTIMONIALS) SECTION */
+      .dowody-heading {
+        font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+        text-align: center;
+        margin-bottom: 4rem;
+        color: var(--plum);
+      }
+
+      .featured-case {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 3.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .featured-case {
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 2.5rem;
+          padding: 3rem !important;
+        }
+      }
+
+      .avatar-wrap {
+        flex-shrink: 0;
+      }
+
+      .avatar-img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--raspberry);
+        box-shadow: 0 4px 12px rgba(194, 31, 107, 0.2);
+        display: block;
+      }
+
+      @media (min-width: 768px) {
+        .avatar-img {
+          width: 88px;
+          height: 88px;
+        }
+      }
+
+      .avatar-label {
+        font-size: 0.65rem;
+        line-height: 1.15;
+        text-transform: uppercase;
+        color: var(--plum);
+        text-align: center;
+      }
+
+      .featured-quote {
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        font-style: italic;
+        line-height: 1.55;
+        margin-bottom: 1.25rem;
+        color: var(--plum);
+      }
+
+      .author-meta {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--raspberry);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .short-quotes-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        align-items: stretch;
+      }
+
+      @media (min-width: 1024px) {
+        .short-quotes-grid {
+          grid-template-columns: repeat(3, 1fr);
+          align-items: stretch;
+        }
+      }
+
+      .short-quote-card {
+        padding: 2rem !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      .short-quote-card .quote-wrap {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+      }
+
+      .short-quote-card .quote {
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        font-style: italic;
+        line-height: 1.55;
+        color: var(--plum);
+        margin-bottom: 0;
+      }
+
+      .short-quote-card .author-meta {
+        margin-top: auto;
+      }
+
+      /* TAP&TALK PODCAST SECTION */
+      .podcast-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        align-items: center;
+        max-width: 920px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 768px) {
+        .podcast-grid {
+          grid-template-columns: 260px 1fr;
+          gap: 3.5rem;
+        }
+      }
+
+      .podcast-cover {
+        aspect-ratio: 1/1 !important;
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+      }
+
+      .podcast-cover-img {
+        aspect-ratio: 1/1;
+        width: 100%;
+        max-width: 260px;
+        height: auto;
+        border-radius: 8px;
+        border: 1px solid rgba(183, 159, 212, 0.25);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        object-fit: cover;
+        margin: 0 auto;
+        display: block;
+      }
+
+      .podcast-info {
+        text-align: left;
+      }
+
+      @media (max-width: 767px) {
+        .podcast-info {
+          text-align: center;
+        }
+        .podcast-info .script-kicker {
+          justify-content: center;
+        }
+      }
+
+      .podcast-info h2 {
+        font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+        margin-bottom: 1.25rem;
+        color: var(--bone);
+      }
+
+      .podcast-info p {
+        font-size: 1.05rem;
+        color: rgba(242, 236, 227, 0.85);
+        margin-bottom: 2rem;
+        line-height: 1.7;
+      }
+
+      .podcast-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      @media (max-width: 767px) {
+        .podcast-links {
+          justify-content: center;
+        }
+      }
+
+      .video-embed-wrapper {
+        max-width: 800px;
+        margin: 1rem auto 0;
+      }
+
+      .video-responsive {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 6px;
+      }
+
+      .video-responsive iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* TAP&READ NEWSLETTER SECTION */
+      .newsletter-card {
+        background-color: var(--bone);
+        border: 1px solid rgba(194, 31, 107, 0.25);
+        border-left: 4px solid var(--raspberry);
+        border-radius: 6px;
+        padding: 3rem 1.75rem;
+        position: relative;
+        box-shadow: 0 16px 40px rgba(194, 31, 107, 0.1);
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      @media (min-width: 1024px) {
+        .newsletter-card {
+          padding: 3.5rem 2.5rem;
+        }
+      }
+
+      .newsletter-card .script-kicker {
+        justify-content: center;
+      }
+
+      .newsletter-card h2 {
+        font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+        margin-bottom: 1.25rem;
+        color: var(--plum);
+      }
+
+      .newsletter-intro {
+        text-align: center;
+        max-width: 680px;
+        margin: 0 auto 1.5rem;
+      }
+
+      .newsletter-intro p {
+        font-size: 1.05rem;
+        color: rgba(22, 18, 28, 0.85);
+        margin-bottom: 1rem;
+        line-height: 1.7;
+      }
+
+      /* MAILERLITE EMBED FIXES */
+      #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label.checkbox {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        text-align: left !important;
+        cursor: pointer;
+      }
+
+      #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label.checkbox input[type="checkbox"] {
+        width: 18px !important;
+        height: 18px !important;
+        min-width: 18px !important;
+        min-height: 18px !important;
+        flex-shrink: 0 !important;
+        margin-top: 3px !important;
+        cursor: pointer;
+      }
+
+      #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label.checkbox .label-description p {
+        text-align: left !important;
+        font-size: 0.8rem !important;
+        line-height: 1.45 !important;
+        margin: 0 !important;
+        color: rgba(22, 18, 28, 0.85) !important;
+      }
+
+      /* STOPKA (FOOTER) */
+      footer {
+        padding: 4rem 0 0 0;
+        border-top: 1px solid rgba(242, 236, 227, 0.1);
+        text-align: center;
+        font-size: 0.9rem;
+        color: rgba(242, 236, 227, 0.7);
+      }
+
+      .footer-line {
+        margin-bottom: 1.25rem;
+      }
+
+      .footer-line:last-child {
+        margin-bottom: 0;
+      }
+
+      .footer-line a {
+        color: var(--bone);
+      }
+
+      .footer-line a:hover {
+        color: var(--rose);
+      }
+
+      .footer-social-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.25rem;
+      }
+
+      .footer-social-link {
+        color: var(--bone);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: color 0.2s ease, transform 0.2s ease;
+      }
+
+      .footer-social-link:hover {
+        color: var(--rose);
+        transform: translateY(-2px);
+      }
+
+      .footer-social-link svg {
+        width: 22px;
+        height: 22px;
+        fill: var(--bone);
+        transition: fill 0.2s ease, transform 0.2s ease;
+      }
+
+      .footer-social-link:hover svg {
+        fill: var(--rose);
+      }
+
+      .footer-social-img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+        display: block;
+        filter: brightness(0) invert(0.92) sepia(0.05);
+        transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+      }
+
+      .footer-social-link:hover .footer-social-img {
+        filter: brightness(0) invert(1);
+        opacity: 1;
+      }
+
+      /* ACCESSIBILITY & MOTION PREFERENCES */
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* SCROLL ANIMATION CLASS */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .fade-up.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 1. STICKY TOP NAV & ANNOUNCEMENT BAR -->
+    <header>
+      <div class="announcement-bar">
+        Warsztat DZIAŁAM dla trenerek EFT, które chcą przestać czekać z biznesem już 20 sierpnia 2026 o 18:00! 🤘 <a href="#warsztat">Zapisz się tutaj</a>
+      </div>
+      <div class="container nav-container">
+        <!-- Logo image -->
+        <a href="#" aria-label="Strona główna Alexa Trachim" class="nav-logo-link">
+          <img src="/src/logo1.png" alt="Alexa Trachim logo — brush lettering with pink skull" class="nav-logo-img" />
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav aria-label="Menu główne">
+          <ul class="nav-menu">
+            <li><a href="#dlakogo">DLA KOGO</a></li>
+            <li><a href="#oferta">OFERTA</a></li>
+            <li><a href="#omnie">O MNIE</a></li>
+            <li><a href="#opinie">OPINIE</a></li>
+            <li><a href="#taptalk">PODCAST</a></li>
+            <li><a href="#tapread">NEWSLETTER</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn" aria-label="Otwórz menu nawigacji" aria-expanded="false" id="hamburger-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Full-Width Overlay Menu -->
+    <div class="mobile-menu-overlay" id="mobile-menu" aria-hidden="true">
+      <button type="button" class="mobile-menu-close" id="mobile-menu-close" aria-label="Zamknij menu">✕</button>
+      <a href="#dlakogo" class="mobile-nav-link">DLA KOGO</a>
+      <a href="#oferta" class="mobile-nav-link">OFERTA</a>
+      <a href="#omnie" class="mobile-nav-link">O MNIE</a>
+      <a href="#opinie" class="mobile-nav-link">OPINIE</a>
+      <a href="#taptalk" class="mobile-nav-link">PODCAST</a>
+      <a href="#tapread" class="mobile-nav-link">NEWSLETTER</a>
+    </div>
+
+    <main>
+      <!-- 2. HERO — DARK -->
+      <section id="hero" class="sec-dark">
+        <div class="hero-accent-stars" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none"><path d="M50 0L53 40L93 43L55 53L60 93L43 57L3 60L37 43Z" fill="var(--lavender)"/><circle cx="85" cy="15" r="3" fill="var(--lavender)"/><circle cx="15" cy="85" r="2" fill="var(--lavender)"/></svg>
+        </div>
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-content fade-up">
+              <span class="script-kicker"><span class="star">★</span> Za kulisami Twojego biznesu EFT…</span>
+              <h1>Wspiera Cię partnerka biznesowa, która rozumie metodę i biznes.</h1>
+              <p class="hero-subhead">Jestem trenerką EFT, która od 10 lat działa w biznesie i marketingu. Nie musisz mi tłumaczyć, na czym polega Twoja praca.</p>
+              <a href="#oferta" class="btn btn-primary">Sprawdź, co dla Ciebie mam</a>
+            </div>
+            <div class="hero-image fade-up">
+              <img src="/src/hero.png" alt="Alexa Trachim - Partnerka biznesowa trenerek EFT" class="hero-img" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VANITY-STYLE LIGHT DOTS STRIP (FULL-BLEED AFTER HERO - DARK) -->
+      <div class="vanity-bulb-strip" aria-hidden="true"></div>
+
+      <!-- 3. DLA KOGO (#dlakogo) — LIGHT -->
+      <section id="dlakogo" class="sec-light">
+        <div class="container">
+          <h2 class="gdzie-heading fade-up">W którym miejscu jesteś dzisiaj?</h2>
+          <div class="cards-grid">
+
+            <!-- Card 1 -->
+            <div class="editorial-card fade-up">
+              <div>
+                <p class="quote">„Skończyłam kurs trenerski EFT i nadal nie ruszyłam z biznesem."</p>
+                <p class="card-body">Znasz metodę i być może masz za sobą pierwsze sesje dla znajomych lub osób z polecenia. Nie wiesz, od czego zacząć, jak wdrożyć technikalia i co zrobić, aby wyjść do świata z ofertą.</p>
+              </div>
+              <div class="card-cta-wrap">
+                <a href="#wystartuj" class="card-link">Sprawdź program Wystartuj →</a>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="editorial-card fade-up">
+              <div>
+                <p class="quote">„Działam od miesięcy i nie wiem, co mnie blokuje."</p>
+                <p class="card-body">Publikujesz content, ale klientów jak nie było, tak nie ma, więc opukujesz blokady finansowe i inne mindsetowe wyzwania. Twój biznes nie zarabia stabilnie, a Ty nie wiesz, dlaczego.</p>
+              </div>
+              <div class="card-cta-wrap">
+                <a href="#diagnoza" class="card-link">Zacznij od Diagnozy →</a>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="editorial-card fade-up">
+              <div>
+                <p class="quote">„Mój biznes prosperuje, a ja nie wyrabiam na zakrętach."</p>
+                <p class="card-body">Masz pełny kalendarz sesji i bez problemu sprzedajesz swoje produkty cyfrowe - ale nie masz już czasu ani energii, aby wdrażać wszystkie swoje pomysły i przez to wiele z nich nigdy nie wychodzi do świata.</p>
+              </div>
+              <div class="card-cta-wrap">
+                <a href="#partnerka" class="card-link">Umów się na rozmowę →</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SCROLL CUE CHEVRON -->
+          <div class="scroll-cue" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. OFERTA (#oferta) — LIGHT SECTION -->
+      <section id="oferta" class="sec-light">
+        <div class="container">
+          <h2 class="oferta-heading fade-up">Jak wspieram trenerki EFT?</h2>
+          <div class="offers-grid">
+
+            <!-- Card 1: #partnerka -->
+            <div id="partnerka" class="offer-card fade-up">
+              <div class="offer-card-top">
+                <span class="script-kicker"><span class="star">★</span> Współpraca premium</span>
+                <h3 class="offer-title">ZAUFANA PARTNERKA</h3>
+                <p class="tagline">Myślę z Tobą i wdrażam za Ciebie.</p>
+                <div class="offer-body">
+                  <p>Wysyłasz głosówkę z pomysłem. Dostajesz rekomendację i wsparcie strategiczne. Wdrażam to, co wspólnie ustalimy. Landingi, newslettery i inne tematy biznesowe przestają czekać na Twój wolny wieczór.</p>
+                  <p>Stała współpraca w modelu miesięcznego pakietu godzin dostępna dla ograniczonej liczby klientek.</p>
+                </div>
+              </div>
+              <div class="offer-card-footer">
+                <div class="offer-cta-wrap">
+                  <a href="#" target="_blank" rel="noopener" class="btn btn-primary">Umów się na rozmowę</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: #diagnoza -->
+            <div id="diagnoza" class="offer-card fade-up">
+              <div class="offer-card-top">
+                <span class="script-kicker"><span class="star">★</span> współpraca 1:1</span>
+                <h3 class="offer-title">DIAGNOZA TWOJEGO BIZNESU EFT</h3>
+                <p class="tagline">Ankieta, 90-minutowe spotkanie i plan działania.</p>
+                <div class="offer-body">
+                  <p>Podczas spotkania rozmawiamy o Twoim biznesie i dotychczasowych działaniach, abym mogła zidentyfikować Twoje wyzwania i ustalić, co tak naprawdę nie jest problemem. Cały proces jest dopasowany do Ciebie w 100%.</p>
+                  <p>Nie dostajesz kolejnej strategii kopiuj-wklej, tylko dokładną instrukcję, co robić krok po kroku. A jeżeli chcesz, żebym poprowadziła Cię w dalszych działaniach - po Diagnozie możesz kontynuować współpracę w 3-miesięcznym mentoringu.</p>
+                </div>
+              </div>
+              <div class="offer-card-footer">
+                <div class="offer-cta-wrap">
+                  <a href="#" target="_blank" rel="noopener" class="btn btn-primary">Zarezerwuj termin</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: #wystartuj -->
+            <div id="wystartuj" class="offer-card fade-up">
+              <div class="offer-card-top">
+                <span class="script-kicker"><span class="star">★</span> program grupowy</span>
+                <h3 class="offer-title">WYSTARTUJ Z TYM BIZNESEM EFT</h3>
+                <p class="tagline">4-tygodniowy program ze spotkaniami na żywo, dedykowaną grupą na Telegramie i moim wsparciem.</p>
+                <div class="offer-body">
+                  <p>Miesiąc pracy, abyś wdrożyła ofertę, odpięła płatności i inne potrzebne narzędzia oraz zrobiła pierwszy krok w marketingu w zgodzie z tym, co lubisz tworzyć.</p>
+                  <p>W czasie całej tej drogi opukujemy to, co dotąd Cię zatrzymywało: lęk przed odrzuceniem, przytłoczenie technikaliami, niepewność i wszystkie inne blokady.</p>
+                  <p>Kameralna grupa, aby każda uczestniczka dostała potrzebny feedback i uwagę.</p>
+                </div>
+              </div>
+              <div class="offer-card-footer">
+                <div class="offer-cta-wrap">
+                  <a href="#" target="_blank" rel="noopener" class="btn btn-primary">Zapisz się na listę zainteresowanych</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: #warsztat -->
+            <div id="warsztat" class="offer-card fade-up">
+              <span class="offer-badge">Zapisy otwarte</span>
+              <div class="offer-card-top">
+                <span class="script-kicker"><span class="star">★</span> warsztat</span>
+                <h3 class="offer-title">DZIAŁAM</h3>
+                <p class="tagline">Spotkanie dla trenerek EFT, które chcą przestać czekać z biznesem.</p>
+                <div class="offer-body">
+                  <p>W 90 minut określisz główną obietnicę Twojego biznesu i wyjdziesz z jedną, konkretną decyzją do wdrożenia w życie oraz deklaracją, kiedy to zrobisz. Po drodze opukamy dwie rundki, aby uwolnić blokady i zbudować determinację do działania.</p>
+                  <p>Dostajesz mapę pierwszego kroku do wydruku oraz edytowalny szablon.</p>
+                  <p>Nagranie warsztatu dla wszystkich zapisanych.</p>
+                </div>
+              </div>
+              <div class="offer-card-footer">
+                <p class="date-line">DATA: 20 sierpnia 2026 o 18:00</p>
+                <div class="offer-cta-wrap">
+                  <a href="#" target="_blank" rel="noopener" class="btn btn-primary">Wykup dostęp</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- VANITY-STYLE LIGHT DOTS STRIP (FULL-BLEED AFTER OFERTA - LIGHT) -->
+      <div class="vanity-bulb-strip" aria-hidden="true"></div>
+
+      <!-- 5. O MNIE (#omnie) — DARK -->
+      <section id="omnie" class="sec-dark">
+        <div class="omnie-accent-stars" aria-hidden="true">
+          <svg viewBox="0 0 120 120" fill="none"><path d="M60 10 L64 50 L104 54 L68 66 L74 106 L54 70 L14 74 L46 54 Z" fill="var(--lavender)"/><circle cx="100" cy="20" r="4" fill="var(--lavender)"/><circle cx="20" cy="100" r="3" fill="var(--lavender)"/></svg>
+        </div>
+        <div class="container">
+          <div class="dlaczego-grid">
+            <div class="dlaczego-image fade-up">
+              <img src="/src/omnie.png" alt="Alexa Trachim - Kto Cię prowadzi" class="omnie-img" />
+            </div>
+            <div class="dlaczego-content fade-up">
+              <h2>Kto Cię prowadzi?</h2>
+              <p>Hej 💜 Jestem Alexa Trachim.</p>
+              <p>Od 10 lat działam jako strateżka biznesowa i marketerka. Piszę teksty, tworzę strony, projektuję sekwencje i automatyzacje, podpinam narzędzia i buduję oferty. Do tego doradzam moim klientkom, zawsze stawiając na pierwszym miejscu ich potrzeby i preferencje.</p>
+              <p>Dodatkowo od 2025 roku jestem trenerką EFT. Wiem, jak wygląda Twoja praca od środka i znam każdy moment, w którym możesz poczuć wątpliwości albo poczuć się przeciążona. Wierze, że EFT powinno wejść do mainstreamu, a jedną z moich misji jest popularyzowanie metody opukiwania. Dlatego wspieram inne trenerki w ich biznesach.</p>
+              <p>Nie musisz mi tłumaczyć, czym jest tapping ani dlaczego prowadzenie firmy bywa dla Ciebie wyzwaniem. Opowiedz mi, co w Twoim biznesie jest trudne, a ja znajdę odpowiednie rozwiązanie.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VANITY-STYLE LIGHT DOTS STRIP (FULL-BLEED AFTER O MNIE - DARK) -->
+      <div class="vanity-bulb-strip" aria-hidden="true"></div>
+
+      <!-- 6. OPINIE (#opinie) — LIGHT -->
+      <section id="opinie" class="sec-light">
+        <div class="container">
+          <h2 class="dowody-heading fade-up">Sprawdź, co mówią trenerki EFT, z którymi pracuję:</h2>
+
+          <!-- Featured Slot -->
+          <div class="featured-case fade-up">
+            <div class="avatar-wrap">
+              <img src="/src/sandra.jpg" alt="Sandra Folta - trenerka EFT" class="avatar-img" />
+            </div>
+            <div>
+              <p>Sandra to trenerka EFT z działającym biznesem, który stale się rozwija. Jej wyzwaniem było to, że jeszcze do niedawna to ona musiała wszystko ogarniać. Pomysły grzęzły w notatkach i często nie wychodziły do świata, bo nie było na to przestrzeni.</p>
+              <p>W ciągu dwóch miesięcy pracy wdrożyłyśmy kilka usprawnień na backstage'u Sandry, zbudowałyśmy jeden produkt low-ticket, ale przede wszystkim pomogłam wdrożyć jej flagową przestrzeń Self-Guidance Space, która już przyjmuje pierwsze klientki.</p>
+              <p>Tydzień Sandry przestał kręcić się wokół wyklikiwania landingów i wdrażania mailingów. Wróciła do tego, co robi najlepiej - tworzy oferty dla swoich klientek i daje im maksymalne wsparcie. Nowe procesy trafiają szybciej do kobiet, które tego potrzebują, wdrażanie dzieje się w tle, a Sandra ma spokój, bo wie, że wszystko działa jak należy.</p>
+              <br>
+              <p class="tagline" style="margin-bottom: 0.5rem; font-weight: 600;">Sandra o naszej współpracy:</p>
+              <p class="featured-quote">„Ta współpraca jest jedną z najlepszych inwestycji w rozwój mojego biznesu. Mam poczucie, że bez Alexy projekt Self-Guidance Space dalej byłby blokiem tekstu na moim dysku Google, bo jego samodzielna realizacja trwałaby wieki. A tak pierwsze osoby już korzystają z tej przestrzeni i transformują swoje życie."</p>
+              <p class="author-meta">Sandra Folta, trenerka EFT i praktyczka Matrix Reimprinting</p>
+            </div>
+          </div>
+
+          <!-- Short Quotes Slots (x3): Wiktoria Fahner, Paulina Kudła, Magda -->
+          <div class="short-quotes-grid">
+            <div class="short-quote-card fade-up">
+              <div class="quote-wrap">
+                <p class="quote">„Bardzo polecam współpracę z Alexą, szybko zrealizowana strona, wystarczyło rzucić pomysł i został zrealizowany bez większego mojego wkładu. Wysokie wyczucie estetyki, co jest dla mnie szczególne ważne, szybko, konkretnie i bezproblemowo! Cenię sobie profesjonalizm i to, że działa w podobnej branży i zna się na rzeczy."</p>
+              </div>
+              <p class="author-meta">Wiktoria Fahner, psycholog, trenerka EFT, hipnoterapeutka</p>
+            </div>
+            <div class="short-quote-card fade-up">
+              <div class="quote-wrap">
+                <p class="quote">„Wow ten landing page jest po prostu piękniejszy niż mogłam to sobie wyobrazić! Nie wierzę, że ogarnęłaś to dosłownie w tydzień i to na takim poziomie. Wizualnie petarda, ale ten tekst? Ja nie wiem jak to jest możliwe, że w taki sposób odzwierciedliłaś to, co miałam w głowie. Już wiem, kto będzie tworzył moje kolejne strony! Dziękuję także za wszystkie wskazówki co do sklepów i platform kursowych - już działam w tym temacie! Jestem mega zadowolona z naszej współpracy i z największej przyjemnością będę polecała Cię moim klientkom!"</p>
+              </div>
+              <p class="author-meta">Paulina Kudła, trenerka EFT</p>
+            </div>
+            <div class="short-quote-card fade-up">
+              <div class="quote-wrap">
+                <p class="quote">„Chyba pierwszy raz odkąd słucham różnych webinarów decyzję podjęłam tak szybko i z radością. Nawet pisałam wczoraj do Magdy Rapalskiej, że właśnie potrzebowałam takiej mentorki biznesowej."</p>
+              </div>
+              <p class="author-meta">Magda, uczestniczka pierwszej edycji programu Wystartuj</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. TAP&TALK (#taptalk) — DARK -->
+      <section id="taptalk" class="sec-dark">
+        <div class="container">
+          <div class="podcast-grid fade-up">
+            <div class="podcast-cover-wrap">
+              <img src="/src/tapandtalk.png" alt="Tap&Talk Podcast - Okładka" class="podcast-cover-img" />
+            </div>
+            <div class="podcast-info">
+              <span class="script-kicker"><span class="star">★</span> posłuchaj podcastu</span>
+              <h2>Tap&Talk - pierwszy polski podcast o EFT</h2>
+              <p>W każdym odcinku wraz z moimi gośćmi dzielimy się wiedzą i doświadczeniami na temat tej metody, a wszystko domykamy wspólną rundką opukiwania.</p>
+              <div class="podcast-links">
+                <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
+                  <img src="/src/spotify.png" alt="Spotify" class="btn-icon-img" />
+                  Spotify
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
+                  <img src="/src/apple.png" alt="Apple Podcasts" class="btn-icon-img" />
+                  Apple Podcasts
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
+                  <img src="/src/youtube.png" alt="YouTube" class="btn-icon-img" />
+                  YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 3rem; text-align: center;" class="fade-up">
+            <p class="tagline" style="margin-bottom: 0.5rem; color: var(--rose); font-weight: 600;">Najnowszy odcinek:</p>
+            <div class="video-embed-wrapper">
+              <div class="video-responsive">
+                <iframe
+                  src="https://www.youtube.com/embed/videoseries?list=PLblILdS8VIBI"
+                  title="Tap&amp;Talk - Najnowszy odcinek"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VANITY-STYLE LIGHT DOTS STRIP (FULL-BLEED AFTER TAP&TALK - DARK) -->
+      <div class="vanity-bulb-strip" aria-hidden="true"></div>
+
+      <!-- 8. TAP&READ (#tapread) — LIGHT -->
+      <section id="tapread" class="sec-light">
+        <div class="container">
+          <div class="newsletter-card fade-up">
+            <span class="script-kicker"><span class="star">★</span> zapisz się na newsletter</span>
+            <h2>Tap&Read - magazyn o EFT i biznesie</h2>
+            <div class="newsletter-intro">
+              <p>Co tydzień piszę o tym, jak budować i rozwijać unikatowe biznesy EFT. Dodatkowo, wrzucam linki do nowych odcinków podcastu i informuję o najnowszych ofertach.</p>
+            </div>
+
+            <!-- MAILERLITE EMBED -->
+            <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1785409");</style>
+            <style type="text/css">
+            /* LOADER */
+            .ml-form-embedSubmitLoad {
+              display: inline-block;
+              width: 20px;
+              height: 20px;
+            }
+
+            .g-recaptcha {
+              transform: scale(1);
+              -webkit-transform: scale(1);
+              transform-origin: 0 0;
+              -webkit-transform-origin: 0 0;
+            }
+
+            .sr-only {
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0,0,0,0);
+              border: 0;
+            }
+
+            .ml-form-embedSubmitLoad:after {
+              content: " ";
+              display: block;
+              width: 11px;
+              height: 11px;
+              margin: 1px;
+              border-radius: 50%;
+              border: 4px solid #fff;
+              border-color: #f2ece3 #f2ece3 #f2ece3 transparent;
+              animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+            }
+            @keyframes ml-form-embedSubmitLoad {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+              #mlb2-44354382.ml-form-embedContainer {
+                box-sizing: border-box;
+                display: table;
+                margin: 0 auto;
+                position: static;
+                width: 100% !important;
+              }
+              #mlb2-44354382.ml-form-embedContainer h4,
+              #mlb2-44354382.ml-form-embedContainer p,
+              #mlb2-44354382.ml-form-embedContainer span,
+              #mlb2-44354382.ml-form-embedContainer button {
+                text-transform: none !important;
+                letter-spacing: normal !important;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper {
+                background-color: #f2ece3;
+                border-width: 0px;
+                border-color: transparent;
+                border-radius: 4px;
+                border-style: solid;
+                box-sizing: border-box;
+                display: inline-block !important;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                width: 100% !important;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper.embedPopup,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 100% !important; max-width: 100% !important; }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 100% !important; width: 100% !important; }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-align-left { text-align: left; }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-align-center { text-align: center; }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-align-default { display: table-cell !important; vertical-align: middle !important; text-align: center !important; }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-align-right { text-align: right; }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedHeader img {
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                height: auto;
+                margin: 0 auto !important;
+                max-width: 100%;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+                padding: 20px 20px 0 20px;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody.ml-form-embedBodyHorizontal {
+                padding-bottom: 0;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
+                text-align: left;
+                margin: 0 0 20px 0;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+                color: #16121c;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                font-size: 30px;
+                font-weight: 400;
+                margin: 0 0 10px 0;
+                text-align: center;
+                word-break: break-word;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
+                color: #16121c;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 21px;
+                margin: 0 0 10px 0;
+                text-align: center;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ul,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ul,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol {
+                color: #16121c;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                font-size: 15px;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p a,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p a {
+                color: #16121c;
+                text-decoration: underline;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group {
+                text-align: left!important;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label {
+                margin-bottom: 5px;
+                color: #333333;
+                font-size: 14px;
+                font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+                font-weight: bold; font-style: normal; text-decoration: none;
+                display: inline-block;
+                line-height: 20px;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p:last-child,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p:last-child {
+                margin: 0;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+                margin: 0;
+                width: 100%;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
+                margin: 0 0 20px 0;
+                width: 100%;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow {
+                margin: 0 0 10px 0;
+                width: 100%;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+                background-color: #e9e2db !important;
+                color: #333333 !important;
+                border-color: #cccccc;
+                border-radius: 3px !important;
+                border-style: solid !important;
+                border-width: 1px !important;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                font-size: 14px !important;
+                height: auto;
+                line-height: 21px !important;
+                margin: 0;
+                padding: 10px 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                max-width: 100% !important;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+                background-color: #c21f6b !important;
+                border-color: #c21f6b !important;
+                color: #f2ece3 !important;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif !important;
+                font-size: 16px !important;
+                font-weight: 700 !important;
+                line-height: 21px !important;
+                height: auto !important;
+                padding: 12px 20px !important;
+                width: 100% !important;
+                box-shadow: none !important;
+                cursor: pointer;
+                border-radius: 4px !important;
+
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
+                background-color: #a31858 !important;
+                border-color: #a31858 !important;
+              }
+            </style>
+
+            <div id="mlb2-44354382" class="ml-form-embedContainer ml-subscribe-form-44354382">
+              <div class="ml-form-align-center">
+                <div class="ml-form-embedWrapper embedForm">
+                  <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                    <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/542866/forms/194520897234667086/subscribe" data-code="" method="post" target="_blank">
+                      <div class="ml-form-formContent">
+                        <div class="ml-form-fieldRow">
+                          <div class="ml-field-group ml-field-name">
+                            <input aria-label="name" type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Imię" autocomplete="given-name">
+                          </div>
+                        </div>
+                        <div class="ml-form-fieldRow ml-last-item">
+                          <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                            <input aria-label="email" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="E-mail" autocomplete="email">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="ml-form-checkboxRow ml-validate-required">
+                        <label class="checkbox">
+                          <input type="checkbox">
+                          <div class="label-description">
+                            <p>Zamawiam usługę newslettera na warunkach określonych w <a builder-link-id="-1" target="_blank" href="https://app.easy.tools/terms/alexatrachim"><u>regulaminie</u></a> i wyrażam zgodę na przetwarzanie moich danych w celu wysyłki newslettera zawierającego informacje o nowościach, webinarach, materiałach edukacyjnych oraz ofertach produktów i usług Superstars sp. z o.o. zgodnie z <a builder-link-id="-2" target="_blank" href="https://app.easy.tools/policies/alexatrachim"><u>polityką prywatności</u></a>.</p>
+                          </div>
+                        </label>
+                      </div>
+
+                      <input type="hidden" name="ml-submit" value="1">
+
+                      <div class="ml-form-embedSubmit">
+                        <button type="submit" class="primary">ZAPISUJĘ SIĘ</button>
+                        <button disabled="disabled" style="display: none;" type="button" class="loading">
+                          <div class="ml-form-embedSubmitLoad"></div>
+                          <span class="sr-only">Loading...</span>
+                        </button>
+                      </div>
+
+                      <input type="hidden" name="anticsrf" value="true">
+                    </form>
+                  </div>
+
+                  <div class="ml-form-successBody row-success" style="display: none">
+                    <div class="ml-form-successContent">
+                      <h4>Dzięki za subskrypcję! 💜</h4>
+                      <p>Dołączyłaś do newslettera Tap&Read.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              function ml_webform_success_44354382() {
+                var $ = ml_jQuery || jQuery;
+                $('.ml-subscribe-form-44354382 .row-success').show();
+                $('.ml-subscribe-form-44354382 .row-form').hide();
+              }
+            </script>
+            <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+            <script>
+                fetch("https://assets.mailerlite.com/jsonp/542866/forms/194520897234667086/takel")
+            </script>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 9. STOPKA — DARK -->
+    <footer class="sec-dark">
+      <div class="container">
+        <div class="footer-line">
+          © Alexa Trachim 2026 • <a href="https://app.easy.tools/policies/alexatrachim" target="_blank" rel="noopener">Polityka prywatności</a> • <a href="https://app.easy.tools/terms/alexatrachim" target="_blank" rel="noopener">Regulamin</a>
+        </div>
+        <div class="footer-social-row">
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+            <img src="/src/instagram.png" alt="Instagram" class="footer-social-img" />
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+            <img src="/src/facebook.png" alt="Facebook" class="footer-social-img" />
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+            <img src="/src/youtube.png" alt="YouTube" class="footer-social-img" />
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Spotify" class="footer-social-link">
+            <img src="/src/spotify.png" alt="Spotify" class="footer-social-img" />
+          </a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Apple Podcasts" class="footer-social-link">
+            <img src="/src/apple.png" alt="Apple Podcasts" class="footer-social-img" />
+          </a>
+          <a href="mailto:kontakt@alexatrachim.pl" aria-label="Email" class="footer-social-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- MINIMAL VANILLA JS -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Mobile Hamburger & Close Overlay Logic
+        var toggleBtn = document.getElementById('hamburger-toggle');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var mobileCloseBtn = document.getElementById('mobile-menu-close');
+        var mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMenu() {
+          if (!toggleBtn || !mobileMenu) return;
+          toggleBtn.classList.add('is-active');
+          mobileMenu.classList.add('is-active');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+          mobileMenu.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+          if (!toggleBtn || !mobileMenu) return;
+          toggleBtn.classList.remove('is-active');
+          mobileMenu.classList.remove('is-active');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+
+        function toggleMenu() {
+          if (mobileMenu && mobileMenu.classList.contains('is-active')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        }
+
+        if (toggleBtn && mobileMenu) {
+          toggleBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu();
+          });
+
+          if (mobileCloseBtn) {
+            mobileCloseBtn.addEventListener('click', function(e) {
+              e.stopPropagation();
+              closeMenu();
+            });
+          }
+
+          mobileNavLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+              closeMenu();
+            });
+          });
+
+          mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+              closeMenu();
+            }
+          });
+        }
+
+        // Fade-Up on Scroll
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+          var fadeElements = document.querySelectorAll('.fade-up');
+          var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+
+          fadeElements.forEach(function(el) {
+            observer.observe(el);
+          });
+        } else {
+          document.querySelectorAll('.fade-up').forEach(function(el) {
+            el.classList.add('is-visible');
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

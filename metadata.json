@@ -1,0 +1,6 @@
+{
+  "name": "Alexa Trachim · Partnerka biznesowa trenerek EFT",
+  "description": "Pomagam trenerkom EFT budować i rozwijać unikatowe biznesy - od pierwszych ofert po współpracę wdrożeniową. Łączę wiedzę marketingową z pracą metodą EFT.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

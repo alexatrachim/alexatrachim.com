@@ -437,6 +437,42 @@
         overflow: hidden;
       }
 
+      .hero-accent-stars,
+      .omnie-accent-stars {
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .hero-accent-stars {
+        top: 2rem;
+        right: 2rem;
+        width: 120px;
+        height: 120px;
+        opacity: 0.15;
+      }
+
+      .omnie-accent-stars {
+        top: 2rem;
+        left: 2rem;
+        width: 130px;
+        height: 130px;
+        opacity: 0.15;
+      }
+
+      @media (max-width: 767px) {
+        .hero-accent-stars,
+        .omnie-accent-stars {
+          top: 0.5rem;
+          right: 0.5rem;
+          left: auto;
+          width: 60px;
+          height: 60px;
+          opacity: 0.06;
+        }
+      }
+
       .hero-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -910,7 +946,7 @@
         font-size: 1rem;
         font-style: italic;
         line-height: 1.55;
-        margin-bottom: 1.25rem;
+        margin-bottom: 2rem;
         color: var(--plum);
       }
 
@@ -932,8 +968,21 @@
         z-index: 2;
       }
 
+      @media (max-width: 767px) {
+        .case-study-badge {
+          top: calc(2.5rem + 32px);
+          transform: translateY(-50%);
+          right: 2rem;
+        }
+      }
+
+      .featured-case p:not(.featured-quote) {
+        font-size: 0.95rem;
+      }
+
       .author-meta {
         font-size: 0.95rem;
+        margin-top: 1.75rem;
       }
 
       .author-name {
@@ -947,7 +996,7 @@
       .author-role {
         font-size: 0.85rem;
         font-weight: 400;
-        color: var(--rose);
+        color: var(--amethyst);
         text-transform: none;
         letter-spacing: normal;
         line-height: 1.35;
@@ -1442,7 +1491,7 @@
     <!-- 1. STICKY TOP NAV & ANNOUNCEMENT BAR -->
     <header>
       <div class="announcement-bar">
-        Warsztat DZIAŁAM dla trenerek EFT, które chcą przestać czekać z biznesem już 20 sierpnia 2026 o 18:00! 🤘 <a href="#warsztat">Zapisz się tutaj</a>
+        Warsztat DZIAŁAM dla trenerek EFT, które chcą przestać czekać z biznesem już 20 sierpnia 2026 o 18:00! 🤘 <a href="https://lp.alexatrachim.com/dzialam" target="_blank" rel="noopener">Zapisz się tutaj</a>
       </div>
       <div class="container nav-container">
         <!-- Logo image -->
@@ -1494,7 +1543,7 @@
               <span class="script-kicker"><span class="star">★</span> Za kulisami Twojego biznesu EFT…</span>
               <h1>Wspiera Cię partnerka biznesowa, która rozumie metodę i biznes.</h1>
               <p class="hero-subhead" style="margin-bottom: 1.25rem;">Jestem trenerką EFT, która od 10 lat działa w biznesie i marketingu. Nie musisz mi tłumaczyć, na czym polega Twoja praca.</p>
-              <p class="hero-subhead">Od pierwszej oferty po stałą współpracę pomagam Ci zamienić metodę w biznes, który sprzedaje. Ty robisz to, co kochasz, a ja biorę na siebie marketing i technikalia.</p>
+              <p class="hero-subhead">Od pierwszej oferty po stałą współpracę pomagam Ci <strong>zamienić metodę w biznes, który sprzedaje</strong>. Ty robisz to, co kochasz, a ja biorę na siebie marketing i technikalia.</p>
               <a href="#oferta" class="btn btn-primary">Sprawdź, co dla Ciebie mam</a>
             </div>
             <div class="hero-image fade-up">
@@ -1575,7 +1624,7 @@
               <div class="offer-card-footer">
                 <p class="date-line" style="visibility: hidden;" aria-hidden="true">&nbsp;</p>
                 <div class="offer-cta-wrap">
-                  <a href="#" target="_blank" rel="noopener" class="btn btn-primary">Umów się na rozmowę</a>
+                  <a href="https://lp.alexatrachim.com/zaufana-partnerka" target="_blank" rel="noopener" class="btn btn-primary">Umów się na rozmowę</a>
                 </div>
               </div>
             </div>
@@ -1594,7 +1643,7 @@
               <div class="offer-card-footer">
                 <p class="date-line" style="visibility: hidden;" aria-hidden="true">&nbsp;</p>
                 <div class="offer-cta-wrap">
-                  <a href="#" target="_blank" rel="noopener" class="btn btn-primary">Zarezerwuj termin</a>
+                  <a href="https://sklep.alexatrachim.com/checkout/diagnoza" target="_blank" rel="noopener" class="btn btn-primary">Zarezerwuj termin</a>
                 </div>
               </div>
             </div>
@@ -1614,7 +1663,7 @@
               <div class="offer-card-footer">
                 <p class="date-line" style="color: var(--amethyst);">2 edycja jesienią</p>
                 <div class="offer-cta-wrap">
-                  <a href="#" target="_blank" rel="noopener" class="btn btn-primary">Lista zainteresowanych</a>
+                  <a href="https://lp.alexatrachim.com/wystartuj" target="_blank" rel="noopener" class="btn btn-primary">Lista zainteresowanych</a>
                 </div>
               </div>
             </div>
@@ -1635,7 +1684,7 @@
               <div class="offer-card-footer">
                 <p class="date-line">DATA: 20 sierpnia 2026 o 18:00</p>
                 <div class="offer-cta-wrap">
-                  <a href="#" target="_blank" rel="noopener" class="btn btn-primary">Wykup dostęp</a>
+                  <a href="https://lp.alexatrachim.com/dzialam" target="_blank" rel="noopener" class="btn btn-primary">Wykup dostęp</a>
                 </div>
               </div>
             </div>
@@ -1667,7 +1716,7 @@
               <p>Hej 💜 Jestem Alexa Trachim.</p>
               <p>Od 10 lat działam jako strateżka biznesowa i marketerka. Piszę teksty, tworzę strony, projektuję sekwencje i automatyzacje, podpinam narzędzia i buduję oferty. Do tego doradzam moim klientkom, zawsze stawiając na pierwszym miejscu ich potrzeby i preferencje.</p>
               <p>Dodatkowo od 2025 roku jestem trenerką EFT. Wiem, jak wygląda Twoja praca od środka i znam każdy moment, w którym możesz poczuć wątpliwości albo poczuć się przeciążona. Wierze, że EFT powinno wejść do mainstreamu, a jedną z moich misji jest popularyzowanie metody opukiwania. Dlatego wspieram inne trenerki w ich biznesach.</p>
-              <p>Nie musisz mi tłumaczyć, czym jest tapping ani dlaczego prowadzenie firmy bywa dla Ciebie wyzwaniem. Opowiedz mi, co w Twoim biznesie jest trudne, a ja znajdę odpowiednie rozwiązanie.</p>
+              <p>Nie musisz mi tłumaczyć, czym jest tapping ani dlaczego prowadzenie firmy bywa dla Ciebie wyzwaniem. <strong>Opowiedz mi, co w Twoim biznesie jest trudne, a ja znajdę odpowiednie rozwiązanie.</strong></p>
             </div>
           </div>
         </div>
@@ -1746,15 +1795,15 @@
               <h2>Tap&Talk - pierwszy polski podcast o EFT</h2>
               <p>W każdym odcinku wraz z moimi gośćmi dzielimy się wiedzą i doświadczeniami na temat tej metody, a wszystko domykamy wspólną rundką opukiwania.</p>
               <div class="podcast-links">
-                <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
+                <a href="https://open.spotify.com/show/5tK8aav4ivqoNrM5GV5kxm?si=0055285702e24ce7" target="_blank" rel="noopener" class="btn btn-outline">
                   <img src="/src/spotify.png" alt="Spotify" class="btn-icon-img" />
                   Spotify
                 </a>
-                <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
+                <a href="https://podcasts.apple.com/pl/podcast/tap-talk/id1896770761?l=pl" target="_blank" rel="noopener" class="btn btn-outline">
                   <img src="/src/apple.png" alt="Apple Podcasts" class="btn-icon-img" />
                   Apple Podcasts
                 </a>
-                <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
+                <a href="https://www.youtube.com/@alexa.trachim" target="_blank" rel="noopener" class="btn btn-outline">
                   <img src="/src/youtube.png" alt="YouTube" class="btn-icon-img" />
                   YouTube
                 </a>
@@ -2064,22 +2113,22 @@
           © Alexa Trachim 2026 • <a href="https://app.easy.tools/policies/alexatrachim" target="_blank" rel="noopener">Polityka prywatności</a> • <a href="https://app.easy.tools/terms/alexatrachim" target="_blank" rel="noopener">Regulamin</a>
         </div>
         <div class="footer-social-row" style="margin-bottom: 2.5rem;">
-          <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
+          <a href="https://www.instagram.com/alexa.trachim" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social-link">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           </a>
-          <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
+          <a href="https://www.facebook.com/alexatrachimeft" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social-link">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </a>
-          <a href="#" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
+          <a href="https://www.youtube.com/@alexa.trachim" target="_blank" rel="noopener" aria-label="YouTube" class="footer-social-link">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           </a>
-          <a href="#" target="_blank" rel="noopener" aria-label="Spotify" class="footer-social-link">
+          <a href="https://open.spotify.com/show/5tK8aav4ivqoNrM5GV5kxm?si=0055285702e24ce7" target="_blank" rel="noopener" aria-label="Spotify" class="footer-social-link">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141 C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.18-.1.2-.78-.42-.6-.18-.6-.6.18-.78 4.2-1.26 11.28-1.02 15.72 1.62.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.439.3z"/></svg>
           </a>
-          <a href="#" target="_blank" rel="noopener" aria-label="Apple Podcasts" class="footer-social-link">
+          <a href="https://podcasts.apple.com/pl/podcast/tap-talk/id1896770761?l=pl" target="_blank" rel="noopener" aria-label="Apple Podcasts" class="footer-social-link">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M5.34 1.8A11.937 11.937 0 000 12c0 3.31 1.35 6.31 3.52 8.48l1.42-1.42A9.924 9.924 0 012 12c0-5.52 4.48-10 10-10s10 4.48 10 10c0 2.76-1.12 5.26-2.94 7.06l1.42 1.42A11.937 11.937 0 0024 12c0-6.63-5.37-12-12-12C9.52 0 7.22.68 5.34 1.8zm2.83 2.83A7.95 7.95 0 005 12c0 1.93.69 3.7 1.83 5.09l1.42-1.42A5.952 5.952 0 017 12c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.38-.56 2.63-1.47 3.53l1.42 1.42A7.95 7.95 0 0019 12c0-4.42-3.58-8-8-8c-2.21 0-4.21.9-5.66 2.34zM12 9a3 3 0 00-3 3c0 1.3.83 2.42 2 2.83V23h2v-8.17c1.17-.41 2-1.53 2-2.83a3 3 0 00-3-3z"/></svg>
           </a>
-          <a href="mailto:kontakt@alexatrachim.pl" aria-label="Email" class="footer-social-link">
+          <a href="mailto:alexa.trachim@gmail.com" aria-label="Email" class="footer-social-link">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M1.5 4.5a2.5 2.5 0 0 1 2.5-2.5h16a2.5 2.5 0 0 1 2.5 2.5v15a2.5 2.5 0 0 1-2.5 2.5h-16a2.5 2.5 0 0 1-2.5-2.5v-15zm3.116.5 7.384 5.907L19.384 5H4.616zM21 6.382l-8.416 6.733a1 1 0 0 1-1.168 0L3 6.382V19.5a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6.382z"/></svg>
           </a>
         </div>

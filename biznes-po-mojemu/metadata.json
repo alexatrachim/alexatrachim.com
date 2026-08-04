@@ -1,0 +1,6 @@
+{
+  "name": "Biznes po mojemu · warsztat dla trenerek EFT",
+  "description": "Warsztat dla trenerek EFT, które gubią się w radach, jak prowadzić biznes. 20 sierpnia 2026, 18:00.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

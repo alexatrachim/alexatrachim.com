@@ -4,28 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>document.documentElement.classList.add('js');</script>
-    <script>
-      window.handleImgError = function(img) {
-        if (!img.dataset.failCount) img.dataset.failCount = '0';
-        var count = parseInt(img.dataset.failCount, 10) + 1;
-        img.dataset.failCount = count.toString();
-        var rawSrc = img.getAttribute('src') || '';
-        var filename = rawSrc.split('/').pop().split('?')[0];
-        if (count === 1) {
-          img.src = '/src/' + filename;
-        } else if (count === 2) {
-          img.src = './src/' + filename;
-        } else if (count === 3) {
-          img.src = filename;
-        } else if (count === 4) {
-          img.src = '/biznes-po-mojemu/src/' + filename;
-        } else {
-          var slot = img.closest('.fig-slot');
-          if (slot) slot.classList.add('is-empty');
-          img.remove();
-        }
-      };
-    </script>
 
     <title>Biznes po mojemu • Warsztat dla trenerek EFT • Alexa Trachim</title>
     <meta name="description" content="Warsztat dla trenerek EFT, które gubią się w radach, jak prowadzić biznes i chcą zacząć decydować samodzielnie. Poczuj, że to, jak Ty chcesz prowadzić biznes, jest najlepszą drogą.">
@@ -1753,7 +1731,7 @@
     <header>
       <div class="container nav-container">
         <a href="/" aria-label="Alexa Trachim strona główna" class="nav-logo-link">
-          <img src="/src/logo.png" alt="Alexa Trachim" class="nav-logo-img" onerror="handleImgError(this)" />
+          <img src="/src/logo.png" alt="Alexa Trachim" class="nav-logo-img" />
         </a>
       </div>
     </header>
@@ -1803,7 +1781,7 @@
 
             <div class="hero-image fade-up">
               <figure class="fig-slot hero-fig">
-                <img src="/src/alexa-hero.png" alt="Alexa Trachim, prowadząca warsztat Biznes po mojemu" class="hero-img" loading="eager" onerror="handleImgError(this)" />
+                <img src="/src/alexa-hero.png" alt="Alexa Trachim, prowadząca warsztat Biznes po mojemu" class="hero-img" loading="eager" onerror="this.closest('.fig-slot').classList.add('is-empty'); this.remove();" />
               </figure>
             </div>
           </div>
@@ -1897,7 +1875,7 @@
                 <span class="note-pudelko">Tu jest sedno</span>
                 <div class="step-title">Rozpuszczamy przekonania techniką pudełka</div>
                 <figure class="fig-slot pudelko-fig">
-                  <img src="/src/pudelko.png" alt="Technika pudełka na cudze zasady" class="pudelko-img" loading="lazy" onerror="handleImgError(this)" />
+                  <img src="/src/pudelko.png" alt="Technika pudełka na cudze zasady" class="pudelko-img" loading="lazy" onerror="this.closest('.fig-slot').classList.add('is-empty'); this.remove();" />
                 </figure>
                 <div class="step-body">
                   <p><span style="font-weight: 500;">To rdzeń tego warsztatu i Twoja droga do odzyskania zaufania do własnych decyzji.</span> Prowadzę Cię przez ten proces krok po kroku, a Ty opukujesz wszystko, co do Ciebie przychodzi i zostawiasz przekonania innych za sobą.</p>
@@ -1987,7 +1965,7 @@
           <div class="omnie-grid">
             <div class="omnie-image fade-up">
               <figure class="fig-slot omnie-fig">
-                <img src="/src/profilowe-new.png" alt="Alexa Trachim, trenerka EFT i strateżka biznesowa" class="omnie-img" loading="lazy" onerror="handleImgError(this)" />
+                <img src="/src/profilowe-new.png" alt="Alexa Trachim, trenerka EFT i strateżka biznesowa" class="omnie-img" loading="lazy" onerror="this.closest('.fig-slot').classList.add('is-empty'); this.remove();" />
               </figure>
             </div>
 
@@ -2038,7 +2016,7 @@
           <div class="oferta-grid">
             <div class="oferta-side-image fade-up">
               <figure class="fig-slot oferta-side-fig">
-                <img src="/src/rundka.png" alt="Rundka kreacyjna podczas warsztatu" class="oferta-side-img" loading="lazy" onerror="handleImgError(this)" />
+                <img src="/src/rundka.png" alt="Rundka kreacyjna podczas warsztatu" class="oferta-side-img" loading="lazy" onerror="this.closest('.fig-slot').classList.add('is-empty'); this.remove();" />
               </figure>
             </div>
 

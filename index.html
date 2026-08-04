@@ -10,7 +10,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400;1,9..40,500&family=Fraunces:opsz,wght@9..144,400..700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400;1,9..40,500&family=Special+Elite&subset=latin,latin-ext&display=swap" rel="stylesheet">
 
     <style>
       /* ==========================================================================
@@ -21,12 +21,13 @@
         --bone: #F2ECE3;      /* Warm off-white: light-section bg; text on dark */
         --raspberry: #C21F6B; /* Primary accent: CTAs, emphasis, hairlines */
         --amethyst: #632A7A;  /* Secondary accent */
+        --amethyst-deep: #351C42;
         --lavender: #B79FD4;  /* Soft accent for details on dark */
         --rose: #D590B2;      /* Soft accent for hovers/details */
 
-        --font-serif: 'Fraunces', serif;
+        --font-serif: 'Playfair Display', 'Times New Roman', serif;
         --font-sans: 'DM Sans', sans-serif;
-        --font-script: 'Shadows Into Light', cursive;
+        --font-script: 'Special Elite', 'Courier New', monospace;
 
         --max-width: 1140px;
         --header-height: 118px;
@@ -48,6 +49,8 @@
         -webkit-font-smoothing: antialiased;
       }
 
+      @media (min-width: 768px) { html { font-size: 17px; } }
+
       body {
         overflow-x: hidden;
         line-height: 1.6;
@@ -66,27 +69,32 @@
 
       /* TYPOGRAPHY UTILITIES */
       h1, h2, h3, .heading-serif {
-        font-family: "Fraunces", serif;
-        font-weight: 600;
-        font-optical-sizing: auto;
-        line-height: 1.05;
-        letter-spacing: -0.015em;
+        font-family: var(--font-serif);
+        font-weight: 500;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        font-variant-numeric: lining-nums tabular-nums;
+        font-feature-settings: "lnum" 1;
       }
 
       .script-kicker {
         font-family: var(--font-script);
-        font-size: clamp(22px, 2.6vw, 26px);
+        font-size: clamp(18px, 2.2vw, 23px);
         font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1.4;
         display: inline-flex;
         align-items: center;
-        gap: 0.4rem;
+        gap: 0.5em;
         margin-bottom: 0.75rem;
       }
 
       .star {
-        color: var(--raspberry);
-        font-size: 0.9em;
+        font-size: 1.5em;
+        line-height: 1;
         vertical-align: middle;
+        flex-shrink: 0;
+        font-style: normal;
       }
 
       /* CONTAINER & SECTIONS */
@@ -97,14 +105,38 @@
       }
 
       section {
-        padding: 5rem 0;
+        padding: 4rem 0;
         position: relative;
+        overflow: hidden;
       }
 
       @media (min-width: 1024px) {
         section {
-          padding: 7rem 0;
+          padding: 6.5rem 0;
         }
+      }
+
+      .container { position: relative; z-index: 1; }
+      .star-deco { position: absolute; pointer-events: none; z-index: 0; line-height: 0; }
+      .star-deco svg { width: 100%; height: auto; display: block; }
+      .star-deco svg path, .star-deco svg circle { fill: currentColor; }
+
+      .star-hero    { top: -60px; right: -80px; width: 255px; transform: rotate(-12deg); color: var(--lavender); opacity: 0.27; }
+      .star-dlakogo { bottom: -70px; right: -80px; width: 221px; transform: rotate(8deg);  color: var(--lavender); opacity: 0.17; }
+      .star-oferta  { bottom: 20px; left: -30px;  width: 136px; transform: rotate(22deg);  color: var(--rose);     opacity: 0.11; }
+      .star-omnie   { top: -40px; left: -60px;    width: 170px; transform: rotate(-8deg);  color: var(--lavender); opacity: 0.21; }
+      .star-opinie  { top: 40px; right: -60px;    width: 150px; transform: rotate(15deg);  color: var(--rose);     opacity: 0.12; }
+      .star-taptalk { bottom: -50px; left: -70px; width: 200px; transform: rotate(-20deg); color: var(--lavender); opacity: 0.18; }
+      .star-tapread { top: -40px; right: -50px;   width: 145px; transform: rotate(10deg);  color: var(--rose);     opacity: 0.12; }
+
+      @media (max-width: 767px) {
+        .star-hero    { width: 130px; top: -30px; right: -40px; opacity: 0.14; }
+        .star-dlakogo { width: 115px; bottom: -35px; right: -40px; opacity: 0.10; }
+        .star-oferta  { width: 80px;  bottom: 10px; left: -20px; opacity: 0.07; }
+        .star-omnie   { width: 95px;  top: -20px; left: -30px; opacity: 0.12; }
+        .star-opinie  { width: 85px;  top: 20px; right: -30px; opacity: 0.07; }
+        .star-taptalk { width: 105px; bottom: -25px; left: -35px; opacity: 0.10; }
+        .star-tapread { width: 80px;  top: -20px; right: -25px; opacity: 0.07; }
       }
 
       /* ALTERNATING DARK & LIGHT SECTIONS */
@@ -113,18 +145,18 @@
         color: var(--bone);
       }
 
-      .sec-dark .script-kicker {
-        color: var(--lavender);
-      }
-
       .sec-light {
         background-color: var(--bone);
         color: var(--plum);
       }
 
-      .sec-light .script-kicker {
-        color: var(--amethyst);
+      .sec-amethyst {
+        background-color: var(--amethyst-deep);
+        color: var(--bone);
       }
+
+      .sec-dark .script-kicker, .sec-light .script-kicker, .sec-amethyst .script-kicker { color: var(--rose); }
+      .sec-dark .star, .sec-light .star, .sec-amethyst .star { color: var(--lavender); }
 
       /* BUTTONS */
       .btn {
@@ -137,11 +169,14 @@
         font-size: 0.95rem;
         letter-spacing: 0.03em;
         text-transform: uppercase;
-        border-radius: 2px;
+        border-radius: 4px;
+        width: 100%;
         cursor: pointer;
         border: 1px solid transparent;
         transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
       }
+
+      @media (min-width: 768px) { .btn { width: auto; } }
 
       .btn-primary {
         background-color: var(--raspberry);
@@ -437,42 +472,6 @@
         overflow: hidden;
       }
 
-      .hero-accent-stars,
-      .omnie-accent-stars {
-        position: absolute;
-        pointer-events: none;
-        z-index: 0;
-        overflow: hidden;
-      }
-
-      .hero-accent-stars {
-        top: 2rem;
-        right: 2rem;
-        width: 120px;
-        height: 120px;
-        opacity: 0.15;
-      }
-
-      .omnie-accent-stars {
-        top: 2rem;
-        left: 2rem;
-        width: 130px;
-        height: 130px;
-        opacity: 0.15;
-      }
-
-      @media (max-width: 767px) {
-        .hero-accent-stars,
-        .omnie-accent-stars {
-          top: 0.5rem;
-          right: 0.5rem;
-          left: auto;
-          width: 60px;
-          height: 60px;
-          opacity: 0.06;
-        }
-      }
-
       .hero-grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -721,29 +720,6 @@
         margin-bottom: 0;
       }
 
-      /* NEGATIVE SPACE ACCENTS */
-      .hero-accent-stars,
-      .omnie-accent-stars {
-        position: absolute;
-        pointer-events: none;
-        opacity: 0.12;
-        z-index: 1;
-      }
-
-      .hero-accent-stars {
-        top: 8%;
-        right: 2%;
-        width: 140px;
-        height: 140px;
-      }
-
-      .omnie-accent-stars {
-        bottom: 8%;
-        left: 2%;
-        width: 120px;
-        height: 120px;
-      }
-
       /* OFERTA SECTION */
       #oferta {
         padding-top: 2rem;
@@ -756,13 +732,34 @@
       }
 
       .oferta-heading {
-        font-family: "Fraunces", serif;
-        font-weight: 600;
+        font-family: var(--font-serif);
+        font-weight: 500;
         color: var(--plum);
         font-size: clamp(1.9rem, 3.8vw, 2.6rem);
         text-align: center;
         margin-bottom: 3rem;
       }
+
+      .gdzie-heading { color: var(--bone); }
+      .sec-amethyst .editorial-card {
+        background-color: rgba(242, 236, 227, 0.04);
+        border: 1px solid rgba(213, 144, 178, 0.28);
+        border-left: 3px solid var(--rose);
+        border-radius: 6px;
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+      .sec-amethyst .editorial-card .quote { color: var(--rose); }
+      .sec-amethyst .editorial-card .card-body { color: rgba(242, 236, 227, 0.85); }
+      .sec-amethyst .card-link { color: var(--rose); }
+      .sec-amethyst .card-link:hover { color: var(--bone); }
+      .sec-amethyst .scroll-cue { color: var(--lavender); }
+      .sec-amethyst .scroll-cue svg { stroke: var(--lavender); }
 
       .offers-grid {
         display: grid;
@@ -1374,7 +1371,7 @@
       .setlist-ticker-wrap {
         width: 100%;
         overflow: hidden;
-        background-color: var(--raspberry);
+        background-color: var(--amethyst);
         color: var(--bone);
         padding: 0.9rem 0;
         border-top: 1px solid rgba(242, 236, 227, 0.25);
@@ -1411,6 +1408,7 @@
       /* CARD HOVER ELEVATION & GLOW */
       @media (hover: hover) and (prefers-reduced-motion: no-preference) {
         .sec-light .editorial-card,
+        .sec-amethyst .editorial-card,
         .sec-light .featured-case,
         .sec-light .short-quote-card,
         .sec-dark .offer-card,
@@ -1423,6 +1421,7 @@
         }
 
         .sec-light .editorial-card:hover,
+        .sec-amethyst .editorial-card:hover,
         .sec-light .featured-case:hover,
         .sec-light .short-quote-card:hover,
         .sec-dark .offer-card:hover,
@@ -1472,8 +1471,6 @@
 
       /* STAR TWINKLE */
       @media (prefers-reduced-motion: no-preference) {
-        .hero-accent-stars svg,
-        .omnie-accent-stars svg,
         .star {
           display: inline-block;
           animation: starTwinkle 3.2s infinite ease-in-out;
@@ -1488,6 +1485,22 @@
   </head>
 
   <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <symbol id="star-grunge" viewBox="0 0 200 200">
+        <path d="M97 6 L124 73 L192 66 L131 114 L158 181 L98 133 L40 178 L69 113 L8 68 L76 74 Z"/>
+        <path d="M164 11 L171 27 L188 27 L174 38 L179 55 L165 45 L150 54 L156 38 L142 27 L160 28 Z" opacity="0.8"/>
+        <circle cx="30" cy="150" r="3.5" opacity="0.9"/>
+        <circle cx="182" cy="128" r="3" opacity="0.9"/>
+        <circle cx="118" cy="192" r="2.5" opacity="0.6"/>
+        <circle cx="16" cy="112" r="2" opacity="0.6"/>
+        <circle cx="196" cy="94" r="2" opacity="0.6"/>
+        <circle cx="62" cy="196" r="1.5" opacity="0.35"/>
+        <circle cx="140" cy="12" r="1.5" opacity="0.35"/>
+        <circle cx="8" cy="182" r="1.5" opacity="0.35"/>
+        <circle cx="188" cy="170" r="1" opacity="0.35"/>
+        <circle cx="46" cy="18" r="1" opacity="0.35"/>
+      </symbol>
+    </svg>
     <!-- 1. STICKY TOP NAV & ANNOUNCEMENT BAR -->
     <header>
       <div class="announcement-bar">
@@ -1534,9 +1547,7 @@
     <main>
       <!-- 2. HERO — DARK -->
       <section id="hero" class="sec-dark">
-        <div class="hero-accent-stars" aria-hidden="true">
-          <svg viewBox="0 0 100 100" fill="none"><path d="M50 0L53 40L93 43L55 53L60 93L43 57L3 60L37 43Z" fill="var(--lavender)"/><circle cx="85" cy="15" r="3" fill="var(--lavender)"/><circle cx="15" cy="85" r="2" fill="var(--lavender)"/></svg>
-        </div>
+        <div class="star-deco star-hero" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#star-grunge"/></svg></div>
         <div class="container">
           <div class="hero-grid">
             <div class="hero-content fade-up">
@@ -1556,8 +1567,9 @@
       <!-- VANITY-STYLE LIGHT DOTS STRIP (FULL-BLEED AFTER HERO - DARK) -->
       <div class="vanity-bulb-strip" aria-hidden="true"></div>
 
-      <!-- 3. DLA KOGO (#dlakogo) — LIGHT -->
-      <section id="dlakogo" class="sec-light">
+      <!-- 3. DLA KOGO (#dlakogo) — AMETHYST -->
+      <section id="dlakogo" class="sec-amethyst">
+        <div class="star-deco star-dlakogo" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#star-grunge"/></svg></div>
         <div class="container">
           <h2 class="gdzie-heading fade-up">W którym miejscu jesteś dzisiaj?</h2>
           <div class="cards-grid">
@@ -1606,6 +1618,7 @@
 
       <!-- 4. OFERTA (#oferta) — LIGHT SECTION -->
       <section id="oferta" class="sec-light">
+        <div class="star-deco star-oferta" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#star-grunge"/></svg></div>
         <div class="container">
           <h2 class="oferta-heading fade-up">Jak wspieram trenerki EFT?</h2>
           <div class="offers-grid">
@@ -1703,9 +1716,7 @@
 
       <!-- 5. O MNIE (#omnie) — DARK -->
       <section id="omnie" class="sec-dark">
-        <div class="omnie-accent-stars" aria-hidden="true">
-          <svg viewBox="0 0 120 120" fill="none"><path d="M60 10 L64 50 L104 54 L68 66 L74 106 L54 70 L14 74 L46 54 Z" fill="var(--lavender)"/><circle cx="100" cy="20" r="4" fill="var(--lavender)"/><circle cx="20" cy="100" r="3" fill="var(--lavender)"/></svg>
-        </div>
+        <div class="star-deco star-omnie" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#star-grunge"/></svg></div>
         <div class="container">
           <div class="dlaczego-grid">
             <div class="dlaczego-image fade-up">
@@ -1727,6 +1738,7 @@
 
       <!-- 6. OPINIE (#opinie) — LIGHT -->
       <section id="opinie" class="sec-light">
+        <div class="star-deco star-opinie" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#star-grunge"/></svg></div>
         <div class="container">
           <h2 class="dowody-heading fade-up">Sprawdź, co mówią trenerki EFT, z którymi pracuję:</h2>
 
@@ -1785,6 +1797,7 @@
 
       <!-- 7. TAP&TALK (#taptalk) — DARK -->
       <section id="taptalk" class="sec-dark">
+        <div class="star-deco star-taptalk" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#star-grunge"/></svg></div>
         <div class="container">
           <div class="podcast-grid fade-up">
             <div class="podcast-cover-wrap">
@@ -1832,6 +1845,7 @@
 
       <!-- 8. TAP&READ (#tapread) — LIGHT -->
       <section id="tapread" class="sec-light">
+        <div class="star-deco star-tapread" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#star-grunge"/></svg></div>
         <div class="container">
           <div class="newsletter-card fade-up">
             <span class="script-kicker"><span class="star">★</span> Zapisz się na newsletter</span>

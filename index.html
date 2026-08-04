@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>document.documentElement.classList.add('js');</script>
+    <script>
+      window.handleImgError = function(img) {
+        if (!img.dataset.failCount) img.dataset.failCount = '0';
+        var count = parseInt(img.dataset.failCount, 10) + 1;
+        img.dataset.failCount = count.toString();
+        var rawSrc = img.getAttribute('src') || '';
+        var filename = rawSrc.split('/').pop().split('?')[0];
+        if (count === 1) {
+          img.src = '/src/' + filename;
+        } else if (count === 2) {
+          img.src = './src/' + filename;
+        } else if (count === 3) {
+          img.src = filename;
+        } else {
+          img.style.display = 'none';
+        }
+      };
+    </script>
     <title>Alexa Trachim · Partnerka biznesowa trenerek EFT</title>
     <meta name="description" content="Pomagam trenerkom EFT budować i rozwijać unikatowe biznesy - od pierwszych ofert po współpracę wdrożeniową. Łączę wiedzę marketingową z pracą metodą EFT." />
 
@@ -1504,12 +1522,12 @@
     <!-- 1. STICKY TOP NAV & ANNOUNCEMENT BAR -->
     <header>
       <div class="announcement-bar">
-        Warsztat DZIAŁAM dla trenerek EFT, które chcą przestać czekać z biznesem już 20 sierpnia 2026 o 18:00! 🤘 <a href="https://lp.alexatrachim.com/dzialam" target="_blank" rel="noopener">Zapisz się tutaj</a>
+        Warsztat DZIAŁAM dla trenerek EFT, które chcą przestać czekać z biznesem już 20 sierpnia 2026 o 18:00! 🤘 <a href="/biznes-po-mojemu/">Zapisz się tutaj</a>
       </div>
       <div class="container nav-container">
         <!-- Logo image -->
         <a href="#" aria-label="Strona główna Alexa Trachim" class="nav-logo-link">
-          <img src="/src/logo1.png" alt="Alexa Trachim logo — brush lettering with pink skull" class="nav-logo-img" />
+          <img src="/src/logo1.png" alt="Alexa Trachim logo — brush lettering with pink skull" class="nav-logo-img" onerror="handleImgError(this)" />
         </a>
 
         <!-- Desktop Navigation Menu -->
@@ -1558,7 +1576,7 @@
               <a href="#oferta" class="btn btn-primary">Sprawdź, co dla Ciebie mam</a>
             </div>
             <div class="hero-image fade-up">
-              <img src="/src/hero.png" alt="Alexa Trachim - Partnerka biznesowa trenerek EFT" class="hero-img" />
+              <img src="/src/hero.png" alt="Alexa Trachim - Partnerka biznesowa trenerek EFT" class="hero-img" onerror="handleImgError(this)" />
             </div>
           </div>
         </div>
@@ -1720,7 +1738,7 @@
         <div class="container">
           <div class="dlaczego-grid">
             <div class="dlaczego-image fade-up">
-              <img src="/src/omnie.png" alt="Alexa Trachim - Kto Cię prowadzi" class="omnie-img" />
+              <img src="/src/omnie.png" alt="Alexa Trachim - Kto Cię prowadzi" class="omnie-img" onerror="handleImgError(this)" />
             </div>
             <div class="dlaczego-content fade-up">
               <h2>Kto Cię prowadzi?</h2>
@@ -1746,7 +1764,7 @@
           <div class="featured-case fade-up">
             <span class="case-study-badge">Case study</span>
             <div class="avatar-wrap">
-              <img src="/src/sandra.jpg" alt="Sandra Folta - trenerka EFT" class="avatar-img" />
+              <img src="/src/sandra.jpg" alt="Sandra Folta - trenerka EFT" class="avatar-img" onerror="handleImgError(this)" />
             </div>
             <div>
               <p>Sandra to trenerka EFT z działającym biznesem, który stale się rozwija. Jej wyzwaniem było to, że jeszcze do niedawna to ona musiała wszystko ogarniać. Pomysły grzęzły w notatkach i często nie wychodziły do świata, bo nie było na to przestrzeni.</p>
@@ -1801,7 +1819,7 @@
         <div class="container">
           <div class="podcast-grid fade-up">
             <div class="podcast-cover-wrap">
-              <img src="/src/tapandtalk.png" alt="Tap&Talk Podcast - Okładka" class="podcast-cover-img" />
+              <img src="/src/tapandtalk.png" alt="Tap&Talk Podcast - Okładka" class="podcast-cover-img" onerror="handleImgError(this)" />
             </div>
             <div class="podcast-info">
               <span class="script-kicker"><span class="star">★</span> Posłuchaj podcastu</span>

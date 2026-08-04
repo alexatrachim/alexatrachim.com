@@ -5,38 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>document.documentElement.classList.add('js');</script>
     <script>
-      window.handleImgError = function(img) {
-        if (!img || img.getAttribute('data-img-failed') === 'true') return;
-        var rawSrc = img.getAttribute('src') || '';
-        var filename = rawSrc.split('/').pop().split('?')[0];
-        if (!filename) return;
+      document.addEventListener('error', function(e) {
+        if (e.target && e.target.tagName === 'IMG') {
+          var img = e.target;
+          if (img.dataset.hasFailed) return;
+          var rawSrc = img.getAttribute('src') || '';
+          var filename = rawSrc.split('/').pop().split('?')[0];
+          if (!filename) return;
 
-        var candidates = [
-          '/src/' + filename,
-          'src/' + filename,
-          '/biznes-po-mojemu/src/' + filename,
-          'biznes-po-mojemu/src/' + filename,
-          '/' + filename,
-          '/biznes-po-mojemu/' + filename,
-          './src/' + filename,
-          './' + filename
-        ];
+          var tries = parseInt(img.dataset.imgTries || '0', 10);
+          var paths = [
+            'src/' + filename,
+            '/src/' + filename,
+            'biznes-po-mojemu/src/' + filename,
+            '/biznes-po-mojemu/src/' + filename,
+            '/' + filename,
+            filename
+          ];
 
-        var tryIndex = parseInt(img.getAttribute('data-try-index') || '0', 10);
-
-        while (tryIndex < candidates.length) {
-          var nextSrc = candidates[tryIndex];
-          tryIndex++;
-          img.setAttribute('data-try-index', tryIndex.toString());
-          if (nextSrc !== rawSrc) {
-            img.src = nextSrc;
-            return;
+          while (tries < paths.length) {
+            var next = paths[tries];
+            tries++;
+            img.dataset.imgTries = tries;
+            if (next !== rawSrc && !rawSrc.endsWith('/' + next)) {
+              img.src = next;
+              return;
+            }
           }
+          img.dataset.hasFailed = 'true';
         }
-
-        img.setAttribute('data-img-failed', 'true');
-        img.onerror = null;
-      };
+      }, true);
     </script>
     <title>Alexa Trachim · Partnerka biznesowa trenerek EFT</title>
     <meta name="description" content="Pomagam trenerkom EFT budować i rozwijać unikatowe biznesy - od pierwszych ofert po współpracę wdrożeniową. Łączę wiedzę marketingową z pracą metodą EFT." />
@@ -1543,7 +1541,7 @@
       <div class="container nav-container">
         <!-- Logo image -->
         <a href="#" aria-label="Strona główna Alexa Trachim" class="nav-logo-link">
-          <img src="/src/logo1.png" alt="Alexa Trachim logo — brush lettering with pink skull" class="nav-logo-img" onerror="handleImgError(this)" />
+          <img src="src/logo1.png" alt="Alexa Trachim logo — brush lettering with pink skull" class="nav-logo-img" />
         </a>
 
         <!-- Desktop Navigation Menu -->
@@ -1592,7 +1590,7 @@
               <a href="#oferta" class="btn btn-primary">Sprawdź, co dla Ciebie mam</a>
             </div>
             <div class="hero-image fade-up">
-              <img src="/src/hero.png" alt="Alexa Trachim - Partnerka biznesowa trenerek EFT" class="hero-img" onerror="handleImgError(this)" />
+              <img src="src/hero.png" alt="Alexa Trachim - Partnerka biznesowa trenerek EFT" class="hero-img" />
             </div>
           </div>
         </div>
@@ -1754,7 +1752,7 @@
         <div class="container">
           <div class="dlaczego-grid">
             <div class="dlaczego-image fade-up">
-              <img src="/src/omnie.png" alt="Alexa Trachim - Kto Cię prowadzi" class="omnie-img" onerror="handleImgError(this)" />
+              <img src="src/omnie.png" alt="Alexa Trachim - Kto Cię prowadzi" class="omnie-img" />
             </div>
             <div class="dlaczego-content fade-up">
               <h2>Kto Cię prowadzi?</h2>
@@ -1780,7 +1778,7 @@
           <div class="featured-case fade-up">
             <span class="case-study-badge">Case study</span>
             <div class="avatar-wrap">
-              <img src="/src/sandra.jpg" alt="Sandra Folta - trenerka EFT" class="avatar-img" onerror="handleImgError(this)" />
+              <img src="src/sandra.jpg" alt="Sandra Folta - trenerka EFT" class="avatar-img" />
             </div>
             <div>
               <p>Sandra to trenerka EFT z działającym biznesem, który stale się rozwija. Jej wyzwaniem było to, że jeszcze do niedawna to ona musiała wszystko ogarniać. Pomysły grzęzły w notatkach i często nie wychodziły do świata, bo nie było na to przestrzeni.</p>
@@ -1835,7 +1833,7 @@
         <div class="container">
           <div class="podcast-grid fade-up">
             <div class="podcast-cover-wrap">
-              <img src="/src/tapandtalk.png" alt="Tap&Talk Podcast - Okładka" class="podcast-cover-img" onerror="handleImgError(this)" />
+              <img src="src/tapandtalk.png" alt="Tap&Talk Podcast - Okładka" class="podcast-cover-img" />
             </div>
             <div class="podcast-info">
               <span class="script-kicker"><span class="star">★</span> Posłuchaj podcastu</span>
@@ -1843,15 +1841,15 @@
               <p>W każdym odcinku wraz z moimi gośćmi dzielimy się wiedzą i doświadczeniami na temat tej metody, a wszystko domykamy wspólną rundką opukiwania.</p>
               <div class="podcast-links">
                 <a href="https://open.spotify.com/show/5tK8aav4ivqoNrM5GV5kxm?si=0055285702e24ce7" target="_blank" rel="noopener" class="btn btn-outline">
-                  <img src="/src/spotify.png" alt="Spotify" class="btn-icon-img" onerror="handleImgError(this)" />
+                  <img src="src/spotify.png" alt="Spotify" class="btn-icon-img" />
                   Spotify
                 </a>
                 <a href="https://podcasts.apple.com/pl/podcast/tap-talk/id1896770761?l=pl" target="_blank" rel="noopener" class="btn btn-outline">
-                  <img src="/src/apple.png" alt="Apple Podcasts" class="btn-icon-img" onerror="handleImgError(this)" />
+                  <img src="src/apple.png" alt="Apple Podcasts" class="btn-icon-img" />
                   Apple Podcasts
                 </a>
                 <a href="https://www.youtube.com/@alexa.trachim" target="_blank" rel="noopener" class="btn btn-outline">
-                  <img src="/src/youtube.png" alt="YouTube" class="btn-icon-img" onerror="handleImgError(this)" />
+                  <img src="src/youtube.png" alt="YouTube" class="btn-icon-img" />
                   YouTube
                 </a>
               </div>

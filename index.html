@@ -6,9 +6,7 @@
     <script>document.documentElement.classList.add('js');</script>
     <script>
       window.handleImgError = function(img) {
-        if (!img) return;
-        var count = parseInt(img.getAttribute('data-fail-count') || '0', 10) + 1;
-        img.setAttribute('data-fail-count', count.toString());
+        if (!img || img.getAttribute('data-img-failed') === 'true') return;
         var rawSrc = img.getAttribute('src') || '';
         var filename = rawSrc.split('/').pop().split('?')[0];
         if (!filename) return;
@@ -16,18 +14,28 @@
         var candidates = [
           '/src/' + filename,
           'src/' + filename,
-          './src/' + filename,
-          '/' + filename,
-          filename,
           '/biznes-po-mojemu/src/' + filename,
-          '/biznes-po-mojemu/' + filename
+          'biznes-po-mojemu/src/' + filename,
+          '/' + filename,
+          '/biznes-po-mojemu/' + filename,
+          './src/' + filename,
+          './' + filename
         ];
 
-        if (count <= candidates.length) {
-          img.src = candidates[count - 1];
-        } else {
-          img.onerror = null;
+        var tryIndex = parseInt(img.getAttribute('data-try-index') || '0', 10);
+
+        while (tryIndex < candidates.length) {
+          var nextSrc = candidates[tryIndex];
+          tryIndex++;
+          img.setAttribute('data-try-index', tryIndex.toString());
+          if (nextSrc !== rawSrc) {
+            img.src = nextSrc;
+            return;
+          }
         }
+
+        img.setAttribute('data-img-failed', 'true');
+        img.onerror = null;
       };
     </script>
     <title>Alexa Trachim · Partnerka biznesowa trenerek EFT</title>

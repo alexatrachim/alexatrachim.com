@@ -6,28 +6,36 @@
     <script>document.documentElement.classList.add('js');</script>
     <script>
       window.handleImgError = function(img) {
-        if (!img) return;
-        var count = parseInt(img.getAttribute('data-fail-count') || '0', 10) + 1;
-        img.setAttribute('data-fail-count', count.toString());
+        if (!img || img.getAttribute('data-img-failed') === 'true') return;
         var rawSrc = img.getAttribute('src') || '';
         var filename = rawSrc.split('/').pop().split('?')[0];
         if (!filename) return;
 
         var candidates = [
-          '/biznes-po-mojemu/src/' + filename,
-          'src/' + filename,
           '/src/' + filename,
+          'src/' + filename,
+          '/biznes-po-mojemu/src/' + filename,
+          'biznes-po-mojemu/src/' + filename,
+          '/' + filename,
           '/biznes-po-mojemu/' + filename,
           './src/' + filename,
-          '/' + filename,
-          filename
+          './' + filename
         ];
 
-        if (count <= candidates.length) {
-          img.src = candidates[count - 1];
-        } else {
-          img.onerror = null;
+        var tryIndex = parseInt(img.getAttribute('data-try-index') || '0', 10);
+
+        while (tryIndex < candidates.length) {
+          var nextSrc = candidates[tryIndex];
+          tryIndex++;
+          img.setAttribute('data-try-index', tryIndex.toString());
+          if (nextSrc !== rawSrc) {
+            img.src = nextSrc;
+            return;
+          }
         }
+
+        img.setAttribute('data-img-failed', 'true');
+        img.onerror = null;
       };
     </script>
 
@@ -1753,7 +1761,7 @@
     <header>
       <div class="container nav-container">
         <a href="/" aria-label="Alexa Trachim strona główna" class="nav-logo-link">
-          <img src="/biznes-po-mojemu/src/logo.png" alt="Alexa Trachim" class="nav-logo-img" onerror="handleImgError(this)" />
+          <img src="/src/logo.png" alt="Alexa Trachim" class="nav-logo-img" onerror="handleImgError(this)" />
         </a>
       </div>
     </header>
@@ -1803,7 +1811,7 @@
 
             <div class="hero-image fade-up">
               <figure class="fig-slot hero-fig">
-                <img src="/biznes-po-mojemu/src/alexa-hero.png" alt="Alexa Trachim, prowadząca warsztat Biznes po mojemu" class="hero-img" loading="eager" onerror="handleImgError(this)" />
+                <img src="/src/alexa-hero.png" alt="Alexa Trachim, prowadząca warsztat Biznes po mojemu" class="hero-img" loading="eager" onerror="handleImgError(this)" />
               </figure>
             </div>
           </div>
@@ -1897,7 +1905,7 @@
                 <span class="note-pudelko">Tu jest sedno</span>
                 <div class="step-title">Rozpuszczamy przekonania techniką pudełka</div>
                 <figure class="fig-slot pudelko-fig">
-                  <img src="/biznes-po-mojemu/src/pudelko.png" alt="Technika pudełka na cudze zasady" class="pudelko-img" loading="lazy" onerror="handleImgError(this)" />
+                  <img src="/src/pudelko.png" alt="Technika pudełka na cudze zasady" class="pudelko-img" loading="lazy" onerror="handleImgError(this)" />
                 </figure>
                 <div class="step-body">
                   <p><span style="font-weight: 500;">To rdzeń tego warsztatu i Twoja droga do odzyskania zaufania do własnych decyzji.</span> Prowadzę Cię przez ten proces krok po kroku, a Ty opukujesz wszystko, co do Ciebie przychodzi i zostawiasz przekonania innych za sobą.</p>
@@ -1987,7 +1995,7 @@
           <div class="omnie-grid">
             <div class="omnie-image fade-up">
               <figure class="fig-slot omnie-fig">
-                <img src="/biznes-po-mojemu/src/profilowe-new.png" alt="Alexa Trachim, trenerka EFT i strateżka biznesowa" class="omnie-img" loading="lazy" onerror="handleImgError(this)" />
+                <img src="/src/profilowe-new.png" alt="Alexa Trachim, trenerka EFT i strateżka biznesowa" class="omnie-img" loading="lazy" onerror="handleImgError(this)" />
               </figure>
             </div>
 
@@ -2038,7 +2046,7 @@
           <div class="oferta-grid">
             <div class="oferta-side-image fade-up">
               <figure class="fig-slot oferta-side-fig">
-                <img src="/biznes-po-mojemu/src/rundka.png" alt="Rundka kreacyjna podczas warsztatu" class="oferta-side-img" loading="lazy" onerror="handleImgError(this)" />
+                <img src="/src/rundka.png" alt="Rundka kreacyjna podczas warsztatu" class="oferta-side-img" loading="lazy" onerror="handleImgError(this)" />
               </figure>
             </div>
 

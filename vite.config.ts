@@ -29,6 +29,7 @@ const mpaRewritePlugin = (): Plugin => ({
 
 export default defineConfig(() => {
   return {
+    publicDir: 'public',
     plugins: [react(), tailwindcss(), mpaRewritePlugin()],
     resolve: {
       alias: {

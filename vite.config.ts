@@ -3,11 +3,21 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, Plugin} from 'vite';
 
+import fs from 'fs';
+
 const mpaRewritePlugin = (): Plugin => ({
   name: 'mpa-rewrite',
   configureServer(server) {
     server.middlewares.use((req, res, next) => {
       const url = req.url ? req.url.split('?')[0] : '';
+      if (url.startsWith('/assets/')) {
+        const filePath = path.join(__dirname, 'dist', url);
+        if (fs.existsSync(filePath)) {
+          res.setHeader('Content-Type', url.endsWith('.png') ? 'image/png' : url.endsWith('.jpg') ? 'image/jpeg' : url.endsWith('.svg') ? 'image/svg+xml' : 'application/octet-stream');
+          fs.createReadStream(filePath).pipe(res);
+          return;
+        }
+      }
       if (url === '/biznes-po-mojemu' || url === '/biznes-po-mojemu/') {
         const query = req.url && req.url.includes('?') ? '?' + req.url.split('?')[1] : '';
         req.url = '/biznes-po-mojemu/index.html' + query;
@@ -30,6 +40,11 @@ export default defineConfig(() => {
         input: {
           main: path.resolve(__dirname, 'index.html'),
           biznesPoMojemu: path.resolve(__dirname, 'biznes-po-mojemu/index.html'),
+        },
+        output: {
+          entryFileNames: 'assets/[name].js',
+          chunkFileNames: 'assets/[name].js',
+          assetFileNames: 'assets/[name].[ext]',
         },
       },
     },

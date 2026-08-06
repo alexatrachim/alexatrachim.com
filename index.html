@@ -620,7 +620,6 @@
       .sec-light .short-quote-card {
         background-color: rgba(22, 18, 28, 0.025);
         border: 1px solid rgba(194, 31, 107, 0.22);
-        border-left: 3px solid var(--raspberry);
         border-radius: 6px;
         padding: 2.5rem 2rem;
         display: flex;
@@ -635,7 +634,6 @@
         background-color: #E8E0EC;
         background: color-mix(in srgb, var(--lavender) 18%, var(--bone));
         border: 1px solid rgba(194, 31, 107, 0.22);
-        border-left: 3px solid var(--raspberry);
         border-radius: 6px;
         padding: 2.5rem 2rem;
         display: flex;
@@ -793,7 +791,6 @@
       .sec-amethyst .editorial-card {
         background-color: rgba(242, 236, 227, 0.04);
         border: 1px solid rgba(213, 144, 178, 0.28);
-        border-left: 3px solid var(--rose);
         border-radius: 6px;
         padding: 2.5rem 2rem;
         display: flex;
@@ -822,6 +819,10 @@
           grid-template-columns: repeat(2, 1fr);
           gap: 2.5rem;
           align-items: stretch;
+        }
+
+        #partnerka.offer-card {
+          grid-column: 1 / -1;
         }
       }
 
@@ -861,7 +862,6 @@
       /* Featured Partnerka offer card badge & borders */
       #partnerka.offer-card {
         border: 2px solid var(--raspberry);
-        border-left: 4px solid var(--raspberry);
         box-shadow: 0 6px 24px rgba(194, 31, 107, 0.15);
       }
 
@@ -869,7 +869,6 @@
         background-color: #ECE0E7;
         background: color-mix(in srgb, var(--raspberry) 15%, var(--bone));
         border: 1px solid var(--raspberry);
-        border-left: 3px solid var(--raspberry);
       }
 
       .offer-badge {
@@ -1229,7 +1228,6 @@
       .newsletter-card {
         background-color: var(--bone);
         border: 1px solid rgba(194, 31, 107, 0.25);
-        border-left: 4px solid var(--raspberry);
         border-radius: 6px;
         padding: 3rem 1.75rem;
         position: relative;
@@ -1676,7 +1674,7 @@
                 <p class="card-body">Publikujesz content, ale klientów jak nie było, tak nie ma, więc opukujesz blokady finansowe i inne mindsetowe wyzwania. Twój biznes nie zarabia stabilnie, a Ty nie wiesz, dlaczego.</p>
               </div>
               <div class="card-cta-wrap">
-                <a href="#diagnoza" class="card-link">Zacznij od Diagnozy →</a>
+                <a href="#warsztat" class="card-link">Sprawdź warsztat →</a>
               </div>
             </div>
 
@@ -1707,26 +1705,7 @@
           <h2 class="oferta-heading fade-up">Jak wspieram trenerki EFT?</h2>
           <div class="offers-grid">
 
-            <!-- Card 1: #partnerka -->
-            <div id="partnerka" class="offer-card fade-up">
-              <div class="offer-card-top">
-                <span class="script-kicker"><span class="star">★</span> Współpraca premium</span>
-                <h3 class="offer-title">Zaufana Partnerka</h3>
-                <p class="tagline">Myślę z Tobą i wdrażam za Ciebie.</p>
-                <div class="offer-body">
-                  <p>Wysyłasz głosówkę z pomysłem. Dostajesz rekomendację i wsparcie strategiczne. Wdrażam to, co wspólnie ustalimy. Landingi, newslettery i inne tematy biznesowe przestają czekać na Twój wolny wieczór.</p>
-                  <p>Stała współpraca w modelu miesięcznego pakietu godzin dostępna dla ograniczonej liczby klientek.</p>
-                </div>
-              </div>
-              <div class="offer-card-footer">
-                <p class="date-line" style="visibility: hidden;" aria-hidden="true">&nbsp;</p>
-                <div class="offer-cta-wrap">
-                  <a href="https://lp.alexatrachim.com/zaufana-partnerka" target="_blank" rel="noopener" class="btn btn-primary">Umów się na rozmowę</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2: #warsztat -->
+            <!-- Card 1: #warsztat -->
             <div id="warsztat" class="offer-card fade-up">
               <span class="offer-badge">Zapisy otwarte</span>
               <div class="offer-card-top">
@@ -1748,7 +1727,7 @@
               </div>
             </div>
 
-            <!-- Card 3: #wystartuj -->
+            <!-- Card 2: #wystartuj -->
             <div id="wystartuj" class="offer-card fade-up">
               <div class="offer-card-top">
                 <span class="script-kicker"><span class="star">★</span> Program grupowy</span>
@@ -1768,23 +1747,24 @@
               </div>
             </div>
 
-            <!-- Card 4: #diagnoza -->
-            <div id="diagnoza" class="offer-card fade-up">
+            <!-- Card 3: #partnerka -->
+            <div id="partnerka" class="offer-card fade-up">
               <div class="offer-card-top">
-                <span class="script-kicker"><span class="star">★</span> Współpraca 1:1</span>
-                <h3 class="offer-title">Diagnoza Twojego Biznesu EFT</h3>
-                <p class="tagline">Ankieta, 90-minutowe spotkanie i plan działania.</p>
+                <span class="script-kicker"><span class="star">★</span> Współpraca premium</span>
+                <h3 class="offer-title">Zaufana Partnerka</h3>
+                <p class="tagline">Myślę z Tobą i wdrażam za Ciebie.</p>
                 <div class="offer-body">
-                  <p>Podczas spotkania rozmawiamy o Twoim biznesie i dotychczasowych działaniach, abym mogła zidentyfikować Twoje wyzwania i ustalić, co tak naprawdę nie jest problemem. Cały proces jest dopasowany do Ciebie w 100%.</p>
-                  <p>Nie dostajesz kolejnej strategii kopiuj-wklej, tylko dokładną instrukcję, co robić krok po kroku. A jeżeli chcesz, żebym poprowadziła Cię w dalszych działaniach - po Diagnozie możesz kontynuować współpracę w 3-miesięcznym mentoringu.</p>
+                  <p>Wysyłasz głosówkę z pomysłem. Dostajesz rekomendację i wsparcie strategiczne. Wdrażam to, co wspólnie ustalimy. Landingi, newslettery i inne tematy biznesowe przestają czekać na Twój wolny wieczór.</p>
+                  <p>Stała współpraca w modelu miesięcznego pakietu godzin dostępna dla ograniczonej liczby klientek.</p>
                 </div>
               </div>
               <div class="offer-card-footer">
                 <p class="date-line" style="visibility: hidden;" aria-hidden="true">&nbsp;</p>
                 <div class="offer-cta-wrap">
-                  <a href="https://sklep.alexatrachim.com/checkout/diagnoza" target="_blank" rel="noopener" class="btn btn-primary">Zarezerwuj termin</a>
+                  <a href="https://lp.alexatrachim.com/zaufana-partnerka" target="_blank" rel="noopener" class="btn btn-primary">Umów się na rozmowę</a>
                 </div>
               </div>
+            </div>
             </div>
 
           </div>

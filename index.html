@@ -543,10 +543,15 @@
       }
 
       .hero-content h1 {
-        font-size: clamp(1.5rem, 3vw, 2.2rem);
-        line-height: 1.15;
+        font-size: clamp(1.2rem, 2.1vw, 1.85rem);
+        line-height: 1.25;
         margin-bottom: 1.5rem;
         color: var(--bone);
+        text-wrap: balance;
+      }
+
+      @media (max-width: 768px) {
+        .hero-br { display: none; }
       }
 
       .hero-subhead {
@@ -606,11 +611,17 @@
         align-items: stretch;
       }
 
+      @media (min-width: 768px) {
+        .cards-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 1.5rem;
+          align-items: stretch;
+        }
+      }
+
       @media (min-width: 1024px) {
         .cards-grid {
-          grid-template-columns: repeat(3, 1fr);
           gap: 1.75rem;
-          align-items: stretch;
         }
       }
 
@@ -800,7 +811,7 @@
         box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
         transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
       }
-      .sec-amethyst .editorial-card .quote { color: var(--rose); }
+      .sec-amethyst .editorial-card .quote { color: var(--lavender); }
       .sec-amethyst .editorial-card .card-body { color: rgba(242, 236, 227, 0.85); }
       .sec-amethyst .card-link { color: var(--rose); }
       .sec-amethyst .card-link:hover { color: var(--bone); }
@@ -851,7 +862,7 @@
       .offer-card .date-line {
         font-size: 0.92rem;
         font-weight: 700;
-        color: var(--raspberry);
+        color: var(--amethyst);
         letter-spacing: 0.02em;
         margin: 0;
         line-height: 1.4;
@@ -859,23 +870,11 @@
         text-align: center;
       }
 
-      /* Featured Partnerka offer card badge & borders */
-      #partnerka.offer-card {
-        border: 2px solid var(--raspberry);
-        box-shadow: 0 6px 24px rgba(194, 31, 107, 0.15);
-      }
-
-      #warsztat.offer-card {
-        background-color: #ECE0E7;
-        background: color-mix(in srgb, var(--raspberry) 15%, var(--bone));
-        border: 1px solid var(--raspberry);
-      }
-
       .offer-badge {
         position: absolute;
         top: 1.25rem;
         right: 1.25rem;
-        background-color: var(--raspberry);
+        background-color: var(--amethyst);
         color: var(--bone);
         font-family: var(--font-sans);
         font-size: 0.72rem;
@@ -884,7 +883,7 @@
         letter-spacing: 0.08em;
         padding: 0.35rem 0.85rem;
         border-radius: 4px;
-        box-shadow: 0 2px 8px rgba(194, 31, 107, 0.25);
+        box-shadow: 0 2px 8px rgba(99, 42, 122, 0.25);
       }
 
       .offer-card .offer-title {
@@ -997,19 +996,20 @@
 
       .case-study-badge {
         position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
+        top: 1.25rem;
+        right: 1.25rem;
         display: inline-block;
         font-family: var(--font-sans);
-        font-size: 0.7rem;
+        font-size: 0.72rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        color: var(--amethyst);
-        border: 1px solid var(--amethyst);
-        border-radius: 9999px;
-        padding: 0.25rem 0.75rem;
-        background-color: var(--bone);
+        color: var(--bone);
+        background-color: var(--amethyst);
+        border: none;
+        border-radius: 4px;
+        padding: 0.35rem 0.85rem;
+        box-shadow: 0 2px 8px rgba(99, 42, 122, 0.25);
         z-index: 2;
       }
 
@@ -1634,9 +1634,9 @@
           <div class="hero-grid">
             <div class="hero-content fade-up">
               <span class="script-kicker"><span class="star">★</span> Za kulisami Twojego biznesu EFT…</span>
-              <h1>Wspiera Cię partnerka biznesowa, która rozumie metodę i biznes.</h1>
-              <p class="hero-subhead" style="margin-bottom: 1.25rem;">Jestem trenerką EFT, która od 10 lat działa w biznesie i marketingu. Nie musisz mi tłumaczyć, na czym polega Twoja praca.</p>
-              <p class="hero-subhead">Od pierwszej oferty po stałą współpracę pomagam Ci <strong>zamienić metodę w biznes, który sprzedaje</strong>. Ty robisz to, co kochasz, a ja biorę na siebie marketing i technikalia.</p>
+              <h1>Jestem partnerką, która zna metodę<br class="hero-br"> i ma 10 lat doświadczenia w marketingu.</h1>
+              <p class="hero-subhead" style="margin-bottom: 1.25rem;">Mój cel to pomóc Ci budować i rozwijać biznes, który pasuje do Ciebie.</p>
+              <p class="hero-subhead">Biorę na siebie backstage i wspieram Cię strategicznie. Ty robisz to, co kochasz: pomagasz swoim klientom.</p>
               <a href="#oferta" class="btn btn-primary">Sprawdź, co dla Ciebie mam</a>
             </div>
             <div class="hero-image fade-up">
@@ -1660,7 +1660,7 @@
             <div class="editorial-card fade-up">
               <div>
                 <p class="quote">„Skończyłam kurs trenerski EFT i nadal nie ruszyłam z biznesem."</p>
-                <p class="card-body">Znasz metodę i być może masz za sobą pierwsze sesje dla znajomych lub osób z polecenia. Nie wiesz, od czego zacząć, jak wdrożyć technikalia i co zrobić, aby wyjść do świata z ofertą.</p>
+                <p class="card-body">Znasz metodę i być może masz za sobą pierwsze sesje dla znajomych lub osób z polecenia. Nie wiesz, od czego zacząć, jak wdrożyć technikalia i co rzeczywiście ma znaczenie, gdy zaczynasz budować firmę.</p>
               </div>
               <div class="card-cta-wrap">
                 <a href="#wystartuj" class="card-link">Sprawdź program Wystartuj →</a>
@@ -1670,19 +1670,19 @@
             <!-- Card 2 -->
             <div class="editorial-card fade-up">
               <div>
-                <p class="quote">„Działam od miesięcy i nie wiem, co mnie blokuje."</p>
-                <p class="card-body">Publikujesz content, ale klientów jak nie było, tak nie ma, więc opukujesz blokady finansowe i inne mindsetowe wyzwania. Twój biznes nie zarabia stabilnie, a Ty nie wiesz, dlaczego.</p>
+                <p class="quote">„Próbuję rozkręcić biznes, ale nie wiem, co mam robić, żeby osiągnąć cele."</p>
+                <p class="card-body">Gubisz się w radach, które znajdujesz w social mediach i które podrzucają Ci różne osoby. Każdy pomysł próbujesz zweryfikować, pytając innych o zdanie. Nie ufasz swoim decyzjom.</p>
               </div>
               <div class="card-cta-wrap">
-                <a href="#warsztat" class="card-link">Sprawdź warsztat →</a>
+                <a href="#warsztat" class="card-link">Sprawdź Biznes po mojemu →</a>
               </div>
             </div>
 
             <!-- Card 3 -->
             <div class="editorial-card fade-up">
               <div>
-                <p class="quote">„Mój biznes prosperuje, a ja nie wyrabiam na zakrętach."</p>
-                <p class="card-body">Masz pełny kalendarz sesji i bez problemu sprzedajesz swoje produkty cyfrowe - ale nie masz już czasu ani energii, aby wdrażać wszystkie swoje pomysły i przez to wiele z nich nigdy nie wychodzi do świata.</p>
+                <p class="quote">„Mój biznes prosperuje, a ja już nie wiem, w co ręce włożyć, aby go skalować."</p>
+                <p class="card-body">Masz pełny kalendarz sesji i bez problemu sprzedajesz swoje produkty cyfrowe - ale nie masz już czasu ani energii, aby wdrażać wszystkie pomysły i przez to wiele z nich nigdy nie wychodzi do świata.</p>
               </div>
               <div class="card-cta-wrap">
                 <a href="#partnerka" class="card-link">Umów się na rozmowę →</a>
@@ -1711,12 +1711,10 @@
               <div class="offer-card-top">
                 <span class="script-kicker"><span class="star">★</span> Warsztat</span>
                 <h3 class="offer-title">Biznes po mojemu</h3>
-                <p class="tagline">Spotkanie dla trenerek EFT, które gubią się w radach, jak prowadzić biznes.</p>
+                <p class="tagline">Spotkanie dla trenerek EFT, które gubią się w cudzych radach o biznesie.</p>
                 <div class="offer-body">
-                  <p>W ciągu 90 minut wypiszesz zasady o prowadzeniu biznesu, które przyjęłaś od innych osób i sprawdzisz, co one w Tobie powodują. Potem oczyścimy je techniką pudełka, żeby zrobić miejsce na Twoje własne podejście.</p>
-                  <p>Wychodzisz ze spotkania ze spisanym manifestem Twojego biznesu, czyli listą własnych zasad na to, jak pracujesz. Domykamy spotkanie rundką kreacyjną, z którą możesz pracować później samodzielnie.</p>
-                  <p>Dostajesz manifest do wydruku oraz edytowalny szablon w Canvie.</p>
-                  <p>Nagranie warsztatu dla wszystkich zapisanych.</p>
+                  <p>Identyfikujesz porady biznesowe, które przyjęłaś od innych i oczyszczasz je techniką pudełka.</p>
+                  <p>Budujesz pewność, że Twoje decyzje są najważniejsze.</p>
                 </div>
               </div>
               <div class="offer-card-footer">
@@ -1732,15 +1730,14 @@
               <div class="offer-card-top">
                 <span class="script-kicker"><span class="star">★</span> Program grupowy</span>
                 <h3 class="offer-title">Wystartuj z Tym Biznesem EFT</h3>
-                <p class="tagline">4-tygodniowy program ze spotkaniami na żywo, dedykowaną grupą na Telegramie i moim wsparciem.</p>
+                <p class="tagline">4-tygodniowy program grupowy ze spotkaniami na żywo i moim wsparciem.</p>
                 <div class="offer-body">
-                  <p>Miesiąc pracy, abyś wdrożyła ofertę, odpięła płatności i inne potrzebne narzędzia oraz zrobiła pierwszy krok w marketingu w zgodzie z tym, co lubisz tworzyć.</p>
-                  <p>W czasie całej tej drogi opukujemy to, co dotąd Cię zatrzymywało: lęk przed odrzuceniem, przytłoczenie technikaliami, niepewność i wszystkie inne blokady.</p>
-                  <p>Kameralna grupa, aby każda uczestniczka dostała potrzebny feedback i uwagę.</p>
+                  <p>Wdrażasz ofertę, podpinasz narzędzia oraz robisz pierwszy krok w marketingu.</p>
+                  <p>Po drodze opukujemy to, co dotąd Cię zatrzymywało.</p>
                 </div>
               </div>
               <div class="offer-card-footer">
-                <p class="date-line" style="color: var(--amethyst);">2 edycja jesienią</p>
+                <p class="date-line">2 edycja w październiku 2026</p>
                 <div class="offer-cta-wrap">
                   <a href="https://lp.alexatrachim.com/wystartuj" target="_blank" rel="noopener" class="btn btn-primary">Lista zainteresowanych</a>
                 </div>
@@ -1754,8 +1751,8 @@
                 <h3 class="offer-title">Zaufana Partnerka</h3>
                 <p class="tagline">Myślę z Tobą i wdrażam za Ciebie.</p>
                 <div class="offer-body">
-                  <p>Wysyłasz głosówkę z pomysłem. Dostajesz rekomendację i wsparcie strategiczne. Wdrażam to, co wspólnie ustalimy. Landingi, newslettery i inne tematy biznesowe przestają czekać na Twój wolny wieczór.</p>
-                  <p>Stała współpraca w modelu miesięcznego pakietu godzin dostępna dla ograniczonej liczby klientek.</p>
+                  <p>Dajesz mi znać o swoich pomysłach, a ja wdrażam to, co wspólnie ustalimy.</p>
+                  <p>Landingi, newslettery i oferty przestają czekać na Twój wolny wieczór.</p>
                 </div>
               </div>
               <div class="offer-card-footer">
@@ -1889,7 +1886,7 @@
             </div>
           </div>
           <div style="margin-top: 3rem; text-align: center;" class="fade-up">
-            <p class="tagline" style="margin-bottom: 0.5rem; color: var(--rose); font-weight: 600;">Najnowszy odcinek:</p>
+            <p class="tagline" style="margin-bottom: 0.5rem; color: var(--raspberry); font-weight: 600;">Najnowszy odcinek:</p>
             <div class="video-embed-wrapper">
               <div class="video-responsive">
                 <iframe

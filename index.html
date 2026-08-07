@@ -40,8 +40,8 @@
     <meta name="description" content="Pomagam trenerkom EFT budować i rozwijać unikatowe biznesy - od pierwszych ofert po współpracę wdrożeniową. Łączę wiedzę marketingową z pracą metodą EFT." />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/public/favicon.png" />
-    <link rel="apple-touch-icon" href="/public/favicon.png" />
+    <link rel="icon" type="image/png" href="/src/favicon.png" />
+    <link rel="apple-touch-icon" href="/src/favicon.png" />
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
@@ -642,17 +642,24 @@
       }
 
       .sec-light .offer-card {
-        background-color: #E8E0EC;
-        background: color-mix(in srgb, var(--lavender) 18%, var(--bone));
-        border: 1px solid rgba(194, 31, 107, 0.22);
         border-radius: 6px;
-        padding: 2.5rem 2rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        padding: 2rem 1.75rem;
         position: relative;
         box-shadow: 0 4px 20px rgba(194, 31, 107, 0.08);
         transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .sec-light .offer-card {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          padding: 2.5rem 2.5rem;
+          gap: 2.5rem;
+        }
       }
 
       .editorial-card .quote {
@@ -780,12 +787,12 @@
 
       /* OFERTA SECTION */
       #oferta {
-        padding-top: 2rem;
+        padding-top: 3.5rem;
       }
 
       @media (min-width: 1024px) {
         #oferta {
-          padding-top: 3rem;
+          padding-top: 5.5rem;
         }
       }
 
@@ -793,9 +800,9 @@
         font-family: var(--font-serif);
         font-weight: 500;
         color: var(--plum);
-        font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+        font-size: clamp(2.1rem, 4.2vw, 3rem);
         text-align: center;
-        margin-bottom: 3rem;
+        margin-bottom: 3.5rem;
       }
 
       .gdzie-heading { color: var(--bone); }
@@ -819,61 +826,90 @@
       .sec-amethyst .scroll-cue svg { stroke: var(--lavender); }
 
       .offers-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        align-items: stretch;
-      }
-
-      @media (min-width: 1024px) {
-        .offers-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 2.5rem;
-          align-items: stretch;
-        }
-
-        #partnerka.offer-card {
-          grid-column: 1 / -1;
-        }
-      }
-
-      .offer-card {
-        height: 100%;
-      }
-
-      /* Pinned offer card flex structure */
-      .offer-card-top {
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
+        gap: 2rem;
+        width: 100%;
       }
 
-      .offer-card-footer {
-        margin-top: auto;
-        padding-top: 2rem;
-        border-top: none;
+      /* THREE BAND INDIVIDUAL STYLES */
+      #partnerka.offer-card {
+        border: 1px solid rgba(194, 31, 107, 0.22);
+        background-color: rgba(183, 159, 212, 0.22);
+        background: color-mix(in srgb, var(--lavender) 18%, var(--bone));
+      }
+
+      #partnerka .offer-action-col {
+        align-self: center;
+      }
+
+      #wystartuj.offer-card {
+        border: 1px solid rgba(194, 31, 107, 0.22);
+        background-color: rgba(183, 159, 212, 0.22);
+        background: color-mix(in srgb, var(--lavender) 18%, var(--bone));
+      }
+
+      #warsztat.offer-card {
+        border: 1px solid rgba(194, 31, 107, 0.22);
+        background-color: rgba(183, 159, 212, 0.22);
+        background: color-mix(in srgb, var(--lavender) 18%, var(--bone));
+      }
+
+      .offer-content-col {
+        flex: 1 1 auto;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media (min-width: 768px) {
+        .offer-content-col {
+          max-width: 50%;
+        }
+      }
+
+      .offer-action-col {
+        flex: 0 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        justify-content: center;
         gap: 0.6rem;
+        text-align: center;
+        width: 100%;
       }
 
-      .offer-card .date-line {
+      @media (min-width: 768px) {
+        .offer-action-col {
+          width: auto;
+          min-width: 260px;
+        }
+      }
+
+      .offer-action-col .date-line {
         font-size: 0.92rem;
         font-weight: 700;
         color: var(--amethyst);
         letter-spacing: 0.02em;
         margin: 0;
         line-height: 1.4;
-        min-height: 1.4em;
         text-align: center;
       }
 
-      .offer-badge {
+      .offer-action-col .offer-cta-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .offer-action-col .btn {
+        width: 100%;
+      }
+
+      .offer-tab {
         position: absolute;
-        top: 1.25rem;
-        right: 1.25rem;
+        top: -11px;
+        left: 1.75rem;
         background-color: var(--amethyst);
         color: var(--bone);
         font-family: var(--font-sans);
@@ -881,54 +917,47 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.08em;
-        padding: 0.35rem 0.85rem;
-        border-radius: 4px;
-        box-shadow: 0 2px 8px rgba(99, 42, 122, 0.25);
+        padding: 0.25rem 0.75rem;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        line-height: 1.2;
+        white-space: nowrap;
+        z-index: 5;
+        box-shadow: 0 2px 6px rgba(99, 42, 122, 0.2);
       }
 
-      .offer-card .offer-title {
-        font-size: clamp(1.15rem, 1.7vw, 1.45rem);
-        color: var(--plum);
-        margin-bottom: 0.75rem;
-        line-height: 1.15;
-      }
-
-      @media (min-width: 1024px) {
-        .offer-card .offer-title {
-          white-space: nowrap;
+      @media (min-width: 768px) {
+        .offer-tab {
+          left: 2.5rem;
         }
       }
 
+      .offer-card .offer-title {
+        font-size: clamp(1.25rem, 2vw, 1.6rem);
+        color: var(--plum);
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+      }
+
       .offer-card .tagline {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         font-weight: 500;
         color: var(--raspberry);
-        margin-bottom: 1.25rem;
+        margin-bottom: 0.85rem;
         font-style: italic;
       }
 
       .offer-card .offer-body p {
         font-size: 0.98rem;
         color: rgba(22, 18, 28, 0.85);
-        margin-bottom: 1rem;
-        line-height: 1.65;
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
       }
 
       .offer-card .offer-body p:last-child {
         margin-bottom: 0;
-      }
-
-      .offer-card .offer-cta-wrap {
-        margin-top: 0;
-        padding-top: 0;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-      }
-
-      .offer-card .btn {
-        width: 100%;
-        max-width: 320px;
       }
 
       /* OPINIE (TESTIMONIALS) SECTION */
@@ -1149,8 +1178,12 @@
       .podcast-info p {
         font-size: 1.05rem;
         color: rgba(242, 236, 227, 0.85);
-        margin-bottom: 2rem;
+        margin-bottom: 0.85rem;
         line-height: 1.7;
+      }
+
+      .podcast-info p:last-of-type {
+        margin-bottom: 1.75rem;
       }
 
       .podcast-links {
@@ -1226,7 +1259,8 @@
 
       /* TAP&READ NEWSLETTER SECTION */
       .newsletter-card {
-        background-color: var(--bone);
+        background-color: rgba(213, 144, 178, 0.14);
+        background: color-mix(in srgb, var(--rose) 14%, var(--bone));
         border: 1px solid rgba(194, 31, 107, 0.25);
         border-radius: 6px;
         padding: 3rem 1.75rem;
@@ -1274,19 +1308,29 @@
         gap: 8px !important;
         text-align: left !important;
         cursor: pointer;
+        padding-left: 0 !important;
       }
 
       #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label.checkbox input[type="checkbox"] {
-        width: 14px !important;
-        height: 14px !important;
-        min-width: 14px !important;
-        min-height: 14px !important;
+        position: relative !important;
+        z-index: 1 !important;
+        opacity: 1 !important;
+        width: 16px !important;
+        height: 16px !important;
+        min-width: 16px !important;
+        min-height: 16px !important;
         flex-shrink: 0 !important;
-        margin-top: 2px !important;
+        margin: 2px 0 0 0 !important;
         cursor: pointer;
         accent-color: var(--amethyst) !important;
-        border: 1px solid rgba(99, 42, 122, 0.3) !important;
-        opacity: 0.8;
+        appearance: auto !important;
+        -webkit-appearance: checkbox !important;
+      }
+
+      #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before,
+      #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
+        display: none !important;
+        content: none !important;
       }
 
       #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label.checkbox .label-description p {
@@ -1705,10 +1749,29 @@
           <h2 class="oferta-heading fade-up">Jak wspieram trenerki EFT?</h2>
           <div class="offers-grid">
 
-            <!-- Card 1: #warsztat -->
+            <!-- Band 1: #partnerka -->
+            <div id="partnerka" class="offer-card fade-up">
+              <div class="offer-tab">FLAGOWA OFERTA</div>
+              <div class="offer-content-col">
+                <span class="script-kicker"><span class="star">★</span> Współpraca premium</span>
+                <h3 class="offer-title">Zaufana Partnerka</h3>
+                <p class="tagline">Myślę z Tobą i wdrażam za Ciebie.</p>
+                <div class="offer-body">
+                  <p>Przychodzisz z pomysłem, a ja wdrażam to, co wspólnie ustalimy.</p>
+                  <p>Landingi i newslettery przestają czekać na Twój wolny wieczór.</p>
+                </div>
+              </div>
+              <div class="offer-action-col">
+                <div class="offer-cta-wrap">
+                  <a href="https://lp.alexatrachim.com/zaufana-partnerka" target="_blank" rel="noopener" class="btn btn-primary">Umów się na rozmowę</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Band 2: #warsztat -->
             <div id="warsztat" class="offer-card fade-up">
-              <span class="offer-badge">Zapisy otwarte</span>
-              <div class="offer-card-top">
+              <div class="offer-tab">Zapisy otwarte</div>
+              <div class="offer-content-col">
                 <span class="script-kicker"><span class="star">★</span> Warsztat</span>
                 <h3 class="offer-title">Biznes po mojemu</h3>
                 <p class="tagline">Spotkanie dla trenerek EFT, które gubią się w cudzych radach o biznesie.</p>
@@ -1717,17 +1780,17 @@
                   <p>Budujesz pewność, że Twoje decyzje są najważniejsze.</p>
                 </div>
               </div>
-              <div class="offer-card-footer">
-                <p class="date-line">DATA: 20 sierpnia 2026 o 18:00</p>
+              <div class="offer-action-col">
+                <p class="date-line">20 sierpnia 2026 o 18:00</p>
                 <div class="offer-cta-wrap">
                   <a href="https://alexatrachim.com/biznes-po-mojemu" class="btn btn-primary">Zapisz się na warsztat</a>
                 </div>
               </div>
             </div>
 
-            <!-- Card 2: #wystartuj -->
+            <!-- Band 3: #wystartuj -->
             <div id="wystartuj" class="offer-card fade-up">
-              <div class="offer-card-top">
+              <div class="offer-content-col">
                 <span class="script-kicker"><span class="star">★</span> Program grupowy</span>
                 <h3 class="offer-title">Wystartuj z Tym Biznesem EFT</h3>
                 <p class="tagline">4-tygodniowy program grupowy ze spotkaniami na żywo i moim wsparciem.</p>
@@ -1736,32 +1799,12 @@
                   <p>Po drodze opukujemy to, co dotąd Cię zatrzymywało.</p>
                 </div>
               </div>
-              <div class="offer-card-footer">
+              <div class="offer-action-col">
                 <p class="date-line">2 edycja w październiku 2026</p>
                 <div class="offer-cta-wrap">
                   <a href="https://lp.alexatrachim.com/wystartuj" target="_blank" rel="noopener" class="btn btn-primary">Lista zainteresowanych</a>
                 </div>
               </div>
-            </div>
-
-            <!-- Card 3: #partnerka -->
-            <div id="partnerka" class="offer-card fade-up">
-              <div class="offer-card-top">
-                <span class="script-kicker"><span class="star">★</span> Współpraca premium</span>
-                <h3 class="offer-title">Zaufana Partnerka</h3>
-                <p class="tagline">Myślę z Tobą i wdrażam za Ciebie.</p>
-                <div class="offer-body">
-                  <p>Dajesz mi znać o swoich pomysłach, a ja wdrażam to, co wspólnie ustalimy.</p>
-                  <p>Landingi, newslettery i oferty przestają czekać na Twój wolny wieczór.</p>
-                </div>
-              </div>
-              <div class="offer-card-footer">
-                <p class="date-line" style="visibility: hidden;" aria-hidden="true">&nbsp;</p>
-                <div class="offer-cta-wrap">
-                  <a href="https://lp.alexatrachim.com/zaufana-partnerka" target="_blank" rel="noopener" class="btn btn-primary">Umów się na rozmowę</a>
-                </div>
-              </div>
-            </div>
             </div>
 
           </div>
@@ -1868,7 +1911,8 @@
             <div class="podcast-info">
               <span class="script-kicker"><span class="star">★</span> Posłuchaj podcastu</span>
               <h2>Tap&Talk - pierwszy polski podcast o EFT</h2>
-              <p>W każdym odcinku wraz z moimi gośćmi dzielimy się wiedzą i doświadczeniami na temat tej metody, a wszystko domykamy wspólną rundką opukiwania.</p>
+              <p>Misją podcastu Tap&Talk jest popularyzować metodę EFT i jednocześnie dawać platformę trenerkom i trenerom do dzielenia się ich podejściem do opukiwania.</p>
+              <p>W każdym odcinku znajdziesz rundkę EFT oraz masę ciekawych wglądów na temat tego, jak tapping sprawdza się w różnych obszarach - od zdrowia, przez relacje, aż po biznes.</p>
               <div class="podcast-links">
                 <a href="https://open.spotify.com/show/5tK8aav4ivqoNrM5GV5kxm?si=0055285702e24ce7" target="_blank" rel="noopener" class="btn btn-outline">
                   <img src="src/spotify.png" alt="Spotify" class="btn-icon-img" />
@@ -1911,13 +1955,13 @@
         <div class="container">
           <div class="newsletter-card fade-up">
             <span class="script-kicker"><span class="star">★</span> Zapisz się na newsletter</span>
-            <h2>Tap&Read - magazyn o EFT i biznesie</h2>
+            <h2>Tap&Read</h2>
             <div class="newsletter-intro">
-              <p>Co tydzień piszę o tym, jak budować i rozwijać unikatowe biznesy EFT. Dodatkowo, wrzucam linki do nowych odcinków podcastu i informuję o najnowszych ofertach.</p>
+              <p>Co tydzień zabieram Cię za kulisy budowania biznesu EFT. W środku: przemyślenia, case study i sprawdzone przeze mnie pro-tipy. Do tego info o nowych odcinkach podcastu, wydarzeniach i miejscach w moich programach.</p>
             </div>
 
             <!-- MAILERLITE EMBED -->
-            <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1785409");</style>
+            <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1785851");</style>
             <style type="text/css">
             /* LOADER */
             .ml-form-embedSubmitLoad {
@@ -1927,10 +1971,11 @@
             }
 
             .g-recaptcha {
-              transform: scale(1);
-              -webkit-transform: scale(1);
-              transform-origin: 0 0;
-              -webkit-transform-origin: 0 0;
+            transform: scale(1);
+            -webkit-transform: scale(1);
+            transform-origin: 0 0;
+            -webkit-transform-origin: 0 0;
+            height: ;
             }
 
             .sr-only {
@@ -1952,12 +1997,16 @@
               margin: 1px;
               border-radius: 50%;
               border: 4px solid #fff;
-              border-color: #f2ece3 #f2ece3 #f2ece3 transparent;
-              animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+            border-color: #f2ece3 #f2ece3 #f2ece3 transparent;
+            animation: ml-form-embedSubmitLoad 1.2s linear infinite;
             }
             @keyframes ml-form-embedSubmitLoad {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
+              0% {
+              transform: rotate(0deg);
+              }
+              100% {
+              transform: rotate(360deg);
+              }
             }
               #mlb2-44354382.ml-form-embedContainer {
                 box-sizing: border-box;
@@ -1974,7 +2023,8 @@
                 letter-spacing: normal !important;
               }
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper {
-                background-color: #f2ece3;
+                background-color: transparent !important;
+                
                 border-width: 0px;
                 border-color: transparent;
                 border-radius: 4px;
@@ -1984,11 +2034,10 @@
                 margin: 0;
                 padding: 0;
                 position: relative;
-                width: 100% !important;
-              }
+                      }
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper.embedPopup,
-              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 100% !important; max-width: 100% !important; }
-              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 100% !important; width: 100% !important; }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 700px; }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 700px; width: 100%; }
               #mlb2-44354382.ml-form-embedContainer .ml-form-align-left { text-align: left; }
               #mlb2-44354382.ml-form-embedContainer .ml-form-align-center { text-align: center; }
               #mlb2-44354382.ml-form-embedContainer .ml-form-align-default { display: table-cell !important; vertical-align: middle !important; text-align: center !important; }
@@ -1999,6 +2048,7 @@
                 height: auto;
                 margin: 0 auto !important;
                 max-width: 100%;
+                width: undefinedpx;
               }
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
@@ -2035,10 +2085,18 @@
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ul,
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol,
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ul,
-              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-successContent ol {
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol {
                 color: #16121c;
                 font-family: 'PT Sans', Arial, Helvetica, sans-serif;
                 font-size: 15px;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol ol,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol ol {
+                list-style-type: lower-alpha;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol ol ol,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol ol ol {
+                list-style-type: lower-roman;
               }
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p a,
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p a {
@@ -2055,7 +2113,7 @@
                 color: #333333;
                 font-size: 14px;
                 font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-                font-weight: bold; font-style: normal; text-decoration: none;
+                font-weight: bold; font-style: normal; text-decoration: none;;
                 display: inline-block;
                 line-height: 20px;
               }
@@ -2072,9 +2130,25 @@
                 margin: 0 0 20px 0;
                 width: 100%;
               }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
+                float: left;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
+                margin: 0;
+                padding: 0 0 20px 0;
+                width: 100%;
+                height: auto;
+                float: left;
+              }
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow {
                 margin: 0 0 10px 0;
                 width: 100%;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item {
+                margin: 0;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-formfieldHorizintal {
+                margin: 0;
               }
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
                 background-color: #e9e2db !important;
@@ -2087,48 +2161,411 @@
                 font-size: 14px !important;
                 height: auto;
                 line-height: 21px !important;
-                margin: 0;
+                margin-bottom: 0;
+                margin-top: 0;
+                margin-left: 0;
+                margin-right: 0;
                 padding: 10px 10px !important;
                 width: 100% !important;
                 box-sizing: border-box !important;
                 max-width: 100% !important;
               }
-              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-webkit-input-placeholder { color: #333333; }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-moz-placeholder,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-moz-placeholder { color: #333333; }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-ms-input-placeholder,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-ms-input-placeholder { color: #333333; }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-moz-placeholder,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-moz-placeholder { color: #333333; }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow textarea, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow textarea {
+                background-color: #e9e2db !important;
+                color: #333333 !important;
+                border-color: #cccccc;
+                border-radius: 3px !important;
+                border-style: solid !important;
+                border-width: 1px !important;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                font-size: 14px !important;
+                height: auto;
+                line-height: 21px !important;
+                margin-bottom: 0;
+                margin-top: 0;
+                padding: 10px 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                max-width: 100% !important;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
+                  border-color: #cccccc!important;
+                  background-color: #e9e2db!important;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input.custom-control-input[type="checkbox"]{
+                box-sizing: border-box;
+                padding: 0;
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+                margin-top: 5px;
+                margin-left: -1.5rem;
+                overflow: visible;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
+                border-radius: 4px!important;
+              }
+
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type=checkbox]:checked~.label-description::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox input[type=checkbox]:checked~.label-description::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-input:checked~.custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-input:checked~.custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox input[type=checkbox]:checked~.label-description::after {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input:checked~.custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input:checked~.custom-control-label::after {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input:checked~.custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-input:checked~.custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-input:checked~.custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-input:checked~.custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox input[type=checkbox]:checked~.label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox input[type=checkbox]:checked~.label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type=checkbox]:checked~.label-description::before  {
+                  border-color: #000000!important;
+                  background-color: #000000!important;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::after {
+                   top: 2px;
+                   box-sizing: border-box;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
+                   top: 0px!important;
+                   box-sizing: border-box!important;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
+                top: -2px!important;
+                   box-sizing: border-box!important;
+              }
+
+               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::after {
+                    top: 0px!important;
+                    box-sizing: border-box!important;
+                    position: absolute;
+                    left: -1.5rem;
+                    display: block;
+                    width: 1rem;
+                    height: 1rem;
+                    content: "";
+               }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before {
+                top: 0px!important;
+                box-sizing: border-box!important;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-control-label::before {
+                  position: absolute;
+                  top: 4px;
+                  left: -1.5rem;
+                  display: block;
+                  width: 16px;
+                  height: 16px;
+                  pointer-events: none;
+                  content: "";
+                  background-color: #ffffff;
+                  border: #adb5bd solid 1px;
+                  border-radius: 50%;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-control-label::after {
+                  position: absolute;
+                  top: 2px!important;
+                  left: -1.5rem;
+                  display: block;
+                  width: 1rem;
+                  height: 1rem;
+                  content: "";
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
+                  position: absolute;
+                  top: 4px;
+                  left: -1.5rem;
+                  display: block;
+                  width: 16px;
+                  height: 16px;
+                  pointer-events: none;
+                  content: "";
+                  background-color: #ffffff;
+                  border: #adb5bd solid 1px;
+                  border-radius: 50%;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::after {
+                  position: absolute;
+                  top: 0px!important;
+                  left: -1.5rem;
+                  display: block;
+                  width: 1rem;
+                  height: 1rem;
+                  content: "";
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
+                  position: absolute;
+                  top: -2px!important;
+                  left: -1.5rem;
+                  display: block;
+                  width: 1rem;
+                  height: 1rem;
+                  content: "";
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-radio .custom-control-label::after {
+                  background: no-repeat 50%/50% 50%;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-checkbox .custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
+                  background: no-repeat 50%/50% 50%;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-control, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-control {
+                position: relative;
+                display: block;
+                min-height: 1.5rem;
+                padding-left: 1.5rem;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-input, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-input, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-input {
+                  position: absolute;
+                  z-index: -1;
+                  opacity: 0;
+                  box-sizing: border-box;
+                  padding: 0;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label {
+                  color: #000000;
+                  font-size: 12px!important;
+                  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                  line-height: 22px;
+                  margin-bottom: 0;
+                  position: relative;
+                  vertical-align: top;
+                  font-style: normal;
+                  font-weight: 700;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-select, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-select {
+                background-color: #e9e2db !important;
+                color: #333333 !important;
+                border-color: #cccccc;
+                border-radius: 3px !important;
+                border-style: solid !important;
+                border-width: 1px !important;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                font-size: 14px !important;
+                line-height: 20px !important;
+                margin-bottom: 0;
+                margin-top: 0;
+                padding: 10px 28px 10px 12px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                max-width: 100% !important;
+                height: auto;
+                display: inline-block;
+                vertical-align: middle;
+                background: url('https://assets.mlcdn.com/ml/images/default/dropdown.svg') no-repeat right .75rem center/8px 10px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+              }
+
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
+                height: auto;
+                width: 100%;
+                float: left;
+              }
+              .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal { width: 70%; float: left; }
+              .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal { width: 30%; float: left; }
+              .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal.labelsOn { padding-top: 25px;  }
+              .ml-form-formContent.horozintalForm .ml-form-horizontalRow .horizontal-fields { box-sizing: border-box; float: left; padding-right: 10px;  }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input {
+                background-color: #e9e2db;
+                color: #333333;
+                border-color: #cccccc;
+                border-radius: 3px;
+                border-style: solid;
+                border-width: 1px;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                line-height: 20px;
+                margin-bottom: 0;
+                margin-top: 0;
+                padding: 10px 10px;
+                width: 100%;
+                box-sizing: border-box;
+                overflow-y: initial;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
+                background-color: #c21f6b !important;
+                border-color: #c21f6b;
+                border-style: solid;
+                border-width: 1px;
+                border-radius: 3px;
+                box-shadow: none;
+                color: #f2ece3 !important;
+                cursor: pointer;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                font-size: 20px !important;
+                font-weight: 700;
+                line-height: 20px;
+                margin: 0 !important;
+                padding: 10px !important;
+                width: 100%;
+                height: auto;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover {
                 background-color: #c21f6b !important;
                 border-color: #c21f6b !important;
-                color: #f2ece3 !important;
-                font-family: 'PT Sans', Arial, Helvetica, sans-serif !important;
-                font-size: 16px !important;
-                font-weight: 700 !important;
-                line-height: 21px !important;
-                height: auto !important;
-                padding: 12px 20px !important;
-                width: 100% !important;
-                box-shadow: none !important;
-                cursor: pointer;
-                border-radius: 4px !important;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type="checkbox"] {
+                box-sizing: border-box;
+                padding: 0;
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+                margin-top: 5px;
+                margin-left: -1.5rem;
+                overflow: visible;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description {
+                color: #b79fd4;
+                display: block;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                text-align: left;
+                margin-bottom: 0;
+                position: relative;
+                vertical-align: top;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label {
+                font-weight: normal;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                display: block;
+                min-height: 24px;
+                padding-left: 24px;
 
               }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label a {
+                color: #b79fd4;
+                text-decoration: underline;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p {
+                color: #b79fd4 !important;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif !important;
+                font-size: 10px !important;
+                font-weight: normal !important;
+                line-height: 16px !important;
+                padding: 0 !important;
+                margin: 0 5px 0 0 !important;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p:last-child {
+                margin: 0;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit {
+                margin: 0 0 20px 0;
+                float: left;
+                width: 100%;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+                background-color: #c21f6b !important;
+                border: none !important;
+                border-radius: 3px !important;
+                box-shadow: none !important;
+                color: #f2ece3 !important;
+                cursor: pointer;
+                font-family: 'PT Sans', Arial, Helvetica, sans-serif !important;
+                font-size: 20px !important;
+                font-weight: 700 !important;
+                line-height: 21px !important;
+                height: auto;
+                padding: 10px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+              }
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading {
+                display: none;
+              }
               #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
-                background-color: #a31858 !important;
-                border-color: #a31858 !important;
+                background-color: #c21f6b !important;
+              }
+              .ml-subscribe-close {
+                width: 30px;
+                height: 30px;
+                background: url('https://assets.mlcdn.com/ml/images/default/modal_close.png') no-repeat;
+                background-size: 30px;
+                cursor: pointer;
+                margin-top: -10px;
+                margin-right: -10px;
+                position: absolute;
+                top: 0;
+                right: 0;
+              }
+              .ml-error input, .ml-error textarea, .ml-error select {
+                border-color: red!important;
+              }
+
+              .ml-error .custom-checkbox-radio-list {
+                border: 1px solid red !important;
+                border-radius: 4px;
+                padding: 10px;
+              }
+
+              .ml-error .label-description,
+              .ml-error .label-description p,
+              .ml-error .label-description p a,
+              .ml-error label:first-child {
+                color: #ff0000 !important;
+              }
+
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow.ml-error .label-description p,
+              #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow.ml-error .label-description p:first-letter {
+                color: #ff0000 !important;
+              }
+                    @media only screen and (max-width: 700px){
+
+                .ml-form-embedWrapper.embedDefault, .ml-form-embedWrapper.embedPopup { width: 100%!important; }
+                .ml-form-formContent.horozintalForm { float: left!important; }
+                .ml-form-formContent.horozintalForm .ml-form-horizontalRow { height: auto!important; width: 100%!important; float: left!important; }
+                .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal { width: 100%!important; }
+                .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal > div { padding-right: 0px!important; padding-bottom: 10px; }
+                .ml-form-formContent.horozintalForm .ml-button-horizontal { width: 100%!important; }
+                .ml-form-formContent.horozintalForm .ml-button-horizontal.labelsOn { padding-top: 0px!important; }
+
               }
             </style>
 
-            <div id="mlb2-44354382" class="ml-form-embedContainer ml-subscribe-form-44354382">
-              <div class="ml-form-align-center">
+            <div id="mlb2-44354382" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-44354382">
+              <div class="ml-form-align-center ">
                 <div class="ml-form-embedWrapper embedForm">
                   <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                    <div class="ml-form-embedContent" style="margin-bottom: 0px; "></div>
                     <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/542866/forms/194520897234667086/subscribe" data-code="" method="post" target="_blank">
                       <div class="ml-form-formContent">
-                        <div class="ml-form-fieldRow">
-                          <div class="ml-field-group ml-field-name">
-                            <input aria-label="name" type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Imię" autocomplete="given-name">
+                        <div class="ml-form-fieldRow ">
+                          <div class="ml-field-group ml-field-name ml-validate-required">
+                            <input aria-label="name" aria-required="true" type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Imię" autocomplete="given-name">
                           </div>
                         </div>
                         <div class="ml-form-fieldRow ml-last-item">
                           <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                            <input aria-label="email" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="E-mail" autocomplete="email">
+                            <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
                           </div>
                         </div>
                       </div>
@@ -2137,7 +2574,7 @@
                         <label class="checkbox">
                           <input type="checkbox">
                           <div class="label-description">
-                            <p>Zamawiam usługę newslettera na warunkach określonych w <a builder-link-id="-1" target="_blank" href="https://app.easy.tools/terms/alexatrachim"><u>regulaminie</u></a> i wyrażam zgodę na przetwarzanie moich danych w celu wysyłki newslettera zawierającego informacje o nowościach, webinarach, materiałach edukacyjnych oraz ofertach produktów i usług Superstars sp. z o.o. zgodnie z <a builder-link-id="-2" target="_blank" href="https://app.easy.tools/policies/alexatrachim"><u>polityką prywatności</u></a>.</p>
+                            <p>Zamawiam usługę newslettera na warunkach określonych w <a builder-link-id="-1" target="_blank" href="https://app.easy.tools/terms/alexatrachim"><u>regulaminie</u></a> i wyrażam zgodę na przetwarzanie moich danych w celu wysyłki newslettera zawierającego informacje o nowościach, webinarach, materiałach edukacyjnych oraz ofertach produktów i usług Superstars sp. z o.o. zgodnie z <a builder-link-id="-2" target="_blank" href="https://app.easy.tools/policies/alexatrachim"><u>polityką prywatności</u></a>.<br></p>
                           </div>
                         </label>
                       </div>
@@ -2158,7 +2595,7 @@
 
                   <div class="ml-form-successBody row-success" style="display: none">
                     <div class="ml-form-successContent">
-                      <h4>Dzięki za subskrypcję! 💜</h4>
+                      <h4>Dzięki za subksrypcję! 💜</h4>
                       <p>Dołączyłaś do newslettera Tap&Read.</p>
                     </div>
                   </div>

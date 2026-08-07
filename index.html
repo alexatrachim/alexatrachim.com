@@ -40,8 +40,8 @@
     <meta name="description" content="Pomagam trenerkom EFT budować i rozwijać unikatowe biznesy - od pierwszych ofert po współpracę wdrożeniową. Łączę wiedzę marketingową z pracą metodą EFT." />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/public/favicon.png" />
-    <link rel="apple-touch-icon" href="/public/favicon.png" />
+    <link rel="icon" type="image/png" href="/src/favicon.png" />
+    <link rel="apple-touch-icon" href="/src/favicon.png" />
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
@@ -1511,6 +1511,16 @@
         pointer-events: none;
       }
 
+      @media (max-width: 767px) {
+        .setlist-ticker-wrap {
+          font-size: 0.8rem;
+          padding: 0.7rem 0;
+        }
+        .setlist-ticker-track span {
+          padding-right: 3.5rem;
+        }
+      }
+
       .setlist-ticker-track {
         display: inline-flex;
         will-change: transform;
@@ -1627,11 +1637,13 @@
         <circle cx="46" cy="18" r="1" opacity="0.35"/>
       </symbol>
     </svg>
-    <!-- 1. STICKY TOP NAV & ANNOUNCEMENT BAR -->
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="announcement-bar">
+      Warsztat BIZNES PO MOJEMU dla trenerek EFT, które chcą przestać słuchać guru biznesu i zacząć słuchać siebie. Już 20 sierpnia 2026 o 18:00! 🤘 <a href="/biznes-po-mojemu/">Zapisz się tutaj</a>
+    </div>
+
+    <!-- 1. STICKY TOP NAV -->
     <header>
-      <div class="announcement-bar">
-        Warsztat BIZNES PO MOJEMU dla trenerek EFT, które chcą przestać słuchać guru biznesu i zacząć słuchać siebie. Już 20 sierpnia 2026 o 18:00! 🤘 <a href="/biznes-po-mojemu/">Zapisz się tutaj</a>
-      </div>
       <div class="container nav-container">
         <!-- Logo image -->
         <a href="#" aria-label="Strona główna Alexa Trachim" class="nav-logo-link">

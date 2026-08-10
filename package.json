@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build && mkdir -p dist/src dist/biznes-po-mojemu/src && cp -rf public/* dist/ 2>/dev/null || true && cp -rf src/*.png src/*.jpg src/*.svg dist/src/ 2>/dev/null || true && cp -rf biznes-po-mojemu/src/*.png biznes-po-mojemu/src/*.jpg dist/biznes-po-mojemu/src/ 2>/dev/null || true",
+    "build": "vite build && mkdir -p dist/src dist/biznes-po-mojemu/src dist/tapandread/src && cp -rf public/* dist/ 2>/dev/null || true && cp -rf src/*.png src/*.jpg src/*.svg dist/src/ 2>/dev/null || true && cp -rf biznes-po-mojemu/src/*.png biznes-po-mojemu/src/*.jpg dist/biznes-po-mojemu/src/ 2>/dev/null || true && cp -rf tapandread/src/*.png tapandread/src/*.jpg tapandread/src/*.svg dist/tapandread/src/ 2>/dev/null || true",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "tsc --noEmit"

@@ -1,0 +1,1447 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tap&Read - newsletter dla trenerek EFT | Alexa Trachim</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="src/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="src/favicon.png" />
+    <link rel="apple-touch-icon" href="src/favicon.png" />
+    <meta name="description" content="Co wtorek za kulisy budowania biznesu EFT. Backstage, historie i sprawdzone pro-tipy dla trenerek EFT." />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tap&Read - newsletter dla trenerek EFT | Alexa Trachim" />
+    <meta property="og:description" content="Co wtorek za kulisy budowania biznesu EFT. Backstage, historie i sprawdzone pro-tipy dla trenerek EFT." />
+    <meta property="og:image" content="src/og-tapandread.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tap&Read - newsletter dla trenerek EFT | Alexa Trachim" />
+    <meta name="twitter:description" content="Co wtorek za kulisy budowania biznesu EFT. Backstage, historie i sprawdzone pro-tipy dla trenerek EFT." />
+    <meta name="twitter:image" content="src/og-tapandread.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Special+Elite&subset=latin,latin-ext&display=swap" rel="stylesheet" />
+
+    <style>
+      /* Page CSS - All rules strictly scoped to .tr- classes (Rule 2) */
+      .tr-page {
+        --plum: #16121C;
+        --bone: #F2ECE3;
+        --raspberry: #C21F6B;
+        --amethyst: #632A7A;
+        --amethyst-deep: #351C42;
+        --lavender: #B79FD4;
+        --rose: #D590B2;
+
+        --font-serif: 'Playfair Display', 'Times New Roman', serif;
+        --font-sans: 'DM Sans', sans-serif;
+        --font-script: 'Special Elite', 'Courier New', monospace;
+
+        font-family: var(--font-sans);
+        background-color: var(--plum);
+        color: var(--bone);
+        line-height: 1.6;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      @media (min-width: 768px) {
+        .tr-page {
+          font-size: 17px;
+        }
+      }
+
+      .tr-page *, .tr-page *::before, .tr-page *::after {
+        box-sizing: border-box;
+      }
+
+      /* Root Container - 1120px max-width, 24px side padding (16px below 600px) */
+      .tr-container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 24px;
+        position: relative;
+        z-index: 1;
+      }
+
+      @media (max-width: 600px) {
+        .tr-container {
+          padding: 0 16px;
+        }
+      }
+
+      /* Sections full-bleed for background color only */
+      .tr-sec {
+        padding: 56px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      @media (min-width: 900px) {
+        .tr-sec {
+          padding: 96px 0;
+        }
+      }
+
+      .tr-sec-bone {
+        background-color: var(--bone);
+        color: var(--plum);
+      }
+
+      .tr-sec-plum {
+        background-color: var(--plum);
+        color: var(--bone);
+      }
+
+      .tr-sec-amethyst {
+        background-color: var(--amethyst-deep);
+        color: var(--bone);
+      }
+
+      /* Kickers */
+      .tr-kicker {
+        font-family: var(--font-script);
+        font-size: clamp(18px, 2.2vw, 23px);
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1.4;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+        margin-bottom: 0.75rem;
+        color: var(--rose);
+      }
+
+      .tr-kicker-dark {
+        color: var(--rose);
+      }
+
+      .tr-star {
+        font-size: 1.25em;
+        line-height: 1;
+        vertical-align: middle;
+        flex-shrink: 0;
+        color: var(--lavender);
+      }
+
+      /* Section Headings */
+      .tr-sec-h2 {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+        line-height: 1.2;
+        margin: 0 0 1.5rem 0;
+        letter-spacing: -0.01em;
+      }
+
+      .tr-sec-bone .tr-sec-h2 {
+        color: var(--plum);
+      }
+
+      .tr-sec-plum .tr-sec-h2, .tr-sec-amethyst .tr-sec-h2 {
+        color: var(--bone);
+      }
+
+      .tr-sec-header-center {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .tr-sec-header-center .tr-sec-h2 {
+        max-width: 720px;
+        margin-bottom: 0;
+      }
+
+      .tr-sec-header-center .tr-intro-para {
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 0;
+      }
+
+      /* Hero Specific Styles */
+      .tr-hero-sec {
+        padding-top: 2rem;
+      }
+
+      @media (min-width: 900px) {
+        .tr-hero-sec {
+          padding-top: 2.5rem;
+        }
+      }
+
+      .tr-hero-col {
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .tr-logo-wrapper {
+        margin-bottom: 3.25rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      .tr-logo-img {
+        max-height: clamp(60px, 8vw, 76px);
+        width: auto;
+        display: block;
+      }
+
+      .tr-hero-h1 {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: clamp(2.5rem, 5vw, 3.8rem);
+        line-height: 1.1;
+        margin: 0 0 1.75rem 0;
+        color: var(--plum);
+        letter-spacing: -0.01em;
+      }
+
+      .tr-hero-para {
+        font-size: 1.05rem;
+        line-height: 1.65;
+        color: rgba(22, 18, 28, 0.88);
+        margin: 0 0 1rem 0;
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .tr-hero-para:last-of-type {
+        margin-bottom: 2rem;
+      }
+
+      .tr-form-intro {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: var(--raspberry);
+        font-weight: 500;
+        text-align: center;
+        margin: 0 0 0.85rem 0;
+      }
+
+      /* Form Card Wrapper (#zapis) matching homepage card treatment */
+      .tr-form-card {
+        background-color: rgba(213, 144, 178, 0.14);
+        border: 1px solid rgba(194, 31, 107, 0.25);
+        border-radius: 6px;
+        padding: 2rem 1.5rem;
+        box-shadow: 0 16px 40px rgba(194, 31, 107, 0.1);
+        width: 100%;
+        max-width: 720px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        text-align: left;
+      }
+
+      @media (min-width: 768px) {
+        .tr-form-card {
+          padding: 2.5rem 2rem;
+        }
+      }
+
+      .tr-first-issue-note {
+        text-align: center;
+        font-size: 0.92rem;
+        font-weight: 500;
+        color: rgba(22, 18, 28, 0.75);
+        margin: 1.25rem 0 0 0;
+      }
+
+      /* Dotted Divider / Vanity Strip */
+      .tr-dotted-strip {
+        width: 100%;
+        height: 24px;
+        background-color: var(--plum);
+        background-image: radial-gradient(circle, var(--lavender) 3px, transparent 3.5px);
+        background-size: 40px 24px;
+        background-position: center;
+        background-repeat: repeat-x;
+        border-top: 1px solid rgba(183, 159, 212, 0.12);
+        border-bottom: 1px solid rgba(183, 159, 212, 0.12);
+      }
+
+      /* Section 2: Rubrics 2x2 Grid */
+      .tr-rubrics-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
+        align-items: stretch;
+      }
+
+      @media (max-width: 700px) {
+        .tr-rubrics-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .tr-rubric-card {
+        background-color: rgba(242, 236, 227, 0.04);
+        border: 1px solid var(--lavender);
+        border-radius: 6px;
+        padding: 2rem 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
+      }
+
+      .tr-rubric-tag {
+        font-family: var(--font-sans);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--rose);
+        margin-bottom: 0.75rem;
+        display: block;
+      }
+
+      .tr-rubric-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: rgba(242, 236, 227, 0.88);
+        margin: 0;
+      }
+
+      /* Section 3: Dla Kogo Intro & 3 Cards Grid */
+      .tr-intro-para {
+        text-align: left;
+        font-size: 1.08rem;
+        line-height: 1.65;
+        color: rgba(22, 18, 28, 0.85);
+        margin: 0 0 2.5rem 0;
+        max-width: 720px;
+      }
+
+      .tr-dlakogo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.75rem;
+        align-items: stretch;
+      }
+
+      @media (max-width: 700px) {
+        .tr-dlakogo-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .tr-dlakogo-card {
+        background-color: rgba(183, 159, 212, 0.2);
+        border: 1px solid var(--rose);
+        border-radius: 6px;
+        padding: 2.25rem 1.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
+        text-align: left;
+      }
+
+      .tr-dlakogo-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: rgba(22, 18, 28, 0.85);
+        margin: 0;
+      }
+
+      /* Section 4: Kto Tworzy (Omnie) Grid */
+      .tr-omnie-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      @media (min-width: 900px) {
+        .tr-omnie-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 3.5rem;
+          align-items: center;
+        }
+      }
+
+      .tr-omnie-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 6px;
+        border: 1px solid rgba(183, 159, 212, 0.25);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        object-fit: cover;
+      }
+
+      /* Heading one size level SMALLER than hero H1 */
+      .tr-omnie-h2 {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+        line-height: 1.25;
+        margin: 0 0 1.5rem 0;
+        color: var(--bone);
+      }
+
+      .tr-omnie-para {
+        font-size: 1rem;
+        line-height: 1.68;
+        color: rgba(242, 236, 227, 0.88);
+        margin: 0 0 1.25rem 0;
+      }
+
+      .tr-omnie-para:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Section 5: Zasady Newslettera (Single Centred Column max-width 640px) */
+      .tr-rules-col {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      .tr-rule-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.25rem;
+        padding: 0.85rem 0;
+      }
+
+      .tr-rule-dot {
+        color: var(--raspberry);
+        font-size: 1.25rem;
+        line-height: 1.5;
+        flex-shrink: 0;
+      }
+
+      .tr-rule-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: rgba(22, 18, 28, 0.88);
+        text-align: left;
+        margin: 0;
+      }
+
+      /* Section 6: Zaproszenie */
+      .tr-invite-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .tr-invite-col-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .tr-invite-img {
+        width: 100%;
+        height: auto;
+        max-width: 480px;
+        display: block;
+        border-radius: 6px;
+        border: 1px solid rgba(183, 159, 212, 0.25);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        object-fit: cover;
+      }
+
+      .tr-invite-wrap {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 620px;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      .tr-invite-para {
+        font-size: 1.05rem;
+        line-height: 1.65;
+        color: var(--bone);
+        margin: 0 0 2rem 0;
+      }
+
+      @media (min-width: 900px) {
+        .tr-invite-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 3.5rem;
+          align-items: center;
+        }
+
+        .tr-invite-wrap {
+          text-align: left;
+          align-items: flex-start;
+          margin: 0;
+        }
+
+        .tr-invite-para {
+          text-align: left;
+        }
+      }
+
+      .tr-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0.95rem 2.5rem;
+        font-weight: 700;
+        font-size: 0.95rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 1px solid transparent;
+        text-decoration: none;
+        transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+      }
+
+      .tr-btn-primary {
+        background-color: var(--raspberry);
+        color: var(--bone);
+        border-color: var(--raspberry);
+      }
+
+      .tr-btn-primary:hover, .tr-btn-primary:focus-visible {
+        background-color: #a31858;
+        border-color: #a31858;
+        transform: translateY(-2px);
+      }
+
+      /* Footer */
+      .tr-footer {
+        padding: 3.5rem 0;
+        border-top: 1px solid rgba(22, 18, 28, 0.1);
+        text-align: center;
+      }
+
+      .tr-footer-content {
+        font-size: clamp(0.68rem, 2.8vw, 0.9rem);
+        color: var(--lavender);
+        line-height: 1.6;
+        white-space: nowrap;
+      }
+
+      .tr-footer-link {
+        color: var(--lavender);
+        text-decoration: underline;
+        transition: color 0.2s ease;
+      }
+
+      .tr-footer-link:hover {
+        color: var(--amethyst);
+      }
+    </style>
+  </head>
+
+  <body class="tr-page">
+    <main>
+      <!-- 1. HERO - bone -->
+      <section class="tr-sec tr-sec-bone tr-hero-sec">
+        <div class="tr-container">
+          <div class="tr-hero-col">
+            <div class="tr-logo-wrapper">
+              <img src="src/logo.png" alt="Alexa Trachim" class="tr-logo-img" />
+            </div>
+
+            <span class="tr-kicker"><span class="tr-star">★</span> Newsletter dla trenerek EFT</span>
+            <h1 class="tr-hero-h1">Tap&Read</h1>
+            <p class="tr-hero-para">Co wtorek zabieram Cię za kulisy budowania i rozwijania unikatowych biznesów EFT.</p>
+            <p class="tr-hero-para">Piszę o decyzjach, które podejmuję w swojej firmie oraz o tych, które podejmujemy razem z moimi klientkami. Dowiesz się, co u nas działa i z jakimi wyzwaniami się mierzymy. Każdy biznes EFT jest inny, więc nie dostaniesz strategii kopiuj-wklej. Otrzymasz też powiadomienia o nowych odcinkach podcastu.</p>
+
+            <div id="zapis" class="tr-form-card">
+                <!-- MAILERLITE FORM EMBED (UNTOUCHABLE VERBATIM) -->
+                <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1785851");</style>
+                <style type="text/css">
+                /* LOADER */
+                .ml-form-embedSubmitLoad {
+                  display: inline-block;
+                  width: 20px;
+                  height: 20px;
+                }
+
+                .g-recaptcha {
+                transform: scale(1);
+                -webkit-transform: scale(1);
+                transform-origin: 0 0;
+                -webkit-transform-origin: 0 0;
+                height: ;
+                }
+
+                .sr-only {
+                  position: absolute;
+                  width: 1px;
+                  height: 1px;
+                  padding: 0;
+                  margin: -1px;
+                  overflow: hidden;
+                  clip: rect(0,0,0,0);
+                  border: 0;
+                }
+
+                .ml-form-embedSubmitLoad:after {
+                  content: " ";
+                  display: block;
+                  width: 11px;
+                  height: 11px;
+                  margin: 1px;
+                  border-radius: 50%;
+                  border: 4px solid #fff;
+                border-color: #f2ece3 #f2ece3 #f2ece3 transparent;
+                animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+                }
+                @keyframes ml-form-embedSubmitLoad {
+                  0% {
+                  transform: rotate(0deg);
+                  }
+                  100% {
+                  transform: rotate(360deg);
+                  }
+                }
+                  #mlb2-44354382.ml-form-embedContainer {
+                    box-sizing: border-box;
+                    display: table;
+                    margin: 0 auto;
+                    position: static;
+                    width: 100% !important;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer h4,
+                  #mlb2-44354382.ml-form-embedContainer p,
+                  #mlb2-44354382.ml-form-embedContainer span,
+                  #mlb2-44354382.ml-form-embedContainer button {
+                    text-transform: none !important;
+                    letter-spacing: normal !important;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper {
+                    background-color: #f2ece3;
+                    
+                    border-width: 0px;
+                    border-color: transparent;
+                    border-radius: 4px;
+                    border-style: solid;
+                    box-sizing: border-box;
+                    display: inline-block !important;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                          }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper.embedPopup,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 700px; }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 700px; width: 100%; }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-align-left { text-align: left; }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-align-center { text-align: center; }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-align-default { display: table-cell !important; vertical-align: middle !important; text-align: center !important; }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-align-right { text-align: right; }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedHeader img {
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+                    height: auto;
+                    margin: 0 auto !important;
+                    max-width: 100%;
+                    width: undefinedpx;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+                    padding: 20px 20px 0 20px;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody.ml-form-embedBodyHorizontal {
+                    padding-bottom: 0;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
+                    text-align: left;
+                    margin: 0 0 20px 0;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+                    color: #c21f6b;
+                    font-family: 'Playfair Display', sans-serif;
+                    font-size: 30px;
+                    font-weight: 700;
+                    margin: 0 0 10px 0;
+                    text-align: center;
+                    word-break: break-word;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
+                    color: #16121c;
+                    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                    font-size: 15px;
+                    font-weight: 400;
+                    line-height: 21px;
+                    margin: 0 0 10px 0;
+                    text-align: center;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ul,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ul,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol {
+                    color: #16121c;
+                    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                    font-size: 15px;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol ol,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol ol {
+                    list-style-type: lower-alpha;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol ol ol,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol ol ol {
+                    list-style-type: lower-roman;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p a,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p a {
+                    color: #16121c;
+                    text-decoration: underline;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group {
+                    text-align: left!important;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label {
+                    margin-bottom: 5px;
+                    color: #d590b2;
+                    font-size: 15px;
+                    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                    font-weight: bold; font-style: normal; text-decoration: none;;
+                    display: inline-block;
+                    line-height: 21px;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p:last-child,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p:last-child {
+                    margin: 0;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+                    margin: 0;
+                    width: 100%;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
+                    margin: 0 0 20px 0;
+                    width: 100%;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
+                    float: left;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
+                    margin: 0;
+                    padding: 0 0 20px 0;
+                    width: 100%;
+                    height: auto;
+                    float: left;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow {
+                    margin: 0 0 10px 0;
+                    width: 100%;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item {
+                    margin: 0;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-formfieldHorizintal {
+                    margin: 0;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+                    background-color: #e9e2db !important;
+                    color: #16121c !important;
+                    border-color: #d2d2d2;
+                    border-radius: 3px !important;
+                    border-style: solid !important;
+                    border-width: 1px !important;
+                    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                    font-size: 14px !important;
+                    height: auto;
+                    line-height: 21px !important;
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    margin-left: 0;
+                    margin-right: 0;
+                    padding: 10px 10px !important;
+                    width: 100% !important;
+                    box-sizing: border-box !important;
+                    max-width: 100% !important;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-webkit-input-placeholder { color: #16121c; }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-moz-placeholder,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-moz-placeholder { color: #16121c; }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-ms-input-placeholder,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-ms-input-placeholder { color: #16121c; }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-moz-placeholder,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-moz-placeholder { color: #16121c; }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow textarea, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow textarea {
+                    background-color: #e9e2db !important;
+                    color: #16121c !important;
+                    border-color: #d2d2d2;
+                    border-radius: 3px !important;
+                    border-style: solid !important;
+                    border-width: 1px !important;
+                    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                    font-size: 14px !important;
+                    height: auto;
+                    line-height: 21px !important;
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    padding: 10px 10px !important;
+                    width: 100% !important;
+                    box-sizing: border-box !important;
+                    max-width: 100% !important;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
+                      border-color: #d2d2d2!important;
+                      background-color: #e9e2db!important;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input.custom-control-input[type="checkbox"]{
+                    box-sizing: border-box;
+                    padding: 0;
+                    position: absolute;
+                    z-index: -1;
+                    opacity: 0;
+                    margin-top: 5px;
+                    margin-left: -1.5rem;
+                    overflow: visible;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
+                    border-radius: 4px!important;
+                  }
+
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type=checkbox]:checked~.label-description::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox input[type=checkbox]:checked~.label-description::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-input:checked~.custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-input:checked~.custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox input[type=checkbox]:checked~.label-description::after {
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input:checked~.custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input:checked~.custom-control-label::after {
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input:checked~.custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-input:checked~.custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-input:checked~.custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-input:checked~.custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox input[type=checkbox]:checked~.label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox input[type=checkbox]:checked~.label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type=checkbox]:checked~.label-description::before  {
+                      border-color: #16121c!important;
+                      background-color: #16121c!important;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::after {
+                       top: 3px;
+                       box-sizing: border-box;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
+                       top: 1px!important;
+                       box-sizing: border-box!important;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
+                    top: -2px!important;
+                       box-sizing: border-box!important;
+                  }
+
+                   #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::after {
+                        top: 0px!important;
+                        box-sizing: border-box!important;
+                        position: absolute;
+                        left: -1.5rem;
+                        display: block;
+                        width: 1rem;
+                        height: 1rem;
+                        content: "";
+                   }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before {
+                    top: 0px!important;
+                    box-sizing: border-box!important;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-control-label::before {
+                      position: absolute;
+                      top: 4px;
+                      left: -1.5rem;
+                      display: block;
+                      width: 16px;
+                      height: 16px;
+                      pointer-events: none;
+                      content: "";
+                      background-color: #ffffff;
+                      border: #adb5bd solid 1px;
+                      border-radius: 50%;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-control-label::after {
+                      position: absolute;
+                      top: 3px!important;
+                      left: -1.5rem;
+                      display: block;
+                      width: 1rem;
+                      height: 1rem;
+                      content: "";
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::before {
+                      position: absolute;
+                      top: 4px;
+                      left: -1.5rem;
+                      display: block;
+                      width: 16px;
+                      height: 16px;
+                      pointer-events: none;
+                      content: "";
+                      background-color: #ffffff;
+                      border: #adb5bd solid 1px;
+                      border-radius: 50%;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::after {
+                      position: absolute;
+                      top: 1px!important;
+                      left: -1.5rem;
+                      display: block;
+                      width: 1rem;
+                      height: 1rem;
+                      content: "";
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
+                      position: absolute;
+                      top: -2px!important;
+                      left: -1.5rem;
+                      display: block;
+                      width: 1rem;
+                      height: 1rem;
+                      content: "";
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-radio .custom-control-label::after {
+                      background: no-repeat 50%/50% 50%;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .custom-checkbox .custom-control-label::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::after, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description::after {
+                      background: no-repeat 50%/50% 50%;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-control, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-control {
+                    position: relative;
+                    display: block;
+                    min-height: 1.5rem;
+                    padding-left: 1.5rem;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-input, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-input, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-input {
+                      position: absolute;
+                      z-index: -1;
+                      opacity: 0;
+                      box-sizing: border-box;
+                      padding: 0;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label {
+                      color: #16121c;
+                      font-size: 13px!important;
+                      font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                      line-height: 23px;
+                      margin-bottom: 0;
+                      position: relative;
+                      vertical-align: top;
+                      font-style: normal;
+                      font-weight: 400;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-select, #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-select {
+                    background-color: #e9e2db !important;
+                    color: #16121c !important;
+                    border-color: #d2d2d2;
+                    border-radius: 3px !important;
+                    border-style: solid !important;
+                    border-width: 1px !important;
+                    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                    font-size: 14px !important;
+                    line-height: 20px !important;
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    padding: 10px 28px 10px 12px !important;
+                    width: 100% !important;
+                    box-sizing: border-box !important;
+                    max-width: 100% !important;
+                    height: auto;
+                    display: inline-block;
+                    vertical-align: middle;
+                    background: url('https://assets.mlcdn.com/ml/images/default/dropdown.svg') no-repeat right .75rem center/8px 10px;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                  }
+
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
+                    height: auto;
+                    width: 100%;
+                    float: left;
+                  }
+                  .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal { width: 70%; float: left; }
+                  .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal { width: 30%; float: left; }
+                  .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal.labelsOn { padding-top: 26px;  }
+                  .ml-form-formContent.horozintalForm .ml-form-horizontalRow .horizontal-fields { box-sizing: border-box; float: left; padding-right: 10px;  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input {
+                    background-color: #e9e2db;
+                    color: #16121c;
+                    border-color: #d2d2d2;
+                    border-radius: 3px;
+                    border-style: solid;
+                    border-width: 1px;
+                    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    line-height: 20px;
+                    margin-bottom: 0;
+                    margin-top: 0;
+                    padding: 10px 10px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    overflow-y: initial;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
+                    background-color: #c21f6b !important;
+                    border-color: #c21f6b;
+                    border-style: solid;
+                    border-width: 1px;
+                    border-radius: 3px;
+                    box-shadow: none;
+                    color: #f2ece3 !important;
+                    cursor: pointer;
+                    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                    font-size: 20px !important;
+                    font-weight: 700;
+                    line-height: 20px;
+                    margin: 0 !important;
+                    padding: 10px !important;
+                    width: 100%;
+                    height: auto;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover {
+                    background-color: #c21f6b !important;
+                    border-color: #c21f6b !important;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type="checkbox"] {
+                    box-sizing: border-box;
+                    padding: 0;
+                    position: absolute;
+                    z-index: -1;
+                    opacity: 0;
+                    margin-top: 5px;
+                    margin-left: -1.5rem;
+                    overflow: visible;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description {
+                    color: #b79fd4;
+                    display: block;
+                    font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+                    font-size: 10px;
+                    text-align: left;
+                    margin-bottom: 0;
+                    position: relative;
+                    vertical-align: top;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label {
+                    font-weight: normal;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                    display: block;
+                    min-height: 24px;
+                    padding-left: 24px;
+
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label a {
+                    color: #b79fd4;
+                    text-decoration: underline;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p {
+                    color: #b79fd4 !important;
+                    font-family: 'PT Sans', Arial, Helvetica, sans-serif !important;
+                    font-size: 10px !important;
+                    font-weight: normal !important;
+                    line-height: 16px !important;
+                    padding: 0 !important;
+                    margin: 0 5px 0 0 !important;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p:last-child {
+                    margin: 0;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit {
+                    margin: 0 0 20px 0;
+                    float: left;
+                    width: 100%;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+                    background-color: #c21f6b !important;
+                    border: none !important;
+                    border-radius: 3px !important;
+                    box-shadow: none !important;
+                    color: #f2ece3 !important;
+                    cursor: pointer;
+                    font-family: 'PT Sans', Arial, Helvetica, sans-serif !important;
+                    font-size: 20px !important;
+                    font-weight: 700 !important;
+                    line-height: 21px !important;
+                    height: auto;
+                    padding: 10px !important;
+                    width: 100% !important;
+                    box-sizing: border-box !important;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading {
+                    display: none;
+                  }
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
+                    background-color: #c21f6b !important;
+                  }
+                  .ml-subscribe-close {
+                    width: 30px;
+                    height: 30px;
+                    background: url('https://assets.mlcdn.com/ml/images/default/modal_close.png') no-repeat;
+                    background-size: 30px;
+                    cursor: pointer;
+                    margin-top: -10px;
+                    margin-right: -10px;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                  }
+                  .ml-error input, .ml-error textarea, .ml-error select {
+                    border-color: red!important;
+                  }
+
+                  .ml-error .custom-checkbox-radio-list {
+                    border: 1px solid red !important;
+                    border-radius: 4px;
+                    padding: 10px;
+                  }
+
+                  .ml-error .label-description,
+                  .ml-error .label-description p,
+                  .ml-error .label-description p a,
+                  .ml-error label:first-child {
+                    color: #ff0000 !important;
+                  }
+
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow.ml-error .label-description p,
+                  #mlb2-44354382.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow.ml-error .label-description p:first-letter {
+                    color: #ff0000 !important;
+                  }
+                        @media only screen and (max-width: 700px){
+
+                    .ml-form-embedWrapper.embedDefault, .ml-form-embedWrapper.embedPopup { width: 100%!important; }
+                    .ml-form-formContent.horozintalForm { float: left!important; }
+                    .ml-form-formContent.horozintalForm .ml-form-horizontalRow { height: auto!important; width: 100%!important; float: left!important; }
+                    .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal { width: 100%!important; }
+                    .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal > div { padding-right: 0px!important; padding-bottom: 10px; }
+                    .ml-form-formContent.horozintalForm .ml-button-horizontal { width: 100%!important; }
+                    .ml-form-formContent.horozintalForm .ml-button-horizontal.labelsOn { padding-top: 0px!important; }
+
+                  }
+                </style>
+
+                <div id="mlb2-44354382" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-44354382">
+                  <div class="ml-form-align-center ">
+                    <div class="ml-form-embedWrapper embedForm">
+
+                      <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+
+                        <div class="ml-form-embedContent" style="margin-bottom: 0px; ">
+                          
+                        </div>
+
+                        <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/542866/forms/194520897234667086/subscribe" data-code="" method="post" target="_blank">
+                          <div class="ml-form-formContent">
+                            
+                              <div class="ml-form-fieldRow ">
+                                <div class="ml-field-group ml-field-name ml-validate-required">
+
+                                  <label>Imię</label>
+
+                                  <input aria-label="name" aria-required="true" type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="" autocomplete="given-name">
+
+                                </div>
+                              </div><div class="ml-form-fieldRow ">
+                                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+
+                                  <label>Email</label>
+
+                                  <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="" autocomplete="email">
+
+                                </div>
+                              </div><div class="ml-form-fieldRow ml-last-item">
+                                <div class="ml-field-group ml-field-level ml-validate-required">
+
+                                  <label>W którym miejscu jesteś dzisiaj?</label>
+
+                                  <div class="custom-checkbox-radio-list">
+                                    <div class="custom-control custom-radio">
+                                      <input aria-label="level" aria-required="true" name="fields[level]" class="custom-control-input" type="radio" value="Jestem początkującą trenerką EFT i nie prowadzę jeszcze biznesu." id="radio-44354382-23}-0">
+                                      <label class="custom-control-label" for="radio-44354382-23}-0">
+                                        Jestem początkującą trenerką EFT i nie prowadzę jeszcze biznesu.
+                                      </label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                      <input aria-label="level" aria-required="true" name="fields[level]" class="custom-control-input" type="radio" value="Mam biznes EFT, ale sprzedaż jest nieprzewidywalna." id="radio-44354382-23}-1">
+                                      <label class="custom-control-label" for="radio-44354382-23}-1">
+                                        Mam biznes EFT, ale sprzedaż jest nieprzewidywalna.
+                                      </label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                      <input aria-label="level" aria-required="true" name="fields[level]" class="custom-control-input" type="radio" value="Brakuje mi czasu na wdrażanie pomysłów i skalowanie mojego biznesu EFT." id="radio-44354382-23}-2">
+                                      <label class="custom-control-label" for="radio-44354382-23}-2">
+                                        Brakuje mi czasu na wdrażanie pomysłów i skalowanie mojego biznesu EFT.
+                                      </label>
+                                    </div>
+
+                                    <div class="custom-control custom-radio">
+                                      <input aria-label="level" aria-required="true" name="fields[level]" class="custom-control-input" type="radio" value="Szukam informacji na temat metody EFT i bycia trenerką." id="radio-44354382-23}-3">
+                                      <label class="custom-control-label" for="radio-44354382-23}-3">
+                                        Szukam informacji na temat metody EFT i bycia trenerką.
+                                      </label>
+                                    </div>
+
+                                  </div>
+
+                                </div>
+                              </div>
+                            
+                          </div>
+
+                          <div class="ml-form-checkboxRow ml-validate-required">
+                            
+                              <label class="checkbox">
+                                <input type="checkbox">
+                                <div class="label-description">
+                                  <p>Zamawiam usługę newslettera na warunkach określonych w <a builder-link-id="-1" target="_blank" href="https://app.easy.tools/terms/alexatrachim"><u>regulaminie</u></a> i wyrażam zgodę na przetwarzanie moich danych w celu wysyłki newslettera zawierającego informacje o nowościach, webinarach, materiałach edukacyjnych oraz ofertach produktów i usług Superstars sp. z o.o. zgodnie z <a builder-link-id="-2" target="_blank" href="https://app.easy.tools/policies/alexatrachim"><u>polityką prywatności</u></a>.<br></p>
+                                </div>
+                              </label>
+                            
+                          </div>
+
+                          <input type="hidden" name="ml-submit" value="1">
+
+                          <div class="ml-form-embedSubmit">
+                            
+                              <button type="submit" class="primary">ZAPISUJĘ SIĘ</button>
+                            
+                            <button disabled="disabled" style="display: none;" type="button" class="loading">
+                              <div class="ml-form-embedSubmitLoad"></div>
+                              <span class="sr-only">Loading...</span>
+                            </button>
+                          </div>
+
+                          <input type="hidden" name="anticsrf" value="true">
+                        </form>
+                      </div>
+
+                      <div class="ml-form-successBody row-success" style="display: none">
+
+                        <div class="ml-form-successContent">
+                          
+                            <h4>Jesteś zapisana na newsletter Tap&Read 💜</h4>
+                            <p>Za chwilę dostaniesz ode mnie maila powitalnego. Newsletter wysyłam w każdy wtorek 😁</p>
+            <p><br></p>
+            <p>W międzyczasie posłuchaj <strong>Tap&Talk</strong>, pierwszego polskiego podcastu o EFT:</p>
+            <p>🔴 <span><a builder-link-id="-3" href="https://www.youtube.com/@alexa.trachim" target="_blank">YouTube</a></span></p>
+            <p>🟢 <span><a builder-link-id="-4" href="https://open.spotify.com/show/5tK8aav4ivqoNrM5GV5kxm?si=0055285702e24ce7" target="_blank">Spotify</a></span></p>
+            <p>🟣 <span><a builder-link-id="-5" href="https://podcasts.apple.com/pl/podcast/tap-talk/id1896770761?l=pl" target="_blank">Apple&nbsp;Podcasts</a></span></p>
+                          
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              <script>
+                function ml_webform_success_44354382() {
+                  var $ = ml_jQuery || jQuery;
+                  $('.ml-subscribe-form-44354382 .row-success').show();
+                  $('.ml-subscribe-form-44354382 .row-form').hide();
+                }
+              </script>
+              
+              <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v83147fa8ce2d95cb73ece7f28b469519" type="text/javascript"></script>
+              <script>
+                fetch("https://assets.mailerlite.com/jsonp/542866/forms/194520897234667086/takel")
+              </script>
+              <!-- END MAILERLITE FORM EMBED -->
+              </div>
+              <p class="tr-first-issue-note">Pierwsze wydanie wysyłam 1 września 2026.</p>
+            </div>
+        </div>
+      </section>
+
+      <!-- 2. NEWSLETTER OD ŚRODKA - plum -->
+      <section class="tr-sec tr-sec-plum">
+        <div class="tr-container">
+          <div class="tr-sec-header-center">
+            <h2 class="tr-sec-h2">Newsletter od środka</h2>
+          </div>
+
+          <div class="tr-rubrics-grid">
+            <div class="tr-rubric-card">
+              <span class="tr-rubric-tag">ZA KULISAMI</span>
+              <p class="tr-rubric-text">Nad czym pracowałam w minionym tygodniu i jakie wyciągnęłam wnioski. Szczerze, również o tym, co nie wypaliło.</p>
+            </div>
+
+            <div class="tr-rubric-card">
+              <span class="tr-rubric-tag">HISTORIE</span>
+              <p class="tr-rubric-text">Pokazuję wprost, dlaczego podjęłam konkretną decyzję albo co postanowiąłyśmy razem z moją klientką (anonimowo). Traktuj to jak inspirację i sprawdź, czy pasuje do Ciebie.</p>
+            </div>
+
+            <div class="tr-rubric-card">
+              <span class="tr-rubric-tag">PRO-TIPY</span>
+              <p class="tr-rubric-text">Narzędzia i polecajki. Wszystko, co realnie może przydać się trenerkom EFT w biznesie.</p>
+            </div>
+
+            <div class="tr-rubric-card">
+              <span class="tr-rubric-tag">NOWOŚCI</span>
+              <p class="tr-rubric-text">Świeże odcinki podcastu Tap&Talk. Informacje o wydarzeniach, które organizuję, i o ofertach, na które zbieram zapisy.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOTTED DIVIDER STRIP (keep after dark plum section) -->
+      <div class="tr-dotted-strip" aria-hidden="true"></div>
+
+      <!-- 3. DLA KOGO JEST TAP&READ - bone -->
+      <section class="tr-sec tr-sec-bone">
+        <div class="tr-container">
+          <div class="tr-sec-header-center">
+            <h2 class="tr-sec-h2">Dla kogo jest Tap&Read?</h2>
+            <p class="tr-intro-para">Newsletter jest dla trenerek EFT na wszystkich etapach biznesu, a także dla osób zainteresowanych opukiwaniem czy zapisaniem się na kurs trenerski. Niezależnie od tego, w którym miejscu jesteś dzisiaj, znajdziesz w nim coś dla siebie.</p>
+          </div>
+
+          <div class="tr-dlakogo-grid">
+            <div class="tr-dlakogo-card">
+              <p class="tr-dlakogo-text"><strong>Skończyłaś kurs trenerski i jesteś na początku swojej biznesowej drogi?</strong><br><br>W newsletterze znajdziesz mnóstwo porad na temat budowania biznesu EFT - od narzędzi po marketing.</p>
+            </div>
+
+            <div class="tr-dlakogo-card">
+              <p class="tr-dlakogo-text"><strong>Budujesz biznes, ale wciąż zarabiasz nieregularnie i nie wiesz, co dalej?</strong><br><br>W newsletterze opowiem Ci o tym, co robimy z moimi klientkami, aby ich biznesy działały.</p>
+            </div>
+
+            <div class="tr-dlakogo-card">
+              <p class="tr-dlakogo-text"><strong>Masz biznes, który działa, ale nie masz czasu i siły go skalować?</strong><br><br>W newsletterze dzielę się podejściem do biznesu bez pracy po 12 godzin i pokazuję, jak to ogarnąć.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. KTO TWORZY TAP&READ - amethyst -->
+      <section class="tr-sec tr-sec-amethyst">
+        <div class="tr-container">
+          <div class="tr-omnie-grid">
+            <div class="tr-omnie-col-img">
+              <img src="src/omnie.png" alt="Alexa Trachim" class="tr-omnie-img" />
+            </div>
+            <div class="tr-omnie-col-text">
+              <h2 class="tr-sec-h2">Kto tworzy Tap&Read?</h2>
+              <p class="tr-omnie-para">Hej 💜 Jestem Alexa Trachim.</p>
+              <p class="tr-omnie-para">Od 10 lat działam jako strateżka biznesowa i marketerka. Dodatkowo od 2025 roku jestem trenerką EFT. Wiem, jak wygląda Twoja praca od środka i znam każdy moment, w którym możesz poczuć wątpliwości albo poczuć się przeciążona. Wierzę, że EFT powinno wejść do mainstreamu, a jedną z moich misji jest popularyzowanie metody opukiwania. Dlatego wspieram inne trenerki w ich biznesach.</p>
+              <p class="tr-omnie-para">Tap&Read jest miejscem, w którym pokazuję Ci to wszystko na własnym przykładzie, tydzień po tygodniu.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. ZASADY NEWSLETTERA - bone -->
+      <section class="tr-sec tr-sec-bone">
+        <div class="tr-container">
+          <div class="tr-sec-header-center">
+            <h2 class="tr-sec-h2">Zasady newslettera</h2>
+          </div>
+
+          <div class="tr-rules-col">
+            <div class="tr-rule-item">
+              <span class="tr-rule-dot">★</span>
+              <p class="tr-rule-text">Wysyłam jeden mail w tygodniu, co wtorek.</p>
+            </div>
+
+            <div class="tr-rule-item">
+              <span class="tr-rule-dot">★</span>
+              <p class="tr-rule-text">Czasami piszę o moich programach i warsztatach. Zaznaczam to w sekcji NOWOŚCI, a jeżeli chcesz wiedzieć więcej, możesz zapisać się na listę zainteresowanych.</p>
+            </div>
+
+            <div class="tr-rule-item">
+              <span class="tr-rule-dot">★</span>
+              <p class="tr-rule-text">Uwielbiam feedback. Odpisuj na maile, które ode mnie dostajesz, jeżeli masz taką ochotę. Twoja historia to dla mnie najcenniejsza wskazówka, co powinno się znaleźć w newsletterze.</p>
+            </div>
+
+            <div class="tr-rule-item">
+              <span class="tr-rule-dot">★</span>
+              <p class="tr-rule-text">Twoje dane są bezpieczne. Możesz wypisać się w każdej chwili.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. ZAPROSZENIE - plum -->
+      <section class="tr-sec tr-sec-plum">
+        <div class="tr-container">
+          <div class="tr-invite-grid">
+            <div class="tr-invite-col-img">
+              <img src="src/newsletter.png" alt="Newsletter Tap&Read" class="tr-invite-img" />
+            </div>
+            <div class="tr-invite-wrap">
+              <span class="tr-kicker tr-kicker-dark"><span class="tr-star">★</span> Zaproszenie</span>
+              <p class="tr-invite-para">Dołącz do pierwszego polskiego newslettera, który łączy w sobie EFT i biznes. Co wtorek w Twojej skrzynce.</p>
+              <a href="#zapis" class="tr-btn tr-btn-primary">ZAPISUJĘ SIĘ</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOTTED DIVIDER STRIP (after Zaproszenie section) -->
+      <div class="tr-dotted-strip" aria-hidden="true"></div>
+
+      <!-- 7. FOOTER - bone -->
+      <footer class="tr-footer tr-sec-bone">
+        <div class="tr-container">
+          <div class="tr-footer-content">
+            © Alexa Trachim 2026 • <a href="https://app.easy.tools/policies/alexatrachim" target="_blank" rel="noopener" class="tr-footer-link">Polityka prywatności</a> • <a href="https://app.easy.tools/terms/alexatrachim" target="_blank" rel="noopener" class="tr-footer-link">Regulamin</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Smooth Scrolling for #zapis button -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var links = document.querySelectorAll('a[href^="#"]');
+        links.forEach(function(link) {
+          link.addEventListener('click', function(e) {
+            var targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+              var targetEl = document.querySelector(targetId);
+              if (targetEl) {
+                e.preventDefault();
+                targetEl.scrollIntoView({ behavior: 'smooth' });
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

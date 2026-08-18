@@ -26,6 +26,10 @@ const mpaRewritePlugin = (): Plugin => ({
         const query = req.url && req.url.includes('?') ? '?' + req.url.split('?')[1] : '';
         req.url = '/tapandread/index.html' + query;
       }
+      if (url === '/backstage' || url === '/backstage/') {
+        const query = req.url && req.url.includes('?') ? '?' + req.url.split('?')[1] : '';
+        req.url = '/backstage/index.html' + query;
+      }
       next();
     });
   },
@@ -46,6 +50,7 @@ export default defineConfig(() => {
           main: path.resolve(__dirname, 'index.html'),
           biznesPoMojemu: path.resolve(__dirname, 'biznes-po-mojemu/index.html'),
           tapAndRead: path.resolve(__dirname, 'tapandread/index.html'),
+          backstage: path.resolve(__dirname, 'backstage/index.html'),
         },
         output: {
           entryFileNames: 'assets/[name].js',

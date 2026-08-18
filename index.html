@@ -643,23 +643,19 @@
 
       .sec-light .offer-card {
         border-radius: 6px;
-        padding: 2rem 1.75rem;
+        padding: 2.5rem 2rem;
         position: relative;
         box-shadow: 0 4px 20px rgba(194, 31, 107, 0.08);
         transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        justify-content: space-between;
+        height: 100%;
       }
 
-      @media (min-width: 768px) {
-        .sec-light .offer-card {
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-between;
-          padding: 2.5rem 2.5rem;
-          gap: 2.5rem;
-        }
+      .sec-light .offer-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 28px rgba(194, 31, 107, 0.14);
       }
 
       .editorial-card .quote {
@@ -787,12 +783,14 @@
 
       /* OFERTA SECTION */
       #oferta {
-        padding-top: 3.5rem;
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
       }
 
       @media (min-width: 1024px) {
         #oferta {
-          padding-top: 5.5rem;
+          padding-top: 6.5rem;
+          padding-bottom: 6.5rem;
         }
       }
 
@@ -825,85 +823,118 @@
       .sec-amethyst .scroll-cue { color: var(--lavender); }
       .sec-amethyst .scroll-cue svg { stroke: var(--lavender); }
 
-      .offers-grid {
-        display: flex;
-        flex-direction: column;
+      /* TIER 1: THREE ONGOING COLLABORATION CARDS */
+      .offers-tier1-grid {
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 2rem;
+        align-items: stretch;
         width: 100%;
       }
 
-      /* THREE BAND INDIVIDUAL STYLES */
-      #partnerka.offer-card {
-        border: 1px solid rgba(194, 31, 107, 0.22);
-        background-color: rgba(183, 159, 212, 0.22);
-        background: color-mix(in srgb, var(--lavender) 18%, var(--bone));
+      @media (min-width: 1024px) {
+        .offers-tier1-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 1.75rem;
+        }
       }
 
-      #partnerka .offer-action-col {
-        align-self: center;
-      }
-
+      /* TIER 1 LAVENDER TINT CARDS */
+      #partnerka.offer-card,
+      #backstage.offer-card,
       #wystartuj.offer-card {
         border: 1px solid rgba(194, 31, 107, 0.22);
         background-color: rgba(183, 159, 212, 0.22);
         background: color-mix(in srgb, var(--lavender) 18%, var(--bone));
       }
 
-      #warsztat.offer-card {
-        border: 1px solid rgba(194, 31, 107, 0.22);
-        background-color: rgba(183, 159, 212, 0.22);
-        background: color-mix(in srgb, var(--lavender) 18%, var(--bone));
+      /* TIER 2: WARSZTATY */
+      .offers-tier2-wrap {
+        margin-top: 4.5rem;
+        width: 100%;
       }
 
-      .offer-content-col {
-        flex: 1 1 auto;
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-
-      @media (min-width: 768px) {
-        .offer-content-col {
-          max-width: 50%;
+      @media (min-width: 1024px) {
+        .offers-tier2-wrap {
+          margin-top: 5.5rem;
         }
       }
 
-      .offer-action-col {
+      .oferta-subheading {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        color: var(--plum);
+        font-size: clamp(1.6rem, 3vw, 2.2rem);
+        text-align: center;
+        margin-bottom: 2.5rem;
+        letter-spacing: -0.01em;
+      }
+
+      .workshops-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        width: 100%;
+        max-width: 740px;
+        margin: 0 auto;
+      }
+
+      /* TIER 2 RASPBERRY TINT WORKSHOP CARD */
+      #warsztat.offer-card {
+        border: 1px solid rgba(194, 31, 107, 0.25);
+        background-color: rgba(213, 144, 178, 0.18);
+        background: color-mix(in srgb, var(--rose) 18%, var(--bone));
+      }
+
+      .offer-content {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .offer-footer {
         flex: 0 0 auto;
+        margin-top: auto;
+        padding-top: 1.75rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        gap: 0.6rem;
+        justify-content: flex-end;
+        gap: 0.65rem;
         text-align: center;
         width: 100%;
       }
 
-      @media (min-width: 768px) {
-        .offer-action-col {
-          width: auto;
-          min-width: 260px;
-        }
-      }
-
-      .offer-action-col .date-line {
+      .offer-caption,
+      .offer-footer .date-line {
         font-size: 0.92rem;
         font-weight: 700;
         color: var(--amethyst);
         letter-spacing: 0.02em;
         margin: 0;
         line-height: 1.4;
+        min-height: 1.4em;
         text-align: center;
       }
 
-      .offer-action-col .offer-cta-wrap {
+      .offer-caption.is-placeholder {
+        visibility: hidden;
+        user-select: none;
+        pointer-events: none;
+      }
+
+      .offer-cta-wrap {
         width: 100%;
         display: flex;
         justify-content: center;
       }
 
-      .offer-action-col .btn {
+      .offer-cta-wrap .btn {
         width: 100%;
+        min-height: 52px;
+        text-align: center;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
       }
 
       .offer-tab {
@@ -930,19 +961,29 @@
 
       @media (min-width: 768px) {
         .offer-tab {
-          left: 2.5rem;
+          left: 2rem;
         }
       }
 
+      .offer-card .script-kicker {
+        font-size: clamp(13px, 1.15vw, 15.5px);
+        margin-bottom: 0.6rem;
+        white-space: nowrap;
+      }
+
+      .offer-card .script-kicker .star {
+        font-size: 1.25em;
+      }
+
       .offer-card .offer-title {
-        font-size: clamp(1.25rem, 2vw, 1.6rem);
+        font-size: clamp(1.35rem, 2.2vw, 1.7rem);
         color: var(--plum);
         margin-bottom: 0.5rem;
         line-height: 1.2;
       }
 
       .offer-card .tagline {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         font-weight: 500;
         color: var(--raspberry);
         margin-bottom: 0.85rem;
@@ -1716,7 +1757,7 @@
             <div class="editorial-card fade-up">
               <div>
                 <p class="quote">„Skończyłam kurs trenerski EFT i nadal nie ruszyłam z biznesem."</p>
-                <p class="card-body">Znasz metodę i być może masz za sobą pierwsze sesje dla znajomych lub osób z polecenia. Nie wiesz, od czego zacząć, jak wdrożyć technikalia i co rzeczywiście ma znaczenie, gdy zaczynasz budować firmę.</p>
+                <p class="card-body">Znasz metodę i być może masz za sobą pierwsze sesje dla znajomych lub osób z polecenia. Nie wiesz, od czego zacząć ani co rzeczywiście ma znaczenie, gdy zaczynasz budować firmę.</p>
               </div>
               <div class="card-cta-wrap">
                 <a href="#wystartuj" class="card-link">Sprawdź program Wystartuj →</a>
@@ -1726,11 +1767,11 @@
             <!-- Card 2 -->
             <div class="editorial-card fade-up">
               <div>
-                <p class="quote">„Próbuję rozkręcić biznes, ale nie wiem, co mam robić, żeby osiągnąć cele."</p>
-                <p class="card-body">Gubisz się w radach, które znajdujesz w social mediach i które podrzucają Ci różne osoby. Każdy pomysł próbujesz zweryfikować, pytając innych o zdanie. Nie ufasz swoim decyzjom.</p>
+                <p class="quote">„Wiem, co chcę robić, ale technikalia mnie zatrzymują. Nie cierpię ich!"</p>
+                <p class="card-body">Wciąż ręcznie umawiasz sesje albo wystawiasz faktury. Chcesz, żeby klientki dostawały powiadomienia na automacie. Masz pomysł na ofertę, ale nie wiesz, jak stworzyć stronę. Chodź, zrobimy to razem.</p>
               </div>
               <div class="card-cta-wrap">
-                <a href="#warsztat" class="card-link">Sprawdź Biznes po mojemu →</a>
+                <a href="#backstage" class="card-link">Sprawdź Backstage →</a>
               </div>
             </div>
 
@@ -1759,60 +1800,62 @@
         <div class="star-deco star-oferta" aria-hidden="true"><svg viewBox="0 0 200 200"><use href="#star-grunge"/></svg></div>
         <div class="container">
           <h2 class="oferta-heading fade-up">Jak wspieram trenerki EFT?</h2>
-          <div class="offers-grid">
 
-            <!-- Band 1: #partnerka -->
+          <!-- TIER 1: Trzy oferty stałej współpracy -->
+          <div class="offers-tier1-grid">
+
+            <!-- Card 1: #partnerka -->
             <div id="partnerka" class="offer-card fade-up">
               <div class="offer-tab">FLAGOWA OFERTA</div>
-              <div class="offer-content-col">
+              <div class="offer-content">
                 <span class="script-kicker"><span class="star">★</span> Współpraca premium</span>
                 <h3 class="offer-title">Zaufana Partnerka</h3>
                 <p class="tagline">Myślę z Tobą i wdrażam za Ciebie.</p>
                 <div class="offer-body">
-                  <p>Przychodzisz z pomysłem, a ja wdrażam to, co wspólnie ustalimy.</p>
-                  <p>Landingi i newslettery przestają czekać na Twój wolny wieczór.</p>
+                  <p>Przychodzisz z wizją, a ja wdrażam to, co wspólnie ustalimy. Od landingów, przez newslettery, aż po rozkminy strategiczne i organizację backstage'u.</p>
+                  <p>Rozwój Twojego biznesu przestaje czekać na Twój wolny wieczór.</p>
                 </div>
               </div>
-              <div class="offer-action-col">
+              <div class="offer-footer">
+                <p class="offer-caption is-placeholder" aria-hidden="true">&nbsp;</p>
                 <div class="offer-cta-wrap">
                   <a href="https://lp.alexatrachim.com/zaufana-partnerka" target="_blank" rel="noopener" class="btn btn-primary">Umów się na rozmowę</a>
                 </div>
               </div>
             </div>
 
-            <!-- Band 2: #warsztat -->
-            <div id="warsztat" class="offer-card fade-up">
-              <div class="offer-tab">Zapisy otwarte</div>
-              <div class="offer-content-col">
-                <span class="script-kicker"><span class="star">★</span> Warsztat</span>
-                <h3 class="offer-title">Biznes po mojemu</h3>
-                <p class="tagline">Spotkanie dla trenerek EFT, które gubią się w cudzych radach o biznesie.</p>
+            <!-- Card 2: #backstage -->
+            <div id="backstage" class="offer-card fade-up">
+              <div class="offer-content">
+                <span class="script-kicker"><span class="star">★</span> Współpraca 1:1</span>
+                <h3 class="offer-title">Backstage 1:1</h3>
+                <p class="tagline">Siadamy razem i wdrażamy technikalia w Twoim biznesie.</p>
                 <div class="offer-body">
-                  <p>Identyfikujesz porady biznesowe, które przyjęłaś od innych i oczyszczasz je techniką pudełka.</p>
-                  <p>Budujesz pewność, że Twoje decyzje są najważniejsze.</p>
+                  <p>Pokazuję Ci, co kliknąć, aby podpiąć płatności, stworzyć landing czy ustawić kalendarz sesji.</p>
+                  <p>Technikalia przestają straszyć, a Ty wiesz, jak ogarnąć drobne zmiany i poprawki.</p>
                 </div>
               </div>
-              <div class="offer-action-col">
-                <p class="date-line">20 sierpnia 2026 o 18:00</p>
+              <div class="offer-footer">
+                <p class="offer-caption is-placeholder" aria-hidden="true">&nbsp;</p>
                 <div class="offer-cta-wrap">
-                  <a href="https://alexatrachim.com/biznes-po-mojemu" class="btn btn-primary">Zapisz się na warsztat</a>
+                  <a href="/backstage/" class="btn btn-primary">Sprawdź Backstage</a>
                 </div>
               </div>
             </div>
 
-            <!-- Band 3: #wystartuj -->
+            <!-- Card 3: #wystartuj -->
             <div id="wystartuj" class="offer-card fade-up">
-              <div class="offer-content-col">
+              <div class="offer-content">
                 <span class="script-kicker"><span class="star">★</span> Program grupowy</span>
-                <h3 class="offer-title">Wystartuj z Tym Biznesem EFT</h3>
-                <p class="tagline">4-tygodniowy program grupowy ze spotkaniami na żywo i moim wsparciem.</p>
+                <h3 class="offer-title">Wystartuj z tym biznesem EFT</h3>
+                <p class="tagline">4-tygodniowy program grupowy.</p>
                 <div class="offer-body">
-                  <p>Wdrażasz ofertę, podpinasz narzędzia oraz robisz pierwszy krok w marketingu.</p>
+                  <p>Wdrażasz ofertę, podpinasz płatności i narzędzia oraz robisz pierwszy krok w marketingu.</p>
                   <p>Po drodze opukujemy to, co dotąd Cię zatrzymywało.</p>
                 </div>
               </div>
-              <div class="offer-action-col">
-                <p class="date-line">2 edycja w październiku 2026</p>
+              <div class="offer-footer">
+                <p class="offer-caption">2 edycja w październiku 2026</p>
                 <div class="offer-cta-wrap">
                   <a href="https://lp.alexatrachim.com/wystartuj" target="_blank" rel="noopener" class="btn btn-primary">Lista zainteresowanych</a>
                 </div>
@@ -1820,6 +1863,35 @@
             </div>
 
           </div>
+
+          <!-- TIER 2: Warsztaty i inne produkty -->
+          <div class="offers-tier2-wrap">
+            <h3 class="oferta-subheading fade-up">Warsztaty i inne produkty:</h3>
+            <div class="workshops-grid">
+
+              <!-- Card: #warsztat -->
+              <div id="warsztat" class="offer-card fade-up">
+                <div class="offer-tab">ZAPISY OTWARTE</div>
+                <div class="offer-content">
+                  <span class="script-kicker"><span class="star">★</span> Warsztat</span>
+                  <h3 class="offer-title">Biznes po mojemu</h3>
+                  <p class="tagline">Spotkanie dla trenerek EFT, które gubią się w cudzych radach o biznesie.</p>
+                  <div class="offer-body">
+                    <p>Identyfikujesz porady biznesowe, które przyjęłaś od innych, i oczyszczasz je techniką pudełka.</p>
+                    <p>Budujesz pewność, że Twoje decyzje są najważniejsze.</p>
+                  </div>
+                </div>
+                <div class="offer-footer">
+                  <p class="date-line">DATA: 20 sierpnia 2026 o 18:00</p>
+                  <div class="offer-cta-wrap">
+                    <a href="/biznes-po-mojemu/" class="btn btn-primary">Zapisz się na warsztat</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 

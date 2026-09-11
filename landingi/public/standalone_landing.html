@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stworzę Twój landing page w 3 dni • Alexa Trachim</title>
+  <meta name="description" content="Estetyczna strona sprzedażowa Twojej oferty? To możliwe! Tworzę landing pages dla trenerek EFT i innych kobiet, które pomagają ludziom w swoich biznesach.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="apple-touch-icon" href="favicon.jpg">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Stworzę Twój landing page w 3 dni • Alexa Trachim">
+  <meta property="og:description" content="Estetyczna strona sprzedażowa Twojej oferty? To możliwe! Tworzę landing pages dla trenerek EFT i innych kobiet, które pomagają ludziom w swoich biznesach.">
+  <meta property="og:image" content="og-landingi.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stworzę Twój landing page w 3 dni • Alexa Trachim">
+  <meta name="twitter:description" content="Estetyczna strona sprzedażowa Twojej oferty? To możliwe! Tworzę landing pages dla trenerek EFT i innych kobiet, które pomagają ludziom w swoich biznesach.">
+  <meta name="twitter:image" content="og-landingi.jpg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --warm-bone: #F2ECE3;
+      --blackened-plum: #16121C;
+      --deep-raspberry: #C21F6B;
+      --dusty-rose: #D590B2;
+      --deep-amethyst: #632A7A;
+      --smoky-lavender: #B79FD4;
+      --white: #FFFFFF;
+    }
+
+    body {
+      background-color: var(--warm-bone);
+      color: var(--blackened-plum);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: radial-gradient(rgba(22, 18, 28, 0.16) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+      background-repeat: repeat;
+    }
+
+    /* TŁO W KROPKI ZE ZMNIEJSZONĄ INTENSYWNOŚCIĄ (50% TRANSPARENTNOŚCI) */
+    .bg-dots {
+      background-image: radial-gradient(rgba(22, 18, 28, 0.16) 1.5px, transparent 1.5px);
+      background-size: 20px 20px;
+    }
+
+    /* TYPOGRAFIA */
+    h1, h2, h3, h4 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--blackened-plum);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      margin-bottom: 1rem;
+    }
+
+    .btn, .tag, .mono-label {
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* KONTENER */
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ODDZIELENIE SEKCJI GRUBĄ LINIĄ */
+    section {
+      border-bottom: 4px solid var(--blackened-plum);
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    /* PRZYCISKI NEO-BRUTALISTYCZNE */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.15rem 2.25rem;
+      border: 3px solid var(--blackened-plum);
+      box-shadow: 6px 6px 0px 0px var(--blackened-plum);
+      background-color: var(--deep-raspberry);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translate(4px, 4px);
+      box-shadow: 2px 2px 0px 0px var(--blackened-plum);
+    }
+
+    /* KARTY NEO-BRUTALISTYCZNE */
+    .card {
+      border: 3px solid var(--blackened-plum);
+      box-shadow: 6px 6px 0px 0px var(--blackened-plum);
+      background-color: var(--warm-bone);
+      padding: 2rem;
+      position: relative;
+    }
+
+    /* OZDOBNIKI - NAKLEJKI, SERCA, GWIAZDY */
+    .badge-sticker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border: 2px solid var(--blackened-plum);
+      box-shadow: 3px 3px 0px 0px var(--blackened-plum);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sticker-float-top {
+      position: absolute;
+      top: -14px;
+      right: 24px;
+      transform: rotate(2deg);
+    }
+
+    .sticker-float-left {
+      position: absolute;
+      top: -14px;
+      left: 20px;
+      transform: rotate(-3deg);
+    }
+
+    .star-icon {
+      color: var(--deep-raspberry);
+    }
+
+    .heart-icon {
+      color: var(--deep-raspberry);
+    }
+
+    /* KAFELKI */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* LAYOUT HERO Z MIEJSCEM NA ZDJĘCIE */
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 960px) {
+      .hero-layout {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+    }
+
+    /* RAMKA NA ZDJĘCIE */
+    .photo-slot {
+      border: 3px solid var(--blackened-plum);
+      box-shadow: 6px 6px 0px 0px var(--blackened-plum);
+      background-color: var(--warm-bone);
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .photo-placeholder {
+      border: 2px dashed var(--blackened-plum);
+      background-color: var(--warm-bone);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .photo-placeholder img {
+      max-width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border: 2px solid var(--blackened-plum);
+      margin-bottom: 0.75rem;
+    }
+
+    [id^="realizationBox"] img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    [id^="realizationBox"] button {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      z-index: 10;
+    }
+
+    /* AKORDION FAQ */
+    .faq-item {
+      border: 3px solid var(--blackened-plum);
+      box-shadow: 6px 6px 0px 0px var(--blackened-plum);
+      background-color: var(--warm-bone);
+      margin-bottom: 1.25rem;
+      transition: all 0.2s ease;
+    }
+
+    .faq-header {
+      width: 100%;
+      text-align: left;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .faq-header:hover {
+      background-color: rgba(242, 236, 227, 0.6);
+    }
+
+    .faq-toggle-btn {
+      width: 32px;
+      height: 32px;
+      background-color: var(--dusty-rose);
+      border: 2px solid var(--blackened-plum);
+      box-shadow: 2px 2px 0px 0px var(--blackened-plum);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Mono', monospace;
+      font-weight: 800;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .faq-content {
+      display: none;
+      padding: 0 1.5rem 1.5rem 1.5rem;
+      border-top: 2px solid var(--blackened-plum);
+      background-color: rgba(242, 236, 227, 0.35);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-content {
+      display: block;
+      padding-top: 1rem;
+    }
+
+    /* LISTY Z IKONAMI */
+    .styled-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .styled-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .list-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background-color: var(--deep-raspberry);
+      color: var(--white);
+      border: 2px solid var(--blackened-plum);
+      box-shadow: 2px 2px 0px 0px var(--blackened-plum);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* STOPKA */
+    footer {
+      background-color: var(--blackened-plum);
+      color: var(--warm-bone);
+      padding: 1.75rem 1rem;
+      text-align: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.72rem;
+    }
+
+    footer a {
+      color: var(--dusty-rose);
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    /* WYŁĄCZNIE W WERSJI MOBILNEJ */
+    .h1-line-1,
+    .h1-line-2 {
+      display: inline;
+    }
+    .h1-line-1::after {
+      content: " ";
+    }
+
+    .step-card-3 {
+      background-color: var(--smoky-lavender);
+    }
+    .step-card-4 {
+      background-color: var(--dusty-rose);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+
+      body {
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      h1 {
+        font-size: clamp(1.7rem, 7.8vw, 2.45rem) !important;
+        text-align: center !important;
+        line-height: 1.15 !important;
+        letter-spacing: -0.035em !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      .h1-line-1 {
+        display: block !important;
+        white-space: nowrap !important;
+      }
+      .h1-line-1::after {
+        content: "" !important;
+      }
+      .h1-line-2 {
+        display: block !important;
+        white-space: nowrap !important;
+      }
+
+      .empathy-h3 {
+        font-size: 1.15rem !important;
+        line-height: 1.4 !important;
+      }
+
+      .step-card-3 {
+        background-color: var(--dusty-rose) !important;
+      }
+      .step-card-4 {
+        background-color: var(--smoky-lavender) !important;
+      }
+
+      .available-spots-badge {
+        font-size: 0.8rem !important;
+        padding: 0.55rem 1rem !important;
+        line-height: 1.35 !important;
+        text-align: center !important;
+      }
+      .spot-line1,
+      .spot-line2 {
+        display: block !important;
+      }
+
+      .hero-layout > div:first-child {
+        text-align: center;
+      }
+
+      .hero-btn-wrap {
+        display: flex;
+        justify-content: center;
+      }
+
+      .btn {
+        display: inline-flex !important;
+        justify-content: center !important;
+        text-align: center !important;
+        font-size: 1.05rem !important;
+        padding: 0.85rem 1.75rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      .card {
+        padding: 1.25rem !important;
+        font-size: 0.95rem !important;
+      }
+
+      /* Stopka w jednej linii na mobile */
+      footer {
+        font-size: clamp(7.5px, 2.3vw, 10px) !important;
+        white-space: nowrap !important;
+        padding: 1.25rem 0.5rem !important;
+        overflow-x: hidden;
+      }
+
+      footer p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        white-space: nowrap;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SEKCJA 1: HERO -->
+  <section>
+    <div class="container">
+      <div class="hero-layout">
+        
+        <!-- Tekst lewa strona -->
+        <div>
+          <h1 style="margin-bottom: 1.5rem;">
+            <span class="h1-line-1">Stworzę Twój landing</span>
+            <span class="h1-line-2">page w 3 dni</span>
+          </h1>
+          
+          <p style="font-size: 1.35rem; font-weight: 600; margin-bottom: 2rem; line-height: 1.45;">
+            Dla trenerek EFT, które mają w głowie gotową ofertę, ale nie mają linka, który mogą wysłać klientowi, aby ją zobaczył.
+          </p>
+
+          <div class="card" style="background-color: var(--smoky-lavender); font-size: 1.25rem; font-weight: 700; margin-bottom: 2rem;">
+            W trzy dni dostajesz stronę w Twojej estetyce i pod Twoją domeną, z podpiętym koszykiem płatności.
+          </div>
+
+          <div class="hero-btn-wrap">
+            <a href="https://alexa-trachim.neetocal.com/spotkanie" target="_blank" rel="noopener noreferrer" class="btn">
+              <span>Umów rozmowę</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Prawa strona: Grafika landing.jpg -->
+        <div>
+          <div class="card" style="background-color: var(--warm-bone); padding: 1rem;">
+            <div style="border: 2px solid var(--blackened-plum); overflow: hidden; background-color: var(--warm-bone);">
+              <img src="landing.jpg" alt="Landing page dla trenerek EFT" style="width: 100%; height: auto; display: block;">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCJA 2: AKAPIT EMPATYCZNY -->
+  <section>
+    <div class="container" style="max-width: 900px;">
+      <div class="card" style="font-size: 1.15rem; line-height: 1.7;">
+        <h3 class="empathy-h3" style="font-size: 1.5rem; display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.5rem; line-height: 1.35;">
+          <span style="color: var(--deep-raspberry); font-size: 1.5rem; line-height: 1; flex-shrink: 0;">♥</span>
+          <span>Od pięciu tygodni obiecujesz sobie, że siądziesz do stworzenia strony sprzedażowej Twojej oferty. Nawet zablokowałaś sobie miejsce w kalendarzu.</span>
+        </h3>
+        <p style="margin-bottom: 1.5rem;">
+          A potem klientka napisała w DMach z prośbą o sesję, dziecko się rozchorowało albo otworzyłaś komputer i poczułaś zmęczenie na samą myśl o klikaniu.
+        </p>
+        <p style="margin-bottom: 1.5rem;">
+          Masz gotową ofertę i żadnego miejsca, w którym jest widoczna. Wiesz, że mając link mogłabyś więcej sprzedawać, umieścić go w bio albo wysłać w wiadomości zamiast po raz kolejny opisywać szczegóły oferty ręcznie.
+        </p>
+        <div class="card" style="background-color: var(--deep-amethyst); color: var(--white); font-size: 1.35rem; font-weight: 700; margin-top: 1.5rem;">
+          Przestań liczyć, że znajdzie się wolne popołudnie. Twój czas należy do klientek - oddaj stronę komuś, kto to ogarnia.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCJA 3: CO ZMIENI SIĘ PO TYCH TRZECH DNIACH -->
+  <section>
+    <div class="container" style="max-width: 900px;">
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;">
+        <span style="font-size: 1.75rem; color: var(--deep-raspberry); flex-shrink: 0;">★</span>
+        <h2>Po naszej współpracy:</h2>
+      </div>
+
+      <div class="card" style="margin-bottom: 3.5rem;">
+        <ul class="styled-list">
+          <li>
+            <span class="list-badge" style="background-color: var(--smoky-lavender); color: var(--blackened-plum);">♥</span>
+            <span>Wysyłasz jeden link zamiast siódmy raz robić screena starego posta z ofertą</span>
+          </li>
+          <li>
+            <span class="list-badge" style="background-color: var(--smoky-lavender); color: var(--blackened-plum);">♥</span>
+            <span>Klientka płaci o 23:40, kiedy Ty śpisz</span>
+          </li>
+          <li>
+            <span class="list-badge" style="background-color: var(--smoky-lavender); color: var(--blackened-plum);">♥</span>
+            <span>Zapisy na sesje dzieją się bez wymiany kilkunastu wiadomości</span>
+          </li>
+          <li>
+            <span class="list-badge" style="background-color: var(--smoky-lavender); color: var(--blackened-plum);">♥</span>
+            <span>PDF z rundkami wreszcie na automacie wpada do skrzynki klienta</span>
+          </li>
+          <li>
+            <span class="list-badge" style="background-color: var(--smoky-lavender); color: var(--blackened-plum);">♥</span>
+            <span>Skupiasz się na tym, co kochasz, czyli na pomaganiu ludziom</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- DLACZEGO AKURAT JA? -->
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <span style="font-size: 1.75rem; color: var(--deep-raspberry); flex-shrink: 0;">★</span>
+        <h2>Dlaczego akurat ja?</h2>
+      </div>
+
+      <div class="grid-3" style="margin-bottom: 3.5rem;">
+        <div class="card" style="background-color: var(--dusty-rose);">
+          <div style="width: 32px; height: 32px; background-color: var(--blackened-plum); color: var(--warm-bone); font-family: 'Space Mono', monospace; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; border: 1px solid var(--blackened-plum);">
+            01
+          </div>
+          Trzy dni zamiast trzech Twoich weekendów, po których nadal strona nie powstała i których nikt Ci nie zwróci.
+        </div>
+        <div class="card" style="background-color: var(--dusty-rose);">
+          <div style="width: 32px; height: 32px; background-color: var(--blackened-plum); color: var(--warm-bone); font-family: 'Space Mono', monospace; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; border: 1px solid var(--blackened-plum);">
+            02
+          </div>
+          Jestem trenerką EFT, więc nie tłumaczysz mi, czym jest punkt karate albo dlaczego Twoi klienci potrzebują opukiwania.
+        </div>
+        <div class="card" style="background-color: var(--dusty-rose);">
+          <div style="width: 32px; height: 32px; background-color: var(--blackened-plum); color: var(--warm-bone); font-family: 'Space Mono', monospace; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; border: 1px solid var(--blackened-plum);">
+            03
+          </div>
+          Wdrażam stronę od A do Z zamiast wysłać Ci kod i zostawić z tematem domeny, hostingu czy przyjmowania płatności od klientów.
+        </div>
+      </div>
+
+      <!-- OPINIA SANDRY -->
+      <div class="card" style="background-color: var(--smoky-lavender); font-style: italic; font-size: 1.15rem; line-height: 1.7;">
+        <div class="badge-sticker sticker-float-top" style="background-color: var(--deep-amethyst); color: var(--white);">
+          ★ Opinia klientki
+        </div>
+        <p>
+          Dzięki współpracy z Alexą moja nowa przestrzeń, czyli Self-Guidance Space, stała się rzeczywistością - dokładnie w takiej formie, jaką sobie wyobrażałam. Alexa wdrożyła dla mnie stronę sprzedażową z designem, który nawet przekroczył moje oczekiwania. Mam ochotę wysyłać tę stronę każdemu i to chyba pierwszy raz, gdy po wdrożeniu nie mam potrzeby, żeby cokolwiek jeszcze poprawiać i dopracowywać - wszystko jest w punkt. Mam poczucie, że bez Alexy ten projekt dalej byłby blokiem tekstu na moim dysku Google, bo jego samodzielna realizacja trwałaby wieki. A tak pierwsze osoby już korzystają z tej przestrzeni i transformują swoje życie.
+        </p>
+        <div style="margin-top: 1.25rem; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 0.95rem; font-style: normal; color: var(--blackened-plum);">
+          Sandra Folta • trenerka EFT i Matrix Reimprinting
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEKCJA 4: CO DOKŁADNIE OTRZYMUJESZ? -->
+  <section>
+    <div class="container" style="max-width: 900px;">
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <span style="font-size: 1.75rem; color: var(--deep-raspberry); flex-shrink: 0;">★</span>
+        <h2>Co dokładnie otrzymujesz?</h2>
+      </div>
+
+      <div class="card">
+        <ul class="styled-list">
+          <li>
+            <span class="list-badge" style="background-color: var(--dusty-rose); color: var(--blackened-plum);">1</span>
+            <span><strong>Teksty</strong>, które mówią o problemach i pragnieniach klienta, aby pomyślał “To coś dla mnie!” zamiast wyjść ze strony po pierwszych 3 sekundach</span>
+          </li>
+          <li>
+            <span class="list-badge" style="background-color: var(--dusty-rose); color: var(--blackened-plum);">2</span>
+            <span><strong>Design</strong> w Twoich kolorach i Twoim stylu, projektowany w Google AI Studio, więc pierwszy podgląd widzisz bez długiego czekania</span>
+          </li>
+          <li>
+            <span class="list-badge" style="background-color: var(--dusty-rose); color: var(--blackened-plum);">3</span>
+            <span><strong>Wdrożenie</strong> pod Twoją domeną, żeby link wyglądał jak Twój, a nie jak adres z kreatora</span>
+          </li>
+          <li>
+            <span class="list-badge" style="background-color: var(--dusty-rose); color: var(--blackened-plum);">4</span>
+            <span>Podpięty <strong>koszyk i kalendarz</strong>, żeby płatność i zapis działy się bez Ciebie</span>
+          </li>
+          <li>
+            <span class="list-badge" style="background-color: var(--dusty-rose); color: var(--blackened-plum);">5</span>
+            <span><strong>Feedback</strong> na każdym etapie, żeby strona brzmiała jak Ty, a nie jak ja</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCJA 5: DLACZEGO WARTO MI ZAUFAĆ? Z MIEJSCEM NA ZDJĘCIE ALEXA -->
+  <section>
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;">
+        <span style="font-size: 1.75rem; color: var(--deep-raspberry); flex-shrink: 0;">★</span>
+        <h2>Dlaczego warto mi zaufać?</h2>
+      </div>
+
+      <!-- O MNIE - JEDEN BOKS ZE ZDJĘCIEM -->
+      <div class="card" style="margin-bottom: 3.5rem; font-size: 1.15rem; line-height: 1.7;">
+        
+        <!-- Górna część: nagłówek i pierwsze 2 akapity obok zdjęcia -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: center; margin-bottom: 1.5rem;">
+          <div>
+            <p style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--deep-amethyst); margin-bottom: 1rem;">
+              Hej, z tej strony Alexa Trachim 💜
+            </p>
+            <p style="margin-bottom: 1rem;">
+              Jestem trenerką EFT, która ogarnia biznes. Od 10 lat pracuję w marketingu, a od 2020 roku prowadzę firmę online.
+            </p>
+            <p style="margin-bottom: 0;">
+              Stworzyłam dziesiątki landing pages dla siebie i swoich klientek. Wiem doskonale, że techniczna strona biznesu zazwyczaj nie jest tą ulubioną - zwłaszcza u kobiet, które specjalizują się w pomaganiu ludziom.
+            </p>
+          </div>
+          <div style="display: flex; justify-content: center;">
+            <div style="max-width: 340px; width: 100%; border: 3px solid var(--blackened-plum); background-color: var(--warm-bone); padding: 0.75rem; box-shadow: 6px 6px 0 0 var(--blackened-plum);">
+              <div style="border: 2px solid var(--blackened-plum); overflow: hidden; background-color: #ffffff;">
+                <img src="omnie.png" alt="Alexa Trachim" style="width: 100%; height: auto; display: block;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dolna część: na całą szerokość boksu -->
+        <div style="padding-top: 0.5rem;">
+          <p style="font-weight: 700; margin-bottom: 1rem;">
+            Moją misją jest wspierać trenerki EFT w budowaniu i rozwijaniu biznesów, aby metoda opukiwania weszła do mainstreamu!
+          </p>
+          <p style="margin-bottom: 0;">
+            Łączę zrozumienie tego, jak pracuje się z klientami i moją ogromną wrażliwość z pasją do technikaliów, marketingu i tworzenia systemów w biznesie. Dlatego teraz zapraszam Cię do skorzystania z moich supermocy, abyś mogła skupić się na pracy ze swoimi klientkami.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- OPINIA WIKTORII -->
+      <div class="card" style="background-color: var(--smoky-lavender); font-style: italic; font-size: 1.15rem; line-height: 1.7; margin-bottom: 3.5rem;">
+        <div class="badge-sticker sticker-float-top" style="background-color: var(--deep-amethyst); color: var(--white);">
+          ★ Opinia klientki
+        </div>
+        <p>
+          „Bardzo polecam współpracę z Alexą, szybko zrealizowana strona, wystarczyło rzucić pomysł i został zrealizowany bez większego mojego wkładu. Wysokie wyczucie estetyki, co jest dla mnie szczególnie ważne, szybko, konkretnie i bezproblemowo! Cenię sobie profesjonalizm i to, że działa w podobnej branży i zna się na rzeczy.”
+        </p>
+        <div style="margin-top: 1.25rem; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 0.95rem; font-style: normal; color: var(--blackened-plum);">
+          Wiktoria Fahner • trenerka EFT, psycholożka, hipnoterapeutka
+        </div>
+      </div>
+
+      <!-- REALIZACJE -->
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+        <span style="font-size: 1.75rem; color: var(--deep-raspberry); flex-shrink: 0;">★</span>
+        <h2>Realizacje:</h2>
+      </div>
+
+      <div class="grid-3">
+        <!-- Realizacja 1 -->
+        <div class="card" style="background-color: var(--smoky-lavender); color: var(--blackened-plum); display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+          <div style="border: 2px solid var(--blackened-plum); background-color: var(--warm-bone); height: 240px; margin-bottom: 0.75rem; position: relative; overflow: hidden; box-shadow: 2px 2px 0 var(--blackened-plum);">
+            <img src="realizacja1.jpeg" alt="Self-Guidance Space" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;" loading="lazy">
+          </div>
+          <div style="padding-top: 0.25rem;">
+            <strong style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--blackened-plum); text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.3; display: block;" title="Self-Guidance Space">Self-Guidance Space</strong>
+          </div>
+        </div>
+
+        <!-- Realizacja 2 -->
+        <div class="card" style="background-color: var(--dusty-rose); color: var(--blackened-plum); display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+          <div style="border: 2px solid var(--blackened-plum); background-color: var(--warm-bone); height: 240px; margin-bottom: 0.75rem; position: relative; overflow: hidden; box-shadow: 2px 2px 0 var(--blackened-plum);">
+            <img src="realizacja2.jpeg" alt="365 dni z EFT" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;" loading="lazy">
+          </div>
+          <div style="padding-top: 0.25rem;">
+            <strong style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--blackened-plum); text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.3; display: block;" title="365 dni z EFT">365 dni z EFT</strong>
+          </div>
+        </div>
+
+        <!-- Realizacja 3 -->
+        <div class="card" style="background-color: var(--smoky-lavender); color: var(--blackened-plum); display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+          <div style="border: 2px solid var(--blackened-plum); background-color: var(--warm-bone); height: 240px; margin-bottom: 0.75rem; position: relative; overflow: hidden; box-shadow: 2px 2px 0 var(--blackened-plum);">
+            <img src="realizacja3.PNG" alt="Wystartuj z tym biznesem EFT" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;" loading="lazy">
+          </div>
+          <div style="padding-top: 0.25rem;">
+            <strong style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--blackened-plum); text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.3; display: block;" title="Wystartuj z tym biznesem EFT">Wystartuj z tym biznesem EFT</strong>
+          </div>
+        </div>
+
+        <!-- Realizacja 4 -->
+        <div class="card" style="background-color: var(--dusty-rose); color: var(--blackened-plum); display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+          <div style="border: 2px solid var(--blackened-plum); background-color: var(--warm-bone); height: 240px; margin-bottom: 0.75rem; position: relative; overflow: hidden; box-shadow: 2px 2px 0 var(--blackened-plum);">
+            <img src="realizacja4.jpeg" alt="Wiktoria Fahner" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;" loading="lazy">
+          </div>
+          <div style="padding-top: 0.25rem;">
+            <strong style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--blackened-plum); text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.3; display: block;" title="Wiktoria Fahner">Wiktoria Fahner</strong>
+          </div>
+        </div>
+
+        <!-- Realizacja 5 -->
+        <div class="card" style="background-color: var(--smoky-lavender); color: var(--blackened-plum); display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+          <div style="border: 2px solid var(--blackened-plum); background-color: var(--warm-bone); height: 240px; margin-bottom: 0.75rem; position: relative; overflow: hidden; box-shadow: 2px 2px 0 var(--blackened-plum);">
+            <img src="realizacja5.jpeg" alt="Alexa Trachim" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;" loading="lazy">
+          </div>
+          <div style="padding-top: 0.25rem;">
+            <strong style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--blackened-plum); text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.3; display: block;" title="Alexa Trachim">Alexa Trachim</strong>
+          </div>
+        </div>
+
+        <!-- Realizacja 6 -->
+        <div class="card" style="background-color: var(--dusty-rose); color: var(--blackened-plum); display: flex; flex-direction: column; justify-content: space-between; padding: 1.25rem;">
+          <div style="flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 240px; margin: 1.5rem 0; padding: 0.5rem;">
+            <strong style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.35rem; font-weight: 800; color: var(--blackened-plum); text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.3;">Miejsce na Twoją stronę</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCJA 6: DLA KOGO JEST TA OFERTA? -->
+  <section>
+    <div class="container" style="max-width: 900px;">
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;">
+        <span style="font-size: 1.75rem; color: var(--deep-raspberry);">★</span>
+        <h2>Dla kogo jest ta oferta?</h2>
+      </div>
+
+      <div class="grid-2" style="margin-bottom: 2rem;">
+        <!-- DLA CIEBIE -->
+        <div class="card" style="background-color: var(--warm-bone);">
+          <h3 style="font-size: clamp(1.05rem, 1.35vw, 1.25rem); white-space: nowrap; margin-bottom: 1.25rem; letter-spacing: -0.02em;">Ta oferta jest dla Ciebie, jeżeli:</h3>
+          <ul class="styled-list">
+            <li>
+              <span class="list-badge" style="background-color: var(--smoky-lavender); color: var(--blackened-plum);">✓</span>
+              <span>Wiesz, co chcesz sprzedawać i masz choćby ramowo określoną ofertę</span>
+            </li>
+            <li>
+              <span class="list-badge" style="background-color: var(--smoky-lavender); color: var(--blackened-plum);">✓</span>
+              <span>Chcesz mieć stronę gotową w kilka dni zamiast w kilka tygodni czy miesięcy</span>
+            </li>
+            <li>
+              <span class="list-badge" style="background-color: var(--smoky-lavender); color: var(--blackened-plum);">✓</span>
+              <span>Szukasz kogoś, kto rozumie, czym jest EFT i komu nie musisz tłumaczyć metody</span>
+            </li>
+            <li>
+              <span class="list-badge" style="background-color: var(--smoky-lavender); color: var(--blackened-plum);">✓</span>
+              <span>Jesteś gotowa na to, aby oddelegować stworzenie landinga i szczegółowo wypełnić brief dotyczący Twojego biznesu</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- NIE DLA CIEBIE -->
+        <div class="card">
+          <h3 style="font-size: clamp(1.05rem, 1.35vw, 1.25rem); white-space: nowrap; margin-bottom: 1.25rem; letter-spacing: -0.02em;">Ta oferta NIE jest dla Ciebie, jeżeli:</h3>
+          <ul class="styled-list">
+            <li>
+              <span class="list-badge" style="background-color: var(--dusty-rose); color: var(--blackened-plum);">✕</span>
+              <span>Nie masz jeszcze konkretnej oferty i musisz ją najpierw stworzyć</span>
+            </li>
+            <li>
+              <span class="list-badge" style="background-color: var(--dusty-rose); color: var(--blackened-plum);">✕</span>
+              <span>Chcesz nauczyć się robić strony samodzielnie</span>
+            </li>
+            <li>
+              <span class="list-badge" style="background-color: var(--dusty-rose); color: var(--blackened-plum);">✕</span>
+              <span>Potrzebujesz witryny Twojego biznesu z kilkoma podstronami i sklepem - w tym też mogę pomóc, ale to osobna wycena</span>
+            </li>
+            <li>
+              <span class="list-badge" style="background-color: var(--dusty-rose); color: var(--blackened-plum);">✕</span>
+              <span>Nie potrafisz zaufać na tyle, aby oddelegować pracę komuś innemu</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BOX -->
+      <div class="card" style="background-color: var(--deep-amethyst); color: var(--white); font-size: 1.2rem; font-weight: 700;">
+        Pst… Jesteś hipnoterapeutką, specjalistką od Human Design lub w inny sposób pomagasz ludziom w rozwoju? Tobie też chętnie pomogę - umów się na rozmowę!
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCJA 7: JAK TO DZIAŁA? -->
+  <section>
+    <div class="container" style="max-width: 900px;">
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;">
+        <span style="font-size: 1.75rem; color: var(--deep-raspberry); flex-shrink: 0;">★</span>
+        <h2>Jak to działa?</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="card" style="background-color: var(--dusty-rose); min-height: 170px; display: flex; flex-direction: column; justify-content: flex-start;">
+          <span style="font-family: 'Space Mono', monospace; font-weight: 700; color: var(--blackened-plum); display: block; margin-bottom: 0.5rem; font-size: 1.25rem;">
+            Krok 1.
+          </span>
+          Umawiasz rozmowę, która trwa 30 minut - rozmawiamy o Twoim biznesie, klientach i potrzebach.
+        </div>
+        <div class="card" style="background-color: var(--smoky-lavender); min-height: 170px; display: flex; flex-direction: column; justify-content: flex-start;">
+          <span style="font-family: 'Space Mono', monospace; font-weight: 700; color: var(--blackened-plum); display: block; margin-bottom: 0.5rem; font-size: 1.25rem;">
+            Krok 2.
+          </span>
+          Wypełniasz brief - opisujesz ofertę, wybierasz interesujący Cię styl i czego dodatkowo potrzebujesz.
+        </div>
+        <div class="card step-card-3" style="min-height: 170px; display: flex; flex-direction: column; justify-content: flex-start;">
+          <span style="font-family: 'Space Mono', monospace; font-weight: 700; color: var(--blackened-plum); display: block; margin-bottom: 0.5rem; font-size: 1.25rem;">
+            Krok 3.
+          </span>
+          Zaczynam pracę - dostajesz tekst, a potem design do feedbacku.
+        </div>
+        <div class="card step-card-4" style="min-height: 170px; display: flex; flex-direction: column; justify-content: flex-start;">
+          <span style="font-family: 'Space Mono', monospace; font-weight: 700; color: var(--blackened-plum); display: block; margin-bottom: 0.5rem; font-size: 1.25rem;">
+            Krok 4.
+          </span>
+          Po 3 dniach strona jest gotowa.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCJA 8: OFERTA -->
+  <section>
+    <div class="container" style="max-width: 800px; text-align: center;">
+      <div class="card" style="background-color: var(--warm-bone); padding: 3rem 2rem; margin-bottom: 3.5rem;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">W cenie dostajesz:</h3>
+        <p style="font-size: 1.35rem; font-weight: 700; max-width: 600px; margin: 0 auto 1.5rem auto;">
+          teksty, design, wdrożenie pod Twoją domeną
+        </p>
+
+        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(3rem, 8vw, 5rem); color: var(--deep-amethyst); line-height: 1; margin-bottom: 1rem;">
+          688 PLN
+        </div>
+
+        <p style="font-size: 0.7rem; margin-bottom: 2rem;">
+          + ewentualny koszt domeny, jeżeli nie masz (mam tanią opcję do polecenia!)
+        </p>
+
+        <div class="card available-spots-badge" style="background-color: var(--dusty-rose); display: inline-flex; align-items: center; justify-content: center; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1.15rem; padding: 0.85rem 1.5rem; margin-bottom: 2rem;">
+          <span>
+            <span class="spot-line1">Dostępne miejsca </span>
+            <span class="spot-line2">w tym miesiącu: 4</span>
+          </span>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+          <a href="https://alexa-trachim.neetocal.com/spotkanie" target="_blank" rel="noopener noreferrer" class="btn">
+            <span>Umów rozmowę</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- OPINIA PAULINY -->
+      <div style="text-align: left;">
+        <div class="card" style="background-color: var(--smoky-lavender); font-style: italic; font-size: 1.15rem; line-height: 1.7;">
+          <div class="badge-sticker sticker-float-top" style="background-color: var(--deep-amethyst); color: var(--white);">
+            ★ Opinia klientki
+          </div>
+          <p>
+            Hej Alexa! Wow ten landing page jest po prostu piękniejszy niż mogłam to sobie wyobrazić! Nie wierzę, że ogarnęłaś to dosłownie w tydzień i to na takim poziomie. Wizualnie petarda, ale ten tekst? Ja nie wiem, jak to jest możliwe, że w taki sposób odzwierciedliłaś to, co miałam w głowie. Już wiem, kto będzie tworzył moje kolejne strony! Dziękuję także za wszystkie wskazówki co do sklepów i platform kursowych - już działam w tym temacie! Jestem mega zadowolona z naszej współpracy i z największą przyjemnością będę polecała Cię moim klientkom!
+          </p>
+          <div style="margin-top: 1.25rem; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 0.95rem; font-style: normal; color: var(--blackened-plum);">
+            Paulina Kudła • trenerka EFT
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEKCJA 9: ODPOWIEDZI NA TWOJE PYTANIA (Z INTERAKTYWNYM AKORDIONEM) -->
+  <section>
+    <div class="container" style="max-width: 900px;">
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;">
+        <span style="font-size: 1.75rem; color: var(--deep-raspberry);">★</span>
+        <h2>Odpowiedzi na Twoje pytania</h2>
+      </div>
+
+      <div id="faqList">
+        
+        <!-- Pytanie 1 -->
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <h3 style="margin-bottom: 0; font-size: 1.25rem;">W czym tworzysz strony?</h3>
+            <div class="faq-toggle-btn">+</div>
+          </button>
+          <div class="faq-content">
+            <p>Design projektuję w Google AI Studio. W ten sposób mogę stworzyć estetyczną stronę szybko i bez długiego wdrażania. Dbam o to, aby projekt nie wyglądał jak każda kolejna strona wygenerowana w AI - stąd pytania w briefie o Twój branding, preferowany styl i inne szczegóły wizualne.</p>
+          </div>
+        </div>
+
+        <!-- Pytanie 2 -->
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <h3 style="margin-bottom: 0; font-size: 1.25rem;">Mam własne grafiki, użyjesz ich?</h3>
+            <div class="faq-toggle-btn">+</div>
+          </button>
+          <div class="faq-content">
+            <p>Oczywiście! O to też dostaniesz pytanie w briefie, a ja poproszę Cię o przesłanie potrzebnych zdjęć i grafik na etapie tworzenia designu.</p>
+          </div>
+        </div>
+
+        <!-- Pytanie 3 -->
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <h3 style="margin-bottom: 0; font-size: 1.25rem;">Nie mam hostingu ani domeny. Co wtedy?</h3>
+            <div class="faq-toggle-btn">+</div>
+          </button>
+          <div class="faq-content">
+            <p>Wdrożę Ci stronę na Cloudflare. Pamiętaj, że jeżeli nie masz domeny, będziesz musiała ją kupić - to dodatkowy koszt, natomiast na Cloudflare są to groszowe sprawy.</p>
+          </div>
+        </div>
+
+        <!-- Pytanie 4 -->
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <h3 style="margin-bottom: 0; font-size: 1.25rem;">Mam swój hosting i domenę. Co wtedy?</h3>
+            <div class="faq-toggle-btn">+</div>
+          </button>
+          <div class="faq-content">
+            <p>Wdrożę stronę tak, abyś miała ją widoczną w swojej domenie. Techniczną stronę zostaw mnie - będę musiała jednak mieć dostęp do Twoich kont u dostawcy hostingu i domeny, aby odpowiednio podpiąć stronę.</p>
+          </div>
+        </div>
+
+        <!-- Pytanie 5 -->
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <h3 style="margin-bottom: 0; font-size: 1.25rem;">Czy ten landing da się potem rozbudować?</h3>
+            <div class="faq-toggle-btn">+</div>
+          </button>
+          <div class="faq-content">
+            <p style="margin-bottom: 0.75rem;">Pewnie, że tak! Landing to strona jednej konkretnej ceny. Jeżeli będziesz chciała stworzyć kolejną stronę sprzedażową, stronę główną Twojego biznesu albo sklep - dołożymy je do istniejącej infrastruktury.</p>
+            <p style="font-weight: 700;">Kiedy będziesz chciała stronę główną albo sklep, dokładamy kolejne podstrony do tej samej infrastruktury.</p>
+          </div>
+        </div>
+
+        <!-- Pytanie 6 -->
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <h3 style="margin-bottom: 0; font-size: 1.25rem;">Podpinasz koszyk płatności i kalendarz?</h3>
+            <div class="faq-toggle-btn">+</div>
+          </button>
+          <div class="faq-content">
+            <p>Jasne! Podpowiem Ci, jakie rozwiązania najlepiej się sprawdzają do przyjmowania płatności i umawiania sesji.</p>
+          </div>
+        </div>
+
+        <!-- Pytanie 7 -->
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <h3 style="margin-bottom: 0; font-size: 1.25rem;">Ile czasu to zajmie po mojej stronie?</h3>
+            <div class="faq-toggle-btn">+</div>
+          </button>
+          <div class="faq-content">
+            <p>Rozmowa 30 minut, wypełnienie briefu i feedback na dwóch pierwszych etapach. Resztę robię ja.</p>
+          </div>
+        </div>
+
+        <!-- Pytanie 8 -->
+        <div class="faq-item">
+          <button class="faq-header" onclick="toggleFaq(this)">
+            <h3 style="margin-bottom: 0; font-size: 1.25rem;">Czy dostanę fakturę?</h3>
+            <div class="faq-toggle-btn">+</div>
+          </button>
+          <div class="faq-content">
+            <p>Oczywiście, wystawiam faktury.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKCJA 10: OSTATNIE CTA -->
+  <section>
+    <div class="container" style="max-width: 800px; text-align: center;">
+      <p style="font-size: 1.6rem; font-weight: 700; margin-bottom: 2rem; line-height: 1.4;">
+        Jeszcze w tym miesiącu możesz wysłać jeden link zamiast tłumaczyć swoją ofertę w dziesiątej wiadomości.
+      </p>
+
+      <div style="margin-bottom: 1.5rem; display: flex; justify-content: center;">
+        <a href="https://alexa-trachim.neetocal.com/spotkanie" target="_blank" rel="noopener noreferrer" class="btn">
+          <span>Umów rozmowę</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <p style="font-size: 0.7rem; line-height: 1.4;">
+        Nie znalazłaś dogodnego terminu albo masz dodatkowe pytanie? Napisz na 
+        <a href="mailto:alexa.trachim@gmail.com" style="color: var(--blackened-plum); font-weight: 700;">alexa.trachim@gmail.com</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- STOPKA -->
+  <footer>
+    <p>
+      © Alexa Trachim 2026 • 
+      <a href="https://app.easy.tools/policies/alexatrachim" target="_blank" rel="noopener noreferrer">Polityka prywatności</a> • 
+      <a href="https://app.easy.tools/terms/alexatrachim" target="_blank" rel="noopener noreferrer">Regulamin</a>
+    </p>
+  </footer>
+
+  <script>
+    // Obsługa zwijania i rozwijania pytań FAQ
+    function toggleFaq(header) {
+      const item = header.parentElement;
+      const isActive = item.classList.contains('active');
+      const toggleBtn = item.querySelector('.faq-toggle-btn');
+      
+      if (isActive) {
+        item.classList.remove('active');
+        toggleBtn.textContent = '+';
+      } else {
+        item.classList.add('active');
+        toggleBtn.textContent = '-';
+      }
+    }
+
+    function toggleAllFaq(expand) {
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach(item => {
+        const toggleBtn = item.querySelector('.faq-toggle-btn');
+        if (expand) {
+          item.classList.add('active');
+          toggleBtn.textContent = '-';
+        } else {
+          item.classList.remove('active');
+          toggleBtn.textContent = '+';
+        }
+      });
+    }
+
+    // Prosty podgląd wgranego zdjęcia
+    function previewImage(input, containerId) {
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const container = document.getElementById(containerId);
+          container.innerHTML = `
+            <img src="${e.target.result}" alt="Podgląd zdjęcia">
+            <button onclick="location.reload()" class="btn" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; background: #ffebee; color: #c62828;">
+              ZRESETUJ
+            </button>
+          `;
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
+</body>
+</html>

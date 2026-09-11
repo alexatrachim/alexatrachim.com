@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme {
+  --shadow-neo: 6px 6px 0px 0px #16121C;
+  --shadow-neo-sm: 3.5px 3.5px 0px 0px #16121C;
+  --shadow-neo-lg: 8px 8px 0px 0px #16121C;
+  --border-width-3: 3px;
+}
+
+@layer base {
+  :root {
+    --color-warm-bone: #F2ECE3;
+    --color-blackened-plum: #16121C;
+    --color-deep-raspberry: #C21F6B;
+    --color-dusty-rose: #D590B2;
+    --color-deep-amethyst: #632A7A;
+    --color-smoky-lavender: #B79FD4;
+  }
+
+  body {
+    background-color: #F2ECE3;
+    background-image: radial-gradient(rgba(22, 18, 28, 0.16) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    background-repeat: repeat;
+    color: #16121C;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 640px) {
+    body {
+      font-size: 15px;
+      line-height: 1.55;
+    }
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    color: #16121C;
+  }
+
+  .font-heading {
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+
+  .font-tag {
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .font-body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Polka dot background pattern with ~18% opacity so it matches the screenshots cleanly */
+.bg-dots {
+  background-image: radial-gradient(rgba(22, 18, 28, 0.18) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.bg-dots-dense {
+  background-image: radial-gradient(rgba(22, 18, 28, 0.16) 1.2px, transparent 1.2px);
+  background-size: 16px 16px;
+}
+
+/* Neo-Brutalist utility classes - hard, crisp block drop-shadows and borders */
+.shadow-neo {
+  box-shadow: 6px 6px 0px 0px #16121C !important;
+}
+
+.shadow-neo-sm {
+  box-shadow: 3.5px 3.5px 0px 0px #16121C !important;
+}
+
+.shadow-neo-lg {
+  box-shadow: 8px 8px 0px 0px #16121C !important;
+}
+
+.border-3 {
+  border-width: 3px !important;
+}
+
+/* Interactive hover states for neo-brutalist buttons */
+.hover\:shadow-none:hover {
+  box-shadow: 0px 0px 0px 0px #16121C !important;
+}
+
+.nb-border {
+  border: 3px solid #16121C;
+}
+
+.nb-border-b {
+  border-bottom: 4px solid #16121C;
+}
+
+.nb-border-t {
+  border-top: 4px solid #16121C;
+}
+
+.nb-shadow {
+  box-shadow: 6px 6px 0px 0px #16121C;
+}
+
+.nb-shadow-lg {
+  box-shadow: 8px 8px 0px 0px #16121C;
+}
+
+.nb-shadow-sm {
+  box-shadow: 4px 4px 0px 0px #16121C;
+}
+
+.nb-btn {
+  border: 3px solid #16121C;
+  box-shadow: 6px 6px 0px 0px #16121C;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nb-btn:hover {
+  transform: translate(6px, 6px);
+  box-shadow: 0px 0px 0px 0px #16121C;
+}
+
+.nb-btn:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0px 0px 0px 0px #16121C;
+}
+
+.nb-card {
+  border: 3px solid #16121C;
+  box-shadow: 6px 6px 0px 0px #16121C;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nb-card-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px 0px #16121C;
+}
+
+/* Marquee / ticker animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+

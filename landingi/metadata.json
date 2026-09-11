@@ -1,0 +1,7 @@
+{
+  "name": "Alexa Trachim - Landing Page w 3 dni",
+  "description": "Estetyczna strona sprzedażowa Twojej oferty? To możliwe! Tworzę landing pages dla trenerek EFT i innych kobiet, które pomagają ludziom w swoich biznesach.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

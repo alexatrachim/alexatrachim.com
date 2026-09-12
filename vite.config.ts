@@ -30,6 +30,10 @@ const mpaRewritePlugin = (): Plugin => ({
         const query = req.url && req.url.includes('?') ? '?' + req.url.split('?')[1] : '';
         req.url = '/backstage/index.html' + query;
       }
+      if (url === '/landingw3dni' || url === '/landingw3dni/') {
+        const query = req.url && req.url.includes('?') ? '?' + req.url.split('?')[1] : '';
+        req.url = '/landingw3dni/index.html' + query;
+      }
       next();
     });
   },
@@ -51,6 +55,7 @@ export default defineConfig(() => {
           biznesPoMojemu: path.resolve(__dirname, 'biznes-po-mojemu/index.html'),
           tapAndRead: path.resolve(__dirname, 'tapandread/index.html'),
           backstage: path.resolve(__dirname, 'backstage/index.html'),
+          landingW3Dni: path.resolve(__dirname, 'landingw3dni/index.html'),
         },
         output: {
           entryFileNames: 'assets/[name].js',
